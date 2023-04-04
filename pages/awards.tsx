@@ -1,6 +1,6 @@
 import { Navbar } from "@/components/navbar/Navbar";
 
-export default function Season2023() {
+export default function AwardsPage() {
   return (
     <>
       <Navbar />

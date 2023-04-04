@@ -1,28 +1,19 @@
-import { Navbar } from "@/components/Navbar";
+import { Navbar } from "@/components/navbar/Navbar";
 import { Footer } from "@/components/Footer";
-import Image from "next/image";
 import { TeamList } from "@/lib/TeamList";
 import { Tooltip } from "@nextui-org/react";
 import { Header } from "@/components/Header";
-
-const TeamMember = (props: any) => {
-  return (
-    <Image
-      className="rounded-full"
-      src={props.src}
-      alt={props.name}
-      width={60}
-      height={60}
-      priority={true}
-    />
-  );
-};
+import Head from "next/head";
+import { TeamMember } from "@/components/TeamMember";
 
 export default function TeamPage() {
   return (
     <>
+      <Head>
+        <title>Team [6070: Gryphon Machine]</title>
+      </Head>
+
       <Navbar />
-      
       <Header
         title="Mentors & Captains"
         subtitle={

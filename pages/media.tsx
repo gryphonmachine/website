@@ -1,10 +1,14 @@
 import { Header } from "@/components/Header";
-import { Navbar } from "@/components/Navbar";
+import { Navbar } from "@/components/navbar/Navbar";
 import { VideoEmbed } from "@/components/VideoEmbed";
+import Head from "next/head";
 
 export default function MediaPage() {
   return (
     <>
+      <Head>
+        <title>Media [6070: Gryphon Machine]</title>
+      </Head>
       <Navbar />
       <Header
         title="Media"
