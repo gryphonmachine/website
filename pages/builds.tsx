@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import Link from "next/link";
 
 const Season = (props: any) => {
   return (
@@ -21,18 +22,24 @@ export default function BuildsPage() {
   return (
     <>
       <Navbar />
+
       <Header
         title="Builds / Past Robots"
         subtitle="6070 has been hard at work since 2016. Take a look at what we've
         built:"
       />
+
       <div className="flex flex-col space-y-7 items-center justify-center px-7 ">
         <div className="chargedUp">
-        <Season
-          className="chargedUp bg-[url('/season/6070-charged-up.png')]"
-          title="Charged Up [ICBM]"
-          subtitle="2023"
-        />
+          <Link href="/season/2023" legacyBehavior>
+            <a>
+              <Season
+                className="chargedUp bg-[url('/season/6070-charged-up.png')]"
+                title="Charged Up [ICBM]"
+                subtitle="2023"
+              />
+            </a>
+          </Link>
         </div>
         <Season
           className="destinationDeepSpace bg-[url('https://media-s3-us-east-1.ceros.com/mcmaster-university/images/2023/02/16/c52a112d77d5eaf18a2f4dc43a89e10e/2019-10-640x480.jpeg')]"

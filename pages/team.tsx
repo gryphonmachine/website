@@ -3,6 +3,7 @@ import { Footer } from "@/components/Footer";
 import Image from "next/image";
 import { TeamList } from "@/lib/TeamList";
 import { Tooltip } from "@nextui-org/react";
+import { Header } from "@/components/Header";
 
 const TeamMember = (props: any) => {
   return (
@@ -21,16 +22,18 @@ export default function TeamPage() {
   return (
     <>
       <Navbar />
-      <div className="flex flex-col px-4 mt-16 mb-8">
-        <p className="h text-center text-5xl font-bold text-primary">
-          Mentors & Captains
-        </p>
-        <p className="text-center text-xl text-gray-400 py-3">
-          We have a lot of dedicated members at 6070. Ranging from captains,{" "}
-          <br />
-          mentors, and general members. We&apos;d like to recognize them.
-        </p>
-      </div>
+      
+      <Header
+        title="Mentors & Captains"
+        subtitle={
+          <>
+            We have a lot of dedicated members at 6070. Ranging from captains,{" "}
+            <br />
+            mentors, and general members. We&apos;d like to recognize them.
+          </>
+        }
+      />
+
       <div className="flex flex-col items-center justify-center">
         <div className="rounded-lg w-[800px] px-10">
           <h1 className="text-secondary text-2xl font-bold text-center mb-5">
@@ -45,7 +48,10 @@ export default function TeamPage() {
               </Tooltip>
             ))}
             {TeamList.headCaptains.map((member) => (
-              <Tooltip key={member.name} content={`${member.name} [Head Captain]`}>
+              <Tooltip
+                key={member.name}
+                content={`${member.name} [Head Captain]`}
+              >
                 <TeamMember src={member.img} name={member.name} />
               </Tooltip>
             ))}
@@ -58,22 +64,34 @@ export default function TeamPage() {
             className={`rounded-lg flex flex-row items-center justify-center space-x-4 mb-10`}
           >
             {TeamList.build.map((member) => (
-              <Tooltip key={member.name} content={`${member.name} [Build Captain]`}>
+              <Tooltip
+                key={member.name}
+                content={`${member.name} [Build Captain]`}
+              >
                 <TeamMember src={member.img} name={member.name} />
               </Tooltip>
             ))}
             {TeamList.programming.map((member) => (
-              <Tooltip key={member.name} content={`${member.name} [Programming Captain]`}>
-                <TeamMember src={member.img} name={member.name}/>
+              <Tooltip
+                key={member.name}
+                content={`${member.name} [Programming Captain]`}
+              >
+                <TeamMember src={member.img} name={member.name} />
               </Tooltip>
             ))}
             {TeamList.design.map((member) => (
-              <Tooltip key={member.name} content={`${member.name} [Design Captain]`}>
+              <Tooltip
+                key={member.name}
+                content={`${member.name} [Design Captain]`}
+              >
                 <TeamMember src={member.img} name={member.name} />
               </Tooltip>
             ))}
             {TeamList.outreach.map((member) => (
-              <Tooltip key={member.name} content={`${member.name} [Outreach Captain]`}>
+              <Tooltip
+                key={member.name}
+                content={`${member.name} [Outreach Captain]`}
+              >
                 <TeamMember src={member.img} name={member.name} />
               </Tooltip>
             ))}
@@ -81,7 +99,8 @@ export default function TeamPage() {
 
           <div className="flex flex-col items-center justify-center">
             <span className="text-gray-400 text-center text-sm">
-              <span className="font-bold">PS:</span> Although our general members aren&apos;t listed here, we want to thank <br/>
+              <span className="font-bold">PS:</span> Although our general
+              members aren&apos;t listed here, we want to thank <br />
               them for their hours spent learning and building @ 6070!
             </span>
           </div>

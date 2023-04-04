@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/Navbar";
+import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
 const Season = (props: any) => {
@@ -20,14 +21,11 @@ export default function SponsorsPage() {
   return (
     <>
       <Navbar />
-      <div className="flex flex-col px-4 mt-16">
-        <p className="h text-center text-5xl font-bold text-primary">
-          Sponsors
-        </p>
-        <p className="text-center text-xl text-gray-400 py-3">
-          We wouldn&apos;t be here without you. Thank you.
-        </p>
-      </div>
+
+      <Header
+        title="Sponsors"
+        subtitle="We wouldn't be here without you. Thank you :)"
+      />
 
       <div className="flex items-center justify-center">
         <div className="rounded-xl w-[1200px] px-10 ">

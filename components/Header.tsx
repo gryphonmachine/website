@@ -4,9 +4,7 @@ export const Header = (props: any) => {
       <p className="h text-center text-5xl font-bold text-primary">
         {props.title}
       </p>
-      <p className="text-center text-xl text-gray-400 py-3">
-        {props.subtitle}
-      </p>
+      <p className="text-center text-xl text-gray-400 py-3">{props.subtitle}</p>
     </div>
   );
 };
