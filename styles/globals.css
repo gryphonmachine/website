@@ -118,8 +118,3 @@ a {
   background-color: rgb(128, 128, 128);
   background-blend-mode: multiply;
 }
-
-.destinationDeepSpace,
-.firstPowerUp {
-  cursor: not-allowed !important;
-}

@@ -13,7 +13,6 @@ export default function TeamPage() {
         <title>Team [6070: Gryphon Machine]</title>
       </Head>
 
-      <Navbar />
       <Header
         title="Mentors & Captains"
         subtitle={

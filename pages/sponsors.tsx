@@ -11,7 +11,6 @@ export default function SponsorsPage() {
         <title>Sponsors [6070: Gryphon Machine]</title>
       </Head>
 
-      <Navbar />
       <Header
         title="Sponsors"
         subtitle="We wouldn't be here without you. Thank you :)"

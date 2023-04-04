@@ -23,18 +23,6 @@ export const Navbar = () => {
           </a>
         </Link>
 
-        <Link href="/media" legacyBehavior>
-          <a>
-            <NavbarItem title="Media" />
-          </a>
-        </Link>
-
-        <Link href="/awards" legacyBehavior>
-          <a>
-            <NavbarItem title="Awards" />
-          </a>
-        </Link>
-
         <Link href="/sponsors" legacyBehavior>
           <a>
             <NavbarItem title="Sponsors" />
