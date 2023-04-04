@@ -34,68 +34,56 @@ export default function TeamPage() {
       <div className="flex flex-col items-center justify-center">
         <div className="rounded-lg w-[800px] px-10">
           <h1 className="text-secondary text-2xl font-bold text-center mb-5">
-            Mentors
+            Mentors & Head Captains
           </h1>
           <div
             className={`rounded-lg flex flex-row items-center justify-center space-x-4 mb-10`}
           >
             {TeamList.mentors.map((member) => (
-              <Tooltip content={member.name}>
+              <Tooltip content={`${member.name} [Mentor]`}>
+                <TeamMember src={member.img} name={member.name} />
+              </Tooltip>
+            ))}
+            {TeamList.headCaptains.map((member) => (
+              <Tooltip content={`${member.name} [Head Captain]`}>
                 <TeamMember src={member.img} name={member.name} />
               </Tooltip>
             ))}
           </div>
 
           <h1 className="text-secondary text-2xl font-bold text-center mb-5">
-            Build Team
+            Captains
           </h1>
           <div
             className={`rounded-lg flex flex-row items-center justify-center space-x-4 mb-10`}
           >
             {TeamList.build.map((member) => (
-              <Tooltip content={member.name}>
+              <Tooltip content={`${member.name} [Build Captain]`}>
                 <TeamMember src={member.img} name={member.name} />
               </Tooltip>
             ))}
-          </div>
-
-          <h1 className="text-secondary text-2xl font-bold text-center mb-5">
-            Progamming Team
-          </h1>
-          <div
-            className={`rounded-lg flex flex-row items-center justify-center space-x-4 mb-10`}
-          >
             {TeamList.programming.map((member) => (
-              <Tooltip content={member.name}>
+              <Tooltip content={`${member.name} [Programming Captain]`}>
                 <TeamMember src={member.img} name={member.name} />
               </Tooltip>
             ))}
-          </div>
-
-          <h1 className="text-secondary text-2xl font-bold text-center mb-5">
-            Design Team
-          </h1>
-          <div
-            className={`rounded-lg flex flex-row items-center justify-center space-x-4 mb-10`}
-          >
             {TeamList.design.map((member) => (
-              <Tooltip content={member.name}>
+              <Tooltip content={`${member.name} [Design Captain]`}>
+                <TeamMember src={member.img} name={member.name} />
+              </Tooltip>
+            ))}
+            {TeamList.outreach.map((member) => (
+              <Tooltip content={`${member.name} [Outreach Captain]`}>
                 <TeamMember src={member.img} name={member.name} />
               </Tooltip>
             ))}
           </div>
 
-          <h1 className="text-secondary text-2xl font-bold text-center mb-5">
-            Outreach Team
-          </h1>
-          <div
-            className={`rounded-lg flex flex-row items-center justify-center space-x-4`}
-          >
-            {TeamList.outreach.map((member) => (
-              <Tooltip content={member.name}>
-                <TeamMember src={member.img} name={member.name} />
-              </Tooltip>
-            ))}
+          <div className="flex flex-col items-center justify-center">
+            <span className="text-gray-400 text-center text-sm">
+              <span className="font-bold">PS:</span> Although our general members aren't listed here, we want to thank <br/>
+              them for their hours spent learning and building @ 6070!
+            </span>
           </div>
         </div>
       </div>

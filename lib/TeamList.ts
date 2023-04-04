@@ -13,49 +13,43 @@ export const TeamList = {
       img: "/6070-logo.png",
     },
   ],
-  build: [
+  headCaptains: [
     {
-      name: "Utkarsh Dubey",
+      name: "Utkarsh",
       img: "/6070-logo.png",
     },
+    {
+      name: "Armaan",
+      img: "/6070-logo.png",
+    },
+  ],
+  build: [
     {
       name: "Lan",
       img: "/6070-logo.png",
     },
     {
-      name: "Ben Zhou",
+      name: "Ben",
       img: "/6070-logo.png",
     },
     {
-      name: "Emerik Chang",
+      name: "Emerik",
       img: "/6070-logo.png",
     },
   ],
   programming: [
     {
-      name: "Bereket Semagn",
+      name: "Bereket",
       img: "/6070-logo.png",
     },
     {
       name: "Kissan",
       img: "/6070-logo.png",
     },
-    {
-      name: "empty slot",
-      img: "/6070-logo.png",
-    },
-    {
-      name: "empty slot",
-      img: "/6070-logo.png",
-    },
   ],
   design: [
     {
-      name: "Armaan",
-      img: "/6070-logo.png",
-    },
-    {
-      name: "Valentina Gheorge",
+      name: "Valentina",
       img: "/6070-logo.png",
     },
     {
@@ -65,15 +59,7 @@ export const TeamList = {
   ],
   outreach: [
     {
-      name: "Amy Sun",
-      img: "/6070-logo.png",
-    },
-    {
-      name: "empty slot",
-      img: "/6070-logo.png",
-    },
-    {
-      name: "empty slot",
+      name: "Amy",
       img: "/6070-logo.png",
     },
   ],
