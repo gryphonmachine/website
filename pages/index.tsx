@@ -20,36 +20,8 @@ export default function Home() {
       <div
         className={`px-7 mt-20 py-[50px] rounded-lg flex flex-col md:flex-row items-center justify-center mb-5`}
       >
-        <div className="mt-20 md:m-0">
-          <Image
-            className="py-2 pr-4 ml-8 mt-0"
-            src="/6070-logo.png"
-            alt="6070 Logo"
-            width={100}
-            height={100}
-            priority={true}
-          />
-        </div>
-        <div className="flex flex-col px-4">
-          <div className="mb-3">
-            <p className="text-center text-5xl md:text-4xl font-bold text-primary">
-              Gryphon Machine
-            </p>
-            <span className="text-left md:text-xl text-secondary">
-              A{" "}
-              <span className="underline">
-                <a
-                  href="https://www.firstinspires.org/robotics/frc"
-                  target="_blank"
-                >
-                  FIRST
-                </a>
-              </span>{" "}
-              Robotics Team
-            </span>
-          </div>
-        </div>
-      </div>{" "}
+        coming soooooooooon
+      </div>
       <Footer />
     </>
   );

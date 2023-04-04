@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
 
 const Season = (props: any) => {
   return (
@@ -20,41 +21,39 @@ export default function BuildsPage() {
   return (
     <>
       <Navbar />
-      <div className="flex flex-col px-4 mt-16 mb-8">
-        <p className="h text-center text-5xl font-bold text-primary">
-          Builds / Past Robots
-        </p>
-        <p className="text-center text-xl text-gray-400 py-3">
-          6070 has been hard at work since 2016. Take a look at what we&apos;ve
-          built:
-        </p>
-      </div>
+      <Header
+        title="Builds / Past Robots"
+        subtitle="6070 has been hard at work since 2016. Take a look at what we've
+        built:"
+      />
       <div className="flex flex-col space-y-7 items-center justify-center px-7 ">
+        <div className="chargedUp">
         <Season
-          className="chargedUp"
+          className="chargedUp bg-[url('/season/6070-charged-up.png')]"
           title="Charged Up [ICBM]"
           subtitle="2023"
         />
+        </div>
         <Season
-          className="destinationDeepSpace"
+          className="destinationDeepSpace bg-[url('https://media-s3-us-east-1.ceros.com/mcmaster-university/images/2023/02/16/c52a112d77d5eaf18a2f4dc43a89e10e/2019-10-640x480.jpeg')]"
           title="Destination: Deep Space"
           subtitle="2019"
         />
         <Season
-          className="firstPowerUp"
+          className="firstPowerUp bg-[url('/season/6070-power-up.png')]"
           title="Power Up [PINGU]"
           subtitle="2018"
         />
         <a href="https://www.youtube.com/watch?v=u3hDYpXdCBg" target="_blank">
           <Season
-            className="firstSteamworks"
+            className="firstSteamworks bg-[url('http://www.frc6070.ca/wp-content/uploads/2017/08/IMG_0759.jpg')]"
             title="Steamworks [PRATTBOT]"
             subtitle="2017"
           />
         </a>
         <a href="https://www.youtube.com/watch?v=E-MpsOlM3U0" target="_blank">
           <Season
-            className="firstStronghold"
+            className="firstStronghold bg-[url('http://www.frc6070.ca/wp-content/uploads/2017/08/IMG_5505.jpg')]"
             title="Stronghold [IRON CURTAIN]"
             subtitle="2016"
           />

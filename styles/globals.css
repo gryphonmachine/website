@@ -110,48 +110,7 @@ a {
   }
 }
 
-.chargedUp {
-  background-image: url("/season/6070-charged-up.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100%;
-  background-color: rgb(128, 128, 128);
-  background-blend-mode: multiply;
-}
-
-.destinationDeepSpace {
-  background-image: url("https://media-s3-us-east-1.ceros.com/mcmaster-university/images/2023/02/16/c52a112d77d5eaf18a2f4dc43a89e10e/2019-10-640x480.jpeg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100%;
-  background-color: rgb(128, 128, 128);
-  background-blend-mode: multiply;
-}
-
-.firstPowerUp {
-  background-image: url("/season/6070-power-up.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100%;
-  background-color: rgb(128, 128, 128);
-  background-blend-mode: multiply;
-}
-
-.firstSteamworks {
-  background-image: url("http://www.frc6070.ca/wp-content/uploads/2017/08/IMG_0759.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100%;
-  background-color: rgb(128, 128, 128);
-  background-blend-mode: multiply;
-}
-
-.firstStronghold {
-  background-image: url("http://www.frc6070.ca/wp-content/uploads/2017/08/IMG_5505.jpg");
+.chargedUp, .destinationDeepSpace, .firstPowerUp, .firstSteamworks, .firstStronghold {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
