@@ -40,12 +40,12 @@ export default function TeamPage() {
             className={`rounded-lg flex flex-row items-center justify-center space-x-4 mb-10`}
           >
             {TeamList.mentors.map((member) => (
-              <Tooltip content={`${member.name} [Mentor]`}>
+              <Tooltip key={member.name} content={`${member.name} [Mentor]`}>
                 <TeamMember src={member.img} name={member.name} />
               </Tooltip>
             ))}
             {TeamList.headCaptains.map((member) => (
-              <Tooltip content={`${member.name} [Head Captain]`}>
+              <Tooltip key={member.name} content={`${member.name} [Head Captain]`}>
                 <TeamMember src={member.img} name={member.name} />
               </Tooltip>
             ))}
@@ -58,23 +58,23 @@ export default function TeamPage() {
             className={`rounded-lg flex flex-row items-center justify-center space-x-4 mb-10`}
           >
             {TeamList.build.map((member) => (
-              <Tooltip content={`${member.name} [Build Captain]`}>
-                <TeamMember key={member.name} src={member.img} name={member.name} />
+              <Tooltip key={member.name} content={`${member.name} [Build Captain]`}>
+                <TeamMember src={member.img} name={member.name} />
               </Tooltip>
             ))}
             {TeamList.programming.map((member) => (
-              <Tooltip content={`${member.name} [Programming Captain]`}>
-                <TeamMember key={member.name} src={member.img} name={member.name}/>
+              <Tooltip key={member.name} content={`${member.name} [Programming Captain]`}>
+                <TeamMember src={member.img} name={member.name}/>
               </Tooltip>
             ))}
             {TeamList.design.map((member) => (
-              <Tooltip content={`${member.name} [Design Captain]`}>
-                <TeamMember key={member.name} src={member.img} name={member.name} />
+              <Tooltip key={member.name} content={`${member.name} [Design Captain]`}>
+                <TeamMember src={member.img} name={member.name} />
               </Tooltip>
             ))}
             {TeamList.outreach.map((member) => (
-              <Tooltip content={`${member.name} [Outreach Captain]`}>
-                <TeamMember key={member.name} src={member.img} name={member.name} />
+              <Tooltip key={member.name} content={`${member.name} [Outreach Captain]`}>
+                <TeamMember src={member.img} name={member.name} />
               </Tooltip>
             ))}
           </div>
