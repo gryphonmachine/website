@@ -28,7 +28,7 @@ export default function TeamPage() {
         <p className="text-center text-xl text-gray-400 py-3">
           We have a lot of dedicated members at 6070. Ranging from captains,{" "}
           <br />
-          mentors, and general members. We'd like to recognize them.
+          mentors, and general members. We&apos;d like to recognize them.
         </p>
       </div>
       <div className="flex flex-col items-center justify-center">
@@ -59,29 +59,29 @@ export default function TeamPage() {
           >
             {TeamList.build.map((member) => (
               <Tooltip content={`${member.name} [Build Captain]`}>
-                <TeamMember src={member.img} name={member.name} />
+                <TeamMember key={member.name} src={member.img} name={member.name} />
               </Tooltip>
             ))}
             {TeamList.programming.map((member) => (
               <Tooltip content={`${member.name} [Programming Captain]`}>
-                <TeamMember src={member.img} name={member.name} />
+                <TeamMember key={member.name} src={member.img} name={member.name}/>
               </Tooltip>
             ))}
             {TeamList.design.map((member) => (
               <Tooltip content={`${member.name} [Design Captain]`}>
-                <TeamMember src={member.img} name={member.name} />
+                <TeamMember key={member.name} src={member.img} name={member.name} />
               </Tooltip>
             ))}
             {TeamList.outreach.map((member) => (
               <Tooltip content={`${member.name} [Outreach Captain]`}>
-                <TeamMember src={member.img} name={member.name} />
+                <TeamMember key={member.name} src={member.img} name={member.name} />
               </Tooltip>
             ))}
           </div>
 
           <div className="flex flex-col items-center justify-center">
             <span className="text-gray-400 text-center text-sm">
-              <span className="font-bold">PS:</span> Although our general members aren't listed here, we want to thank <br/>
+              <span className="font-bold">PS:</span> Although our general members aren&apos;t listed here, we want to thank <br/>
               them for their hours spent learning and building @ 6070!
             </span>
           </div>
