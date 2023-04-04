@@ -7,19 +7,6 @@ import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
 const inter = Inter({ subsets: ["latin"] });
 
-const TeamMember = (props: any) => {
-  return (
-    <Image
-      className="rounded-full"
-      src={props.src}
-      alt={props.name}
-      width={60}
-      height={60}
-      priority={true}
-    />
-  );
-};
-
 export default function Home() {
   return (
     <>
@@ -63,24 +50,6 @@ export default function Home() {
           </div>
         </div>
       </div>{" "}
-      
-      <div className="flex items-center justify-center">
-        <div className="bg-[#232936] rounded-lg w-[800px] px-10 py-8">
-          <h1 className="text-secondary text-4xl font-bold text-center mb-2">
-            We are <span className="text-primary">6070</span>.
-          </h1>
-          <p className="text-center text-gray-400 mb-10">
-            The Robotics Team @ Glenforest Secondary School
-          </p>
-
-          <div
-            className={`rounded-lg flex flex-row items-center justify-center space-x-4`}
-          >
-            <TeamMember src="/people/bereket.png" name="Bereket Semagn" />
-            <TeamMember src="/people/ankur.png" name="Ankur Boyed" />
-          </div>
-        </div>
-      </div>
       <Footer />
     </>
   );
