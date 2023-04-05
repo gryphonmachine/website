@@ -2,8 +2,9 @@ export const EventData = (props: any) => {
   return (
     <>
       <div className="relative overflow-x-auto">
-        <table className="w-full text-sm text-left ">
-          <thead className="text-xs text-white uppercase">
+        <table className="bg-gray-700 rounded-md w-full text-sm text-left border-2 border-gray-600">
+          <thead className="text-xs text-white uppercase ">
+                        <br/>
             <tr>
               <th scope="col" className="px-6 py-3">
                 #
@@ -11,10 +12,10 @@ export const EventData = (props: any) => {
               <th scope="col" className="px-6 py-3">
                 Alliance
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-6 py-3 text-red-400">
                 Red Score
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-6 py-3 text-sky-400">
                 Blue Score
               </th>
             </tr>
@@ -24,10 +25,10 @@ export const EventData = (props: any) => {
               <p>Loading matches...</p>
             ) : (
               props.data?.map((match: any, i: number) => {
-                const team = match.teams.filter(
+                const team6070 = match.teams.filter(
                   (team: any) => team.teamNumber == "6070"
                 );
-                const alliance = team[0].station.replace(/[0-9]/g, "");
+                const alliance = team6070[0].station.replace(/[0-9]/g, "");
 
                 const didWeWin = () => {
                   if (
@@ -47,7 +48,7 @@ export const EventData = (props: any) => {
 
                 return (
                   <tr
-                    className="border-2 border-gray-600 text-gray-300"
+                    className="text-gray-300 border-2 border-gray-600"
                     key={i}
                   >
                     <th
@@ -65,8 +66,8 @@ export const EventData = (props: any) => {
                     >
                       {alliance}
                     </td>
-                    <td className="px-6 py-4">{match.scoreRedFinal}</td>
-                    <td className="px-6 py-4">{match.scoreBlueFinal}</td>
+                    <td className="px-6 py-4 font-semibold ">{match.scoreRedFinal}</td>
+                    <td className="px-6 py-4 font-semibold ">{match.scoreBlueFinal}</td>
                   </tr>
                 );
               })

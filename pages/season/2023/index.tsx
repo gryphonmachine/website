@@ -22,12 +22,12 @@ export default function Season2023() {
 
         <Link href="/season/2023/western" legacyBehavior>
           <a>
-            <Subtitle>1. Western University Event</Subtitle>
+            <Subtitle className="hover:text-primary">1. Western University Event</Subtitle>
           </a>
         </Link>
         <Link href="/season/2023/windsor" legacyBehavior>
           <a>
-            <Subtitle>2. Windsor Essex Great Lakes Event</Subtitle>
+            <Subtitle className="hover:text-primary">2. Windsor Essex Great Lakes Event</Subtitle>
           </a>
         </Link>
       </Season>

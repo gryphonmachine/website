@@ -13,12 +13,12 @@ export default function Season2018() {
 
         <Link href="/season/2018/durham" legacyBehavior>
           <a>
-            <Subtitle>1. Durham College Event</Subtitle>
+            <Subtitle className="hover:text-primary">1. Durham College Event</Subtitle>
           </a>
         </Link>
         <Link href="/season/2018/mcmaster" legacyBehavior>
           <a>
-            <Subtitle>2. McMaster University Event</Subtitle>
+            <Subtitle className="hover:text-primary">2. McMaster University Event</Subtitle>
           </a>
         </Link>
       </Season>

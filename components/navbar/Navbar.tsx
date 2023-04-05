@@ -11,12 +11,6 @@ export const Navbar = () => {
           </a>
         </Link>
 
-        <Link href="/about" legacyBehavior>
-          <a>
-            <NavbarItem title="About" />
-          </a>
-        </Link>
-
         <Link href="/team" legacyBehavior>
           <a>
             <NavbarItem title="Team" />
@@ -26,6 +20,12 @@ export const Navbar = () => {
         <Link href="/builds" legacyBehavior>
           <a>
             <NavbarItem title="Builds" />
+          </a>
+        </Link>
+
+        <Link href="/awards" legacyBehavior>
+          <a>
+            <NavbarItem title="Awards" />
           </a>
         </Link>
 

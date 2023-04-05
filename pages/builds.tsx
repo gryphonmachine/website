@@ -32,7 +32,7 @@ export default function BuildsPage() {
           <a>
             <SeasonCard
               className="destinationDeepSpace bg-[url('https://media-s3-us-east-1.ceros.com/mcmaster-university/images/2023/02/16/c52a112d77d5eaf18a2f4dc43a89e10e/2019-10-640x480.jpeg')]"
-              title="🥇 Destination: Deep Space"
+              title="Destination: Deep Space"
               subtitle="2019"
             />
           </a>
