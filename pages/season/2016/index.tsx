@@ -4,6 +4,9 @@ import { Season } from "@/components/season/Season";
 import { VideoEmbed } from "@/components/VideoEmbed";
 import { SeasonPhoto } from "@/components/season/SeasonPhoto";
 import Zoom from "react-medium-image-zoom";
+import Link from "next/link";
+import { Subtitle } from "@/components/Subtitle";
+import { Title } from "@/components/Title";
 
 export default function Season2016() {
   return (
@@ -18,7 +21,7 @@ export default function Season2016() {
           <VideoEmbed id="E-MpsOlM3U0" />
         </div>
 
-        <div className="flex flex-col justify-center md:grid md:grid-cols-3 gap-8">
+        <div className="flex flex-col justify-center md:grid md:grid-cols-3 gap-4 mb-10">
           <Zoom>
             <SeasonPhoto img="2016/IMG_2983.jpg" />
           </Zoom>
@@ -29,6 +32,14 @@ export default function Season2016() {
             <SeasonPhoto img="2016/IMG_5505.jpg" />
           </Zoom>
         </div>
+
+        <Title>Events Attended</Title>
+
+        <Link href="/season/2016/toronto" legacyBehavior>
+          <a>
+            <Subtitle>1. Greater Toronto East Regionals</Subtitle>
+          </a>
+        </Link>
       </Season>
 
       <Footer />
