@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export const SeasonPhoto = (props: any) => {
+export const Photo = (props: any) => {
   return (
     <Image
       className={`rounded-lg ${props.className}`}
@@ -8,6 +8,7 @@ export const SeasonPhoto = (props: any) => {
       height="1000"
       src={props.img}
       alt="Season Photo"
+      priority={true}
     />
   );
 };

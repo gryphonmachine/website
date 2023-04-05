@@ -19,6 +19,7 @@ export default function Home() {
             height="1000"
             width="1000"
             alt="Windsor Team Photo"
+            priority={true}
           />
 
           <h1 className="text-secondary md:text-4xl text-3xl font-bold text-left mb-5">

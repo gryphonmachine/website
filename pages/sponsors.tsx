@@ -24,6 +24,7 @@ export default function SponsorsPage() {
               height="6000"
               src="/sponsors.png"
               alt="Sponsors"
+              priority={true}
             />
           </div>
         </div>

@@ -1,7 +1,7 @@
 import { Header } from "@/components/Header";
 import { Season } from "@/components/season/Season";
 import { VideoEmbed } from "@/components/VideoEmbed";
-import { SeasonPhoto } from "@/components/season/SeasonPhoto";
+import { Photo } from "@/components/Photo";
 import { Footer } from "@/components/Footer";
 import Zoom from "react-medium-image-zoom";
 import { Subtitle } from "@/components/Subtitle";
@@ -24,13 +24,13 @@ export default function Season2017() {
 
         <div className="flex flex-col justify-center md:grid md:grid-cols-3 gap-4 mb-[60px]">
           <Zoom>
-            <SeasonPhoto img="/season/2017/IMG_0742-1.jpg" />
+            <Photo img="/season/2017/IMG_0742-1.jpg" />
           </Zoom>
           <Zoom>
-            <SeasonPhoto img="/season/2017/IMG_0759.jpg" />
+            <Photo img="/season/2017/IMG_0759.jpg" />
           </Zoom>
           <Zoom>
-            <SeasonPhoto img="/season/2017/Eddy-G.jpg" />
+            <Photo img="/season/2017/Eddy-G.jpg" />
           </Zoom>
         </div>
 
