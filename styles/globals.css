@@ -110,11 +110,15 @@ a {
   }
 }
 
-.chargedUp, .destinationDeepSpace, .firstPowerUp, .firstSteamworks, .firstStronghold {
+.chargedUp,
+.destinationDeepSpace,
+.firstPowerUp,
+.firstSteamworks,
+.firstStronghold {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
-  background-color: rgb(128, 128, 128);
+  background-color: rgb(105, 105, 105);
   background-blend-mode: multiply;
 }

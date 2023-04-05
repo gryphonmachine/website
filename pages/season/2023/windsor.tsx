@@ -6,16 +6,24 @@ import { Season } from "@/components/season/Season";
 import { useEffect, useState } from "react";
 
 export default function Season2023() {
-  const [data, setData] = useState<any>(null);
+  const [qualData, setQualData] = useState<any>(null);
+  const [playoffData, setPlayoffData] = useState<any>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
     setIsLoading(true);
-    fetch("/api/2023/windsor")
+    fetch("/api/2023/windsor?type=Qualification")
       .then((res) => res.json())
       .then((data) => {
         setIsLoading(false);
-        setData(data);
+        setQualData(data);
+      });
+
+    fetch("/api/2023/windsor?type=Playoff")
+      .then((res) => res.json())
+      .then((data) => {
+        setIsLoading(false);
+        setPlayoffData(data);
       });
   }, []);
 
@@ -27,8 +35,11 @@ export default function Season2023() {
       />
 
       <Season>
-        <Title>Qualification Matches</Title>
-        <EventData data={data} isLoading={isLoading} />
+        <Title className="mt-[-30px]">Qualification Matches</Title>
+        <EventData data={qualData} isLoading={isLoading} />
+
+        <Title className="mt-10">Playoff Matches</Title>
+        <EventData data={playoffData} isLoading={isLoading} />
       </Season>
 
       <Footer />

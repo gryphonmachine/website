@@ -7,7 +7,7 @@ export default async function western(
 ) {
   await axios
     .get(
-      "https://frc-api.firstinspires.org/v3.0/2017/matches/ONHAM?tournamentLevel=Qualification&teamNumber=6070",
+      `https://frc-api.firstinspires.org/v3.0/2017/matches/ONHAM?tournamentLevel=Qualification&teamNumber=6070`,
       {
         headers: {
           Authorization: `Basic ${process.env.FIRST_API_KEY}`,

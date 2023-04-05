@@ -27,7 +27,7 @@ export default function Season2023() {
       />
 
       <Season>
-        <Title>Qualification Matches</Title>
+        <Title className="mt-[-30px]">Qualification Matches</Title>
         <EventData data={data} isLoading={isLoading} />
       </Season>
 

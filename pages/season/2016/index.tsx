@@ -21,7 +21,7 @@ export default function Season2016() {
           <VideoEmbed id="E-MpsOlM3U0" />
         </div>
 
-        <div className="flex flex-col justify-center md:grid md:grid-cols-3 gap-4 mb-10">
+        <div className="flex flex-col justify-center md:grid md:grid-cols-3 gap-4 mb-[60px]">
           <Zoom>
             <SeasonPhoto img="2016/IMG_2983.jpg" />
           </Zoom>

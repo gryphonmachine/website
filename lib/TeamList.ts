@@ -42,10 +42,6 @@ export const TeamList = {
       name: "Bereket",
       img: "/6070-logo.png",
     },
-    {
-      name: "Kissan",
-      img: "/6070-logo.png",
-    },
   ],
   design: [
     {

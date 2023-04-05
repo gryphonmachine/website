@@ -18,11 +18,11 @@ export default function Season2017() {
           <b>Recap Video + Media</b>
         </h3>
 
-        <div className="mb-[60px]">
+        <div className="mb-10">
           <VideoEmbed id="u3hDYpXdCBg" />
         </div>
 
-        <div className="flex flex-col justify-center md:grid md:grid-cols-3 gap-4 mb-10">
+        <div className="flex flex-col justify-center md:grid md:grid-cols-3 gap-4 mb-[60px]">
           <Zoom>
             <SeasonPhoto img="2017/IMG_0742-1.jpg" />
           </Zoom>
