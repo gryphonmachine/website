@@ -22,7 +22,7 @@ export default function BuildsPage() {
           <a>
             <SeasonCard
               className="chargedUp bg-[url('/season/6070-charged-up.png')]"
-              title="Charged Up [ICBM]"
+              title="Charged Up presented by Haas"
               subtitle="2023"
             />
           </a>
@@ -42,7 +42,7 @@ export default function BuildsPage() {
           <a>
             <SeasonCard
               className="firstPowerUp bg-[url('/season/6070-power-up.png')]"
-              title="Power Up [PINGU]"
+              title="FIRST Power Up"
               subtitle="2018"
             />
           </a>
@@ -52,7 +52,7 @@ export default function BuildsPage() {
           <a>
             <SeasonCard
               className="firstSteamworks bg-[url('http://www.frc6070.ca/wp-content/uploads/2017/08/IMG_0759.jpg')]"
-              title="Steamworks [PRATTBOT]"
+              title="FIRST Steamworks"
               subtitle="2017"
             />
           </a>
@@ -62,7 +62,7 @@ export default function BuildsPage() {
           <a>
             <SeasonCard
               className="firstStronghold bg-[url('http://www.frc6070.ca/wp-content/uploads/2017/08/IMG_5505.jpg')]"
-              title="Stronghold [IRON CURTAIN]"
+              title="FIRST Stronghold"
               subtitle="2016"
             />
           </a>
