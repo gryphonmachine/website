@@ -12,7 +12,7 @@ export default function Home() {
       <Navbar />
 
       <div className="flex items-center justify-center mt-14">
-        <div className="bg-[#232936] rounded-lg md:w-[700px] w-[350px] px-10 py-8">
+        <div className="border-2 border-gray-600 rounded-lg md:w-[700px] w-[350px] px-10 py-8">
           <Image
             className="rounded-lg mb-6"
             src="/team-pics/IMG_3793.jpg"
