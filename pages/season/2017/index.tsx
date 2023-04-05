@@ -18,7 +18,7 @@ export default function Season2017() {
           <b>Recap Video + Media</b>
         </h3>
 
-        <div className="mb-10">
+        <div className="mb-[60px]">
           <VideoEmbed id="u3hDYpXdCBg" />
         </div>
 

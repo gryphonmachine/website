@@ -14,7 +14,7 @@ export default function Season2023() {
       <Season title="Intercontintinental Ballistic Mini Me (ICBM)">
         <Title>Recap Video</Title>
 
-        <div className="mb-10">
+        <div className="mb-[60px]">
           <VideoEmbed id="dQw4w9WgXcQ" />
         </div>
 
