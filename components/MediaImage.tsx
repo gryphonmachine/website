@@ -7,7 +7,7 @@ export const MediaImage = (props: any) => {
   
     return (
       <Zoom>
-        <Photo className="md:h-[200px] md:w-[500px]" img={props.img}/>
+        <Photo className="hover:opacity-75 md:h-[200px] md:w-[500px]" img={props.img}/>
         <Subtitle className={styles}>
           <span className="text-white font-bold">{props.title}</span>
           <br /> {props.subtitle ?? ""}

@@ -23,13 +23,22 @@ export default function Season2016() {
 
         <div className="flex flex-col justify-center md:grid md:grid-cols-3 gap-4 mb-[60px]">
           <Zoom>
-            <Photo img="/season/2016/IMG_2983.jpg" />
+            <Photo
+              className="hover:opacity-75"
+              img="/season/2016/IMG_2983.jpg"
+            />
           </Zoom>
           <Zoom>
-            <Photo img="/season/2016/IMG_3040-1.jpg" />
+            <Photo
+              className="hover:opacity-75"
+              img="/season/2016/IMG_3040-1.jpg"
+            />
           </Zoom>
           <Zoom>
-            <Photo img="/season/2016/IMG_5505.jpg" />
+            <Photo
+              className="hover:opacity-75"
+              img="/season/2016/IMG_5505.jpg"
+            />
           </Zoom>
         </div>
 
@@ -37,7 +46,9 @@ export default function Season2016() {
 
         <Link href="/season/2016/toronto" legacyBehavior>
           <a>
-            <Subtitle className="hover:text-primary">1. Greater Toronto East Regionals</Subtitle>
+            <Subtitle className="hover:text-primary">
+              1. Greater Toronto East Regionals
+            </Subtitle>
           </a>
         </Link>
       </Season>

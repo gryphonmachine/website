@@ -24,13 +24,19 @@ export default function Season2017() {
 
         <div className="flex flex-col justify-center md:grid md:grid-cols-3 gap-4 mb-[60px]">
           <Zoom>
-            <Photo img="/season/2017/IMG_0742-1.jpg" />
+            <Photo
+              className="hover:opacity-75"
+              img="/season/2017/IMG_0742-1.jpg"
+            />
           </Zoom>
           <Zoom>
-            <Photo img="/season/2017/IMG_0759.jpg" />
+            <Photo
+              className="hover:opacity-75"
+              img="/season/2017/IMG_0759.jpg"
+            />
           </Zoom>
           <Zoom>
-            <Photo img="/season/2017/Eddy-G.jpg" />
+            <Photo className="hover:opacity-75" img="/season/2017/Eddy-G.jpg" />
           </Zoom>
         </div>
 
@@ -38,12 +44,16 @@ export default function Season2017() {
 
         <Link href="/season/2017/western" legacyBehavior>
           <a>
-            <Subtitle className="hover:text-primary">1. Western University Event 🥇</Subtitle>
+            <Subtitle className="hover:text-primary">
+              1. Western University Event 🥇
+            </Subtitle>
           </a>
         </Link>
         <Link href="/season/2017/mcmaster" legacyBehavior>
           <a>
-            <Subtitle className="hover:text-primary">2. McMaster University Event</Subtitle>
+            <Subtitle className="hover:text-primary">
+              2. McMaster University Event
+            </Subtitle>
           </a>
         </Link>
       </Season>
