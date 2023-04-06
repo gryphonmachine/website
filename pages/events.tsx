@@ -40,7 +40,7 @@ export default function EventsPage() {
           img="/events/Image-16.jpg"
         />
         <MediaImage
-          title="FIRST LEGO Leauge Team Mentorship - Team 20475"
+          title="FIRST LEGO League Team Mentorship - Team 20475"
           img="/events/Lego-768x432.jpg"
         />
         <MediaImage

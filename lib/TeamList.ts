@@ -2,61 +2,66 @@ export const TeamList = {
   mentors: [
     {
       name: "Mr. Angelkovski",
-      img: "/6070-logo.png",
+      img: "/people/angelkovski.png",
     },
     {
       name: "Mr. Bertovic",
       img: "/6070-logo.png",
     },
     {
-      name: "Ms. Virdi",
-      img: "/6070-logo.png",
+      name: "Mrs. Virdi",
+      img: "/people/virdi.png",
     },
   ],
   headCaptains: [
     {
-      name: "Utkarsh",
-      img: "/6070-logo.png",
+      name: "Muhammed",
+      img: "/people/muhammed.png",
     },
     {
-      name: "Armaan",
-      img: "/6070-logo.png",
+      name: "Kevin",
+      img: "/people/kevin.png",
     },
   ],
-  build: [
-    {
-      name: "Lan",
-      img: "/6070-logo.png",
-    },
-    {
-      name: "Ben",
-      img: "/6070-logo.png",
-    },
-    {
-      name: "Emerik",
-      img: "/6070-logo.png",
-    },
-  ],
+  // build: [
+  //   {}
+  // ],
   programming: [
     {
-      name: "Bereket",
-      img: "/6070-logo.png",
+      name: "Roozbeh",
+      img: "/people/roozbeh.png",
+    },
+    {
+      name: "Ankur",
+      img: "/people/ankur.png",
+    },
+    {
+      name: "Utkarsh",
+      img: "/people/utkarsh.png",
+    },
+    {
+      name: "Riya",
+      img: "/people/riya.png",
     },
   ],
   design: [
     {
-      name: "Valentina",
-      img: "/6070-logo.png",
-    },
-    {
-      name: "Panda",
-      img: "/6070-logo.png",
+      name: "Armaan",
+      img: "/people/armaan.png",
     },
   ],
   outreach: [
     {
+      name: "Manan",
+      img: "/people/manan.png",
+    },
+    {
+      name: "Kelly",
+      img: "/people/kelly.png",
+    },
+    {
       name: "Amy",
-      img: "/6070-logo.png",
+      img: "/people/amy.png",
     },
   ],
 };

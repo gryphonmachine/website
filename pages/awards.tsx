@@ -24,7 +24,7 @@ export default function AwardsPage() {
         subtitle="Here are some awards we have won since 2016 ;)"
       />
 
-      <div className="flex flex-col justify-center md:grid md:grid-cols-3 gap-5 pr-10 pl-10">
+      <div className="flex flex-col justify-center items-center md:grid md:grid-cols-3 gap-5 pr-10 pl-10">
         <Zoom>
           <Photo img="/awards/IMG_0549.jpg" />
           <Subtitle className={styles}>

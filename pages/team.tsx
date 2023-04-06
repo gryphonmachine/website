@@ -53,14 +53,14 @@ export default function TeamPage() {
           <div
             className={`rounded-lg flex flex-row items-center justify-center space-x-4 mb-10`}
           >
-            {TeamList.build.map((member) => (
+            {/* {TeamList.build.map((member) => (
               <Tooltip
                 key={member.name}
                 content={`${member.name} [Build Captain]`}
               >
                 <TeamMember src={member.img} name={member.name} />
               </Tooltip>
-            ))}
+            ))} */}
             {TeamList.programming.map((member) => (
               <Tooltip
                 key={member.name}
@@ -91,7 +91,7 @@ export default function TeamPage() {
             <span className="text-gray-400 text-center text-sm">
               <span className="font-bold">PS:</span> Although our general
               members aren&apos;t listed here, we want to thank <br />
-              them for their hours spent learning and building @ 6070!
+              them for spending their days learning and building @ 6070!
             </span>
           </div>
         </div>
