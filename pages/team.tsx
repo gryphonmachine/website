@@ -1,4 +1,3 @@
-import { Navbar } from "@/components/navbar/Navbar";
 import { Footer } from "@/components/Footer";
 import { TeamList } from "@/lib/TeamList";
 import { Tooltip } from "@nextui-org/react";

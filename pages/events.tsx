@@ -1,28 +1,15 @@
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import { Subtitle } from "@/components/Subtitle";
-import { Navbar } from "@/components/navbar/Navbar";
-import { Photo } from "@/components/Photo";
-import { Tooltip } from "@nextui-org/react";
-import Zoom from "react-medium-image-zoom";
-
-const MediaImage = (props: any) => {
-  const styles = "text-center md:text-sm text-md mt-2";
-
-  return (
-    <Zoom>
-      <Photo img={props.img}/>
-      <Subtitle className={styles}>
-        <span className="text-white font-bold">{props.title}</span>
-        <br /> {props.subtitle ?? ""}
-      </Subtitle>
-    </Zoom>
-  );
-};
+import { MediaImage } from "@/components/MediaImage";
+import Head from "next/head";
 
 export default function EventsPage() {
   return (
     <>
+      <Head>
+        <title>Events [6070: Gryphon Machine]</title>
+      </Head>
+
       <Header
         title="Outreach ❤️s Events"
         subtitle="Check out some of the events that 6070 has hosted, ran, or participated in!"
@@ -47,7 +34,7 @@ export default function EventsPage() {
           title="Polycultural Mentorship with Teams 1241, 771, 4939, and 4001"
           img="/events/Polycultural-Workshop-Week-1-PowerPoint.ppt.jpg"
         />
-         <MediaImage
+        <MediaImage
           title="Polycultural Day Camp"
           subtitle="August 2017"
           img="/events/Image-5-8.jpg"
@@ -57,27 +44,27 @@ export default function EventsPage() {
           subtitle="July 2017"
           img="/events/Image-6-6.jpg"
         />
-         <MediaImage
+        <MediaImage
           title="Canadian Youth STEM Conference"
           subtitle="May 2017"
           img="/events/Image-5-6.jpg"
         />
-         <MediaImage
+        <MediaImage
           title="Nahani Way LEGO Robotics Engineering Mentorship Grand Finale"
           subtitle="May 2017"
           img="/events/Image-5-5.jpg"
         />
-         <MediaImage
+        <MediaImage
           title="Minister Bains Innovation Week Visit"
           subtitle="May 2017"
           img="/events/Image-11-1.jpg"
         />
-         <MediaImage
+        <MediaImage
           title="Do you want to CAD a Snowman?"
           subtitle="December 2016"
           img="/events/Image-1-6.jpg"
         />
-         <MediaImage
+        <MediaImage
           title="Hour of Code Day"
           subtitle="December 2016"
           img="/events/Image-2-8.jpg"
