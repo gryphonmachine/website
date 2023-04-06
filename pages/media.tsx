@@ -41,7 +41,7 @@ export default function MediaPage() {
         subtitle="Highlights of our competitions in photos & videos!"
       />
 
-      <Title className="pl-10">Video Highlights</Title>
+      <Title className="pl-10 mb-0">Video Highlights</Title>
 
       <div className="flex flex-col justify-center md:grid md:grid-cols-3 gap-5 pr-10 pl-10 mb-10">
         <VideoEmbed id="9G6N4v4JEwg" />
