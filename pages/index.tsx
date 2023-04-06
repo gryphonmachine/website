@@ -55,7 +55,7 @@ export default function Home() {
               <p className="text-left text-gray-400">
                 To inspire, empower, and spread the message of FIRST within
                 ourselves and our community, while also raising awareness for
-                Robotics, Engineering, and the STEAM fields.
+                Robotics, Engineering, and the STEM fields.
               </p>
             </div>
           </div>
