@@ -13,12 +13,6 @@ export const Navbar = () => {
             </a>
           </Link>
 
-          <Link href="/team" legacyBehavior>
-            <a>
-              <NavbarItem title="Team" />
-            </a>
-          </Link>
-
           <Link href="/builds" legacyBehavior>
             <a>
               <NavbarItem title="Builds" />
@@ -36,15 +30,15 @@ export const Navbar = () => {
               <NavbarItem title="Sponsors" />
             </a>
           </Link>
-        </div>
 
-        <div className="md:pl-10">
           <Link href="/events" legacyBehavior>
             <a>
               <NavbarItem title="Events" />
             </a>
           </Link>
+        </div>
 
+        <div>
           <Link href="/media" legacyBehavior>
             <a>
               <NavbarItem title="Media" />

@@ -16,18 +16,20 @@ export default function EventsPage() {
         subtitle="Check out some of the events that 6070 has hosted, ran, or participated in!"
       />
 
-      <div className="flex flex-col justify-center md:grid md:grid-cols-3 gap-5 pr-10 pl-10">
-        {Events.map((event: any) => {
-          return (
-            <>
-              <MediaImage
-                title={event.title}
-                subtitle={event.subtitle}
-                img={event.img}
-              />
-            </>
-          );
-        })}
+      <div className="flex items-center justify-center">
+        <div className="flex flex-col md:w-[1100px] md:grid md:grid-cols-3 gap-5 pr-10 pl-10">
+          {Events.map((event: any) => {
+            return (
+              <>
+                <MediaImage
+                  title={event.title}
+                  subtitle={event.subtitle}
+                  img={event.img}
+                />
+              </>
+            );
+          })}
+        </div>
       </div>
 
       <Footer />

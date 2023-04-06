@@ -2,6 +2,10 @@ import Head from "next/head";
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/navbar/Navbar";
 import Image from "next/image";
+import { TeamList } from "@/lib/TeamList";
+import { TeamMember } from "@/components/TeamMember";
+import { Tooltip } from "@nextui-org/react";
+import { FaDiscord, FaTwitter, FaInstagram } from "react-icons/fa";
 
 export default function Home() {
   return (
@@ -12,7 +16,7 @@ export default function Home() {
       <Navbar />
 
       <div className="flex items-center justify-center mt-14 p-5">
-        <div className="border-2 border-gray-600 rounded-lg md:w-[800px] px-10 py-8">
+        <div className="border-2 border-gray-600 rounded-lg md:w-[700px] px-10 py-8">
           <Image
             className="rounded-lg mb-6"
             src="/team-pics/IMG_3793.jpg"
@@ -54,6 +58,91 @@ export default function Home() {
                 Robotics, Engineering, and the STEAM fields.
               </p>
             </div>
+          </div>
+
+          <h2 className="font-bold text-gray-300 text-lg mt-5 mb-3">
+            Our Team
+          </h2>
+
+          <p className="text-gray-400 text-xs font-bold uppercase mb-3">
+            Mentors & Head Captains
+          </p>
+
+          <div className={`rounded-lg flex flex-wrap gap-3 mb-5`}>
+            {TeamList.mentors.map((member) => (
+              <Tooltip key={member.name} content={`${member.name} [Mentor]`}>
+                <TeamMember src={member.img} name={member.name} />
+              </Tooltip>
+            ))}
+            {TeamList.headCaptains.map((member) => (
+              <Tooltip
+                key={member.name}
+                content={`${member.name} [Head Captain]`}
+              >
+                <TeamMember src={member.img} name={member.name} />
+              </Tooltip>
+            ))}
+          </div>
+
+          <p className="text-gray-400 text-xs font-bold uppercase mb-3">
+            Captains{" "}
+          </p>
+
+          <div className={`rounded-lg flex flex-wrap gap-3`}>
+            {/* {TeamList.build.map((member) => (
+              <Tooltip
+                key={member.name}
+                content={`${member.name} [Build Captain]`}
+              >
+                <TeamMember src={member.img} name={member.name} />
+              </Tooltip>
+            ))} */}
+            {TeamList.programming.map((member) => (
+              <Tooltip
+                key={member.name}
+                content={`${member.name} [Programming Captain]`}
+              >
+                <TeamMember src={member.img} name={member.name} />
+              </Tooltip>
+            ))}
+            {TeamList.design.map((member) => (
+              <Tooltip
+                key={member.name}
+                content={`${member.name} [Design Captain]`}
+              >
+                <TeamMember src={member.img} name={member.name} />
+              </Tooltip>
+            ))}
+            {TeamList.outreach.map((member) => (
+              <Tooltip
+                key={member.name}
+                content={`${member.name} [Outreach Captain]`}
+              >
+                <TeamMember src={member.img} name={member.name} />
+              </Tooltip>
+            ))}
+          </div>
+
+          <h2 className="font-bold text-gray-300 text-lg mt-5 mb-3">
+            Have any questions?
+          </h2>
+
+          <div className="flex gap-5">
+            <a href="https://discord.gg/JUunNhnf2v" target="_blank">
+              <p className="text-sm text-violet-400 hover:text-white">
+                <FaDiscord className="inline mr-1" size={20} /> Discord
+              </p>
+            </a>
+            <a href="https://twitter.com/frc6070" target="_blank">
+              <p className="text-sm text-sky-400 hover:text-white">
+                <FaTwitter className="inline mr-1" size={20} /> Twitter
+              </p>
+            </a>
+            <a href="https://www.instagram.com/frc6070" target="_blank">
+              <p className="text-sm text-pink-400 hover:text-white">
+                <FaInstagram className="inline mr-1" size={20} /> Instagram
+              </p>
+            </a>
           </div>
         </div>
       </div>
