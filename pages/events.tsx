@@ -24,7 +24,7 @@ export default function EventsPage() {
   return (
     <>
       <Header
-        title="Outreach ❤️'s Events"
+        title="Outreach ❤️s Events"
         subtitle="Check out some of the events that 6070 has hosted, ran, or participated in!"
       />
 

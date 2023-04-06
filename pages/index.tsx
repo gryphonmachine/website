@@ -11,8 +11,8 @@ export default function Home() {
       </Head>
       <Navbar />
 
-      <div className="flex items-center justify-center mt-14">
-        <div className="border-2 border-gray-600 rounded-lg md:w-[700px] w-[350px] px-10 py-8">
+      <div className="flex items-center justify-center mt-14 p-5">
+        <div className="border-2 border-gray-600 rounded-lg md:w-[800px] px-10 py-8">
           <Image
             className="rounded-lg mb-6"
             src="/team-pics/IMG_3793.jpg"

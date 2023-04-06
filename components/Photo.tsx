@@ -3,7 +3,7 @@ import Image from "next/image";
 export const Photo = (props: any) => {
   return (
     <Image
-      className={`rounded-lg ${props.className} md:h-[200px] md:w-[500px] hover:opacity-75`}
+      className={`rounded-lg ${props.className} md:h-[200px] md:w-[500px] hover:opacity-75 border-2 border-primary`}
       width={1000}
       height={1000}
       src={props.img}
