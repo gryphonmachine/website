@@ -12,7 +12,7 @@ const ViewAlbum = (props: any) => {
     <a
       href={props.link}
       target="_blank"
-      className="absolute mt-[75px] bg-black text-gray-200 border-2 border-primary p-3 rounded-lg m-2"
+      className="absolute mt-[75px] bg-black text-gray-200 border-2 border-primary p-3 rounded-lg m-2 transition ease-in-out delay-50 hover:font-bold duration-300 hover:bg-transparent"
     >
       <button>View Album →</button>
     </a>
