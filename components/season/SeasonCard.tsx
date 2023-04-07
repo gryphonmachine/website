@@ -1,7 +1,7 @@
 export const SeasonCard = (props: any) => {
   return (
     <div
-      className={`${props.className} group/arrow hover:cursor-pointer bg-gray-900 border-solid border-2 border-primary hover:border-white rounded-lg md:w-[800px] px-10 py-24`}
+      className={`${props.className} group/arrow hover:cursor-pointer border-solid border-2 border-primary hover:border-white rounded-lg md:w-[800px] px-10 py-24`}
     >
       <h1 className="text-4xl font-bold text-center mb-2">
         {props.title}{" "}
