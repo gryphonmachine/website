@@ -59,14 +59,15 @@ export default function MediaPage() {
 
       <Title className="text-center ">🎥 Video Highlights</Title>
 
-      <div className="flex flex-col justify-center md:grid md:grid-cols-3 gap-5 pr-10 pl-10 mb-10">
+      <div className="flex flex-col justify-center text-center pr-10 pl-10 mb-10">
         {isLoading ? (
           <p>Loading videos...</p>
-          
         ) : (
-          videos.slice(0,9).map((video: any, i: number) => {
-            return <VideoEmbed key={i} id={video.link.split("?v=")[1]} />;
-          })
+          <div className="md:grid md:grid-cols-3 gap-5">
+            {...videos.slice(0, 9).map((video: any, i: number) => {
+              return <VideoEmbed key={i} id={video.link.split("?v=")[1]} />;
+            })}
+          </div>
         )}
       </div>
 
