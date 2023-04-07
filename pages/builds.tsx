@@ -67,7 +67,6 @@ export default function BuildsPage() {
             />
           </a>
         </Link>
-
       </div>
       <Footer />
     </>

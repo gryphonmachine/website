@@ -93,7 +93,8 @@ export const EventData = (props: any) => {
                           alliance === "Blue" ? "text-sky-300" : "text-red-300"
                         }`}
                       >
-                        {alliance} ({secondAllianceFilter.toString().replace(/,/g, ', ')})
+                        {alliance} (
+                        {secondAllianceFilter.toString().replace(/,/g, ", ")})
                       </td>
                       <td className="px-6 py-4 font-semibold ">
                         {match.scoreRedFinal}

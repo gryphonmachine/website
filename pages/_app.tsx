@@ -1,5 +1,5 @@
 import "@/styles/globals.css";
-import '@/styles/zoom.css'
+import "@/styles/zoom.css";
 
 import type { AppProps } from "next/app";
 
