@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import axios from "axios";
 
-export default async function western(
+export default async function torontoData2016(
   req: NextApiRequest,
   res: NextApiResponse
 ) {

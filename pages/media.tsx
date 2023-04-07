@@ -6,6 +6,8 @@ import { Title } from "@/components/Title";
 import { VideoEmbed } from "@/components/VideoEmbed";
 import Head from "next/head";
 import { MediaList } from "@/lib/Media";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 const ViewAlbum = (props: any) => {
   return (
@@ -31,6 +33,19 @@ const Description = (props: any) => {
 };
 
 export default function MediaPage() {
+  const [videos, setVideos] = useState<any>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    setIsLoading(true);
+    fetch("/api/videos")
+      .then((res) => res.json())
+      .then((data) => {
+        setIsLoading(false);
+        setVideos(data);
+      });
+  }, []);
+
   return (
     <>
       <Head>
@@ -42,15 +57,20 @@ export default function MediaPage() {
         subtitle="Highlights of our competitions in photos & videos!"
       />
 
-      <Title className="pl-10 mb-0">Video Highlights</Title>
+      <Title className="text-center ">🎥 Video Highlights</Title>
 
       <div className="flex flex-col justify-center md:grid md:grid-cols-3 gap-5 pr-10 pl-10 mb-10">
-        <VideoEmbed id="9G6N4v4JEwg" />
-        <VideoEmbed id="BNbqMjZZsYc" />
-        <VideoEmbed id="E2t4Ew94GXg" />
+        {isLoading ? (
+          <p>Loading videos...</p>
+          
+        ) : (
+          videos.slice(0,9).map((video: any, i: number) => {
+            return <VideoEmbed key={i} id={video.link.split("?v=")[1]} />;
+          })
+        )}
       </div>
 
-      <Title className="pl-10">Photo/Album Highlights</Title>
+      <Title className="text-center">📷 Photo/Album Highlights</Title>
 
       <div className="flex flex-col justify-center md:grid md:grid-cols-3 gap-5 pr-10 pl-10">
         {MediaList.map((media: any) => {
