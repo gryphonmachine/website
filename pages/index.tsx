@@ -122,6 +122,14 @@ export default function Home() {
                 <TeamMember src={member.img} name={member.name} />
               </Tooltip>
             ))}
+            {TeamList.media.map((member) => (
+              <Tooltip
+                key={member.name}
+                content={`${member.name} [Media Captain]`}
+              >
+                <TeamMember src={member.img} name={member.name} />
+              </Tooltip>
+            ))}
           </div>
 
           <h2 className="font-bold text-gray-300 text-lg mt-5 mb-3">

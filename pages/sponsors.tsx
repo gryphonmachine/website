@@ -83,7 +83,7 @@ export default function SponsorsPage() {
               title="Our Robot"
               subtitle={
                 <span>
-                  <li>Purchasing Parts</li>
+                  <li>Purchasing Robot Parts</li>
                   <li>Manufacturing</li>
                   <li>Spare Parts</li>
                 </span>

@@ -52,20 +52,22 @@ export const TeamList = {
   ],
   outreach: [
     {
+      name: "Kelly",
+      img: "/people/kelly.png",
+    },
+    {
       name: "Manan",
       img: "/people/manan.png",
     },
+  ],
+  media: [
     {
       name: "Aleena",
       img: "/people/aleena.png",
     },
     {
-      name: "Kelly",
-      img: "/people/kelly.png",
-    },
-    {
       name: "Amy",
       img: "/people/amy.png",
     },
-  ],
+  ]
 };
