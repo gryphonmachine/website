@@ -5,7 +5,7 @@ import Image from "next/image";
 import { TeamList } from "@/lib/TeamList";
 import { TeamMember } from "@/components/TeamMember";
 import { Tooltip } from "@nextui-org/react";
-import { FaDiscord, FaTwitter, FaInstagram, FaFacebook } from "react-icons/fa";
+import { FaDiscord, FaTwitter, FaInstagram } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 
 export default function Home() {
@@ -134,19 +134,14 @@ export default function Home() {
                 <FaDiscord className="inline mr-1" size={20} /> Discord
               </p>
             </a>
-            <a href="https://twitter.com/frc6070" target="_blank">
-              <p className="text-sm text-sky-400 hover:text-white">
-                <FaTwitter className="inline mr-1" size={20} /> Twitter
-              </p>
-            </a>
             <a href="https://www.instagram.com/frc6070" target="_blank">
               <p className="text-sm text-pink-400 hover:text-white">
                 <FaInstagram className="inline mr-1" size={20} /> Instagram
               </p>
             </a>
-            <a href="https://www.facebook.com/frc6070" target="_blank">
-              <p className="text-sm text-blue-500 hover:text-white">
-                <FaFacebook className="inline mr-1" size={20} /> Facebook
+            <a href="https://twitter.com/frc6070" target="_blank">
+              <p className="text-sm text-sky-400 hover:text-white">
+                <FaTwitter className="inline mr-1" size={20} /> Twitter
               </p>
             </a>
             <a href="mailto:gryphonmachine@gmail.com" target="_blank">

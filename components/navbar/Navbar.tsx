@@ -1,15 +1,21 @@
 import Link from "next/link";
 import { NavbarItem } from "./NavbarItem";
-import { useState } from "react";
+import Image from "next/image";
 
 export const Navbar = () => {
   return (
     <>
-      <div className="flex flex-col justify-center mt-10 4 space-y-2 items-center text-gray-300">
-        <div>
+      <div className="flex flex-col mt-10 4 space-y-2 text-gray-300">
+        <div className="flex-wrap flex justify-center items-center pr-3 pl-3">
           <Link href="/" legacyBehavior>
             <a>
-              <NavbarItem title="🤖" />
+              <Image 
+              className="mr-5 logo6070"
+              src="/6070-logo.png"
+              alt="6070 Logo"
+              width="25"
+              height="25"
+              />
             </a>
           </Link>
 
@@ -25,29 +31,21 @@ export const Navbar = () => {
             </a>
           </Link>
 
-          <Link href="/sponsors" legacyBehavior>
-            <a>
-              <NavbarItem title="Sponsors" />
-            </a>
-          </Link>
-
           <Link href="/events" legacyBehavior>
             <a>
               <NavbarItem title="Events" />
             </a>
           </Link>
-        </div>
 
-        <div>
           <Link href="/media" legacyBehavior>
             <a>
               <NavbarItem title="Media" />
             </a>
           </Link>
 
-          <Link href="/case-studies" legacyBehavior>
+          <Link href="/sponsors" legacyBehavior>
             <a>
-              <NavbarItem title="Case Studies" />
+              <NavbarItem title="Sponsors" />
             </a>
           </Link>
         </div>

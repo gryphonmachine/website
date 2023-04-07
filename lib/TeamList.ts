@@ -56,6 +56,10 @@ export const TeamList = {
       img: "/people/manan.png",
     },
     {
+      name: "Aleena",
+      img: "/people/aleena.png",
+    },
+    {
       name: "Kelly",
       img: "/people/kelly.png",
     },

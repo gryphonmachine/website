@@ -17,7 +17,7 @@ export default function BuildsPage() {
         built:"
       />
 
-      <div className="flex flex-col space-y-7 items-center justify-center px-7 ">
+      <div className="flex flex-col space-y-7 items-center justify-center pr-10 pl-10">
         <Link href="/season/2023" legacyBehavior>
           <a>
             <SeasonCard

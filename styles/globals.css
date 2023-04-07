@@ -129,4 +129,15 @@ a {
 .firstSteamworks:hover,
 .firstStronghold:hover {
   transform: scale(1.02);
+  background-color: rgb(125, 125, 125);
+  background-blend-mode: multiply;
+}
+
+.logo6070 {
+  transition: all 1s ease;
+}
+
+.logo6070:hover {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
 }
