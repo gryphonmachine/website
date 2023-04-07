@@ -75,7 +75,7 @@ export default function SponsorsPage() {
                 <span>
                   <li>Off-Season Events</li>
                   <li>Transporation</li>
-                  <li>Registration Fees</li>
+                  <li>Registration & Event Fees</li>
                 </span>
               }
             />
