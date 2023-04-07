@@ -11,7 +11,7 @@ export default function AwardsPage() {
       </Head>
 
       <Header
-        title="Awards"
+        title="🏅 Awards"
         subtitle="Here are some awards we have won since 2016 ;)"
       />
 
@@ -49,7 +49,7 @@ export default function AwardsPage() {
           />
         </div>
       </div>
-      
+
       <Footer />
     </>
   );
