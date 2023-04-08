@@ -17,6 +17,8 @@ export const Footer = () => {
           height="175"
           width="175"
           alt="Vercel Powered By"
+          priority={true}
+          quality={1}
         />
       </a>
     </div>
