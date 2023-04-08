@@ -26,8 +26,8 @@ export default function Season2023() {
         subtitle="2016 Season - FIRST Stronghold"
       />
 
-      <Season>
-        <Title>Qualification Matches</Title>
+      <Season className="w-[350px]">
+        <Title className="mt-[-30px]">Qualification Matches</Title>
         <EventData data={data} isLoading={isLoading} />
       </Season>
 

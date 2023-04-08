@@ -70,7 +70,7 @@ export default function MediaPage() {
         <span className="mr-2">📷</span> Photo Highlights
       </Title>
       <Subtitle className="text-center mt-[-20px] mb-[-10px] text-s">
-        click album cover photo to view google photos!
+        click the cover photos to view the full album!
       </Subtitle>
 
       <div className="flex items-center justify-center mt-10">

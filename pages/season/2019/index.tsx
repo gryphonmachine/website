@@ -1,4 +1,6 @@
+import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { SeasonEvent } from "@/components/SeasonEvent";
 import { Subtitle } from "@/components/Subtitle";
 import { Title } from "@/components/Title";
 import { Season } from "@/components/season/Season";
@@ -12,17 +14,27 @@ export default function Season2019() {
       <Season title="Pingu">
         <Title>Events Attended</Title>
 
-        <Link href="/season/2019/durham" legacyBehavior>
-          <a>
-            <Subtitle className="hover:text-primary">1. Durham College Event</Subtitle>
-          </a>
-        </Link>
-        <Link href="/season/2019/mcmaster" legacyBehavior>
-          <a>
-            <Subtitle className="hover:text-primary">2. McMaster University Event 🥇</Subtitle>
-          </a>
-        </Link>
+        <div className="flex flex-col">
+          <Link href="/season/2019/durham" legacyBehavior>
+            <a>
+              <SeasonEvent
+                title="Durham College District Event"
+                date="March 1st - 3rd, 2019"
+              />
+            </a>
+          </Link>
+          <Link href="/season/2019/mcmaster" legacyBehavior>
+            <a>
+              <SeasonEvent
+                title="McMaster University District Event 🥇"
+                date="April 5th - 7th, 2019"
+              />
+            </a>
+          </Link>
+        </div>
       </Season>
+
+      <Footer />
     </>
   );
 }

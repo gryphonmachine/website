@@ -34,7 +34,7 @@ export default function Season2023() {
         subtitle="2019 Season - Destination: Deep Space"
       />
 
-      <Season>
+      <Season className="w-[350px]">
         <Title className="mt-[-30px]">Qualification Matches</Title>
         <EventData data={qualData} isLoading={isLoading} />
 

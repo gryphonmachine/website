@@ -34,7 +34,7 @@ export default function Season2023() {
         subtitle="2018 Season - FIRST Power Up"
       />
 
-      <Season>
+      <Season className="w-[350px]">
         <Title className="mt-[-30px]">Qualification Matches</Title>
         <EventData data={qualData} isLoading={isLoading} />
 

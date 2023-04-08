@@ -7,6 +7,7 @@ import Zoom from "react-medium-image-zoom";
 import Link from "next/link";
 import { Subtitle } from "@/components/Subtitle";
 import { Title } from "@/components/Title";
+import { SeasonEvent } from "@/components/SeasonEvent";
 
 export default function Season2016() {
   return (
@@ -44,13 +45,16 @@ export default function Season2016() {
 
         <Title>Events Attended</Title>
 
-        <Link href="/season/2016/toronto" legacyBehavior>
-          <a>
-            <Subtitle className="hover:text-primary">
-              1. Greater Toronto East Regionals
-            </Subtitle>
-          </a>
-        </Link>
+        <div className="flex flex-col">
+          <Link href="/season/2016/toronto" legacyBehavior>
+            <a>
+              <SeasonEvent
+                title="Greater Toronto East Regionals District Event"
+                date="March 9th - 12th, 2016"
+              />
+            </a>
+          </Link>
+        </div>
       </Season>
 
       <Footer />

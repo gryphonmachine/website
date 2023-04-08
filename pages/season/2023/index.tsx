@@ -5,6 +5,7 @@ import { Season } from "@/components/season/Season";
 import { VideoEmbed } from "@/components/VideoEmbed";
 import { Subtitle } from "@/components/Subtitle";
 import { Title } from "@/components/Title";
+import { SeasonEvent } from "@/components/SeasonEvent";
 
 export default function Season2023() {
   return (
@@ -20,16 +21,24 @@ export default function Season2023() {
 
         <Title>Events Attended</Title>
 
-        <Link href="/season/2023/western" legacyBehavior>
-          <a>
-            <Subtitle className="hover:text-primary">1. Western University Event</Subtitle>
-          </a>
-        </Link>
-        <Link href="/season/2023/windsor" legacyBehavior>
-          <a>
-            <Subtitle className="hover:text-primary">2. Windsor Essex Great Lakes Event</Subtitle>
-          </a>
-        </Link>
+        <div className="flex flex-col">
+          <Link href="/season/2023/western" legacyBehavior>
+            <a>
+            <SeasonEvent
+                title="Western University District Event"
+                date="March 17th - March 19th, 2023"
+              />
+            </a>
+          </Link>
+          <Link href="/season/2023/windsor" legacyBehavior>
+            <a>
+              <SeasonEvent
+                title="Windsor Essex Great Lakes District Event"
+                date="March 30th - April 1st, 2023"
+              />
+            </a>
+          </Link>
+        </div>
       </Season>
 
       <Footer />

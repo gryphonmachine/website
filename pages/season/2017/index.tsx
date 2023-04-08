@@ -7,6 +7,7 @@ import Zoom from "react-medium-image-zoom";
 import { Subtitle } from "@/components/Subtitle";
 import Link from "next/link";
 import { Title } from "@/components/Title";
+import { SeasonEvent } from "@/components/SeasonEvent";
 
 export default function Season2017() {
   return (
@@ -42,20 +43,24 @@ export default function Season2017() {
 
         <Title>Events Attended</Title>
 
-        <Link href="/season/2017/western" legacyBehavior>
-          <a>
-            <Subtitle className="hover:text-primary">
-              1. Western University Event 🥇
-            </Subtitle>
-          </a>
-        </Link>
-        <Link href="/season/2017/mcmaster" legacyBehavior>
-          <a>
-            <Subtitle className="hover:text-primary">
-              2. McMaster University Event
-            </Subtitle>
-          </a>
-        </Link>
+        <div className="flex flex-col">
+          <Link href="/season/2017/western" legacyBehavior>
+            <a>
+              <SeasonEvent
+                title="Western University District Event 🥇"
+                date="March 31st - April 2nd, 2017"
+              />
+            </a>
+          </Link>
+          <Link href="/season/2017/mcmaster" legacyBehavior>
+            <a>
+              <SeasonEvent
+                title="McMaster University District Event"
+                date="April 7th - April 9th, 2017"
+              />
+            </a>
+          </Link>
+        </div>
       </Season>
 
       <Footer />
