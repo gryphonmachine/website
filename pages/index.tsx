@@ -6,7 +6,7 @@ import Image from "next/image";
 import { phrases } from "@/lib/Phrases";
 
 export default function Home() {
-  const [phrase, setPhrase] = useState(phrases[0]);
+  const [phrase, setPhrase] = useState("Gryphon Machine");
   const [usedPhrases, setUsedPhrases] = useState<string[]>([]);
 
   useEffect(() => {
