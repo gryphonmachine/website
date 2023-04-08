@@ -137,3 +137,12 @@ a {
   -webkit-transform: rotate(360deg);
   transform: rotate(360deg);
 }
+
+.homeBg {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  background-color: rgb(75, 75, 105);
+  background-blend-mode: multiply;
+}

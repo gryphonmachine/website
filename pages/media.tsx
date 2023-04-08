@@ -59,37 +59,41 @@ export default function MediaPage() {
 
       <Title className="text-center ">🎥 Video Highlights</Title>
 
-      <div className="flex flex-col justify-center text-center pr-10 pl-10 mb-10">
+      <div className="flex flex-col justify-center text-center mb-10">
         {isLoading ? (
           <p>Loading videos...</p>
         ) : (
-          <div className="md:grid md:grid-cols-3 gap-5">
-            {...videos.slice(0, 9).map((video: any, i: number) => {
-              return <VideoEmbed key={i} id={video.link.split("?v=")[1]} />;
-            })}
+          <div className="md:flex items-center justify-center">
+            <div className="flex flex-col md:w-[1100px] md:grid md:grid-cols-3 gap-5 pr-10 pl-10">
+              {...videos.slice(0, 9).map((video: any, i: number) => {
+                return <VideoEmbed key={i} id={video.link.split("?v=")[1]} />;
+              })}
+            </div>
           </div>
         )}
       </div>
 
       <Title className="text-center">📷 Photo/Album Highlights</Title>
 
-      <div className="flex flex-col justify-center md:grid md:grid-cols-3 gap-5 pr-10 pl-10">
-        {MediaList.map((media: any) => {
-          return (
-            <>
-              <div className="flex flex-col items-center ">
-                <Photo
-                  className="opacity-50 md:h-[200px] md:w-[500px]"
-                  img={media.img}
-                />
+      <div className="flex items-center justify-center">
+        <div className="flex flex-col md:w-[1100px] md:grid md:grid-cols-3 gap-5 pr-10 pl-10">
+          {MediaList.map((media: any) => {
+            return (
+              <>
+                <div className="flex flex-col items-center">
+                  <Photo
+                    className="opacity-50 md:h-[200px] md:w-[500px]"
+                    img={media.img}
+                  />
 
-                <ViewAlbum link={media.url} />
+                  <ViewAlbum link={media.url} />
 
-                <Description title={media.title} subtitle={media.subtitle} />
-              </div>
-            </>
-          );
-        })}
+                  <Description title={media.title} subtitle={media.subtitle} />
+                </div>
+              </>
+            );
+          })}
+        </div>
       </div>
 
       <Footer />

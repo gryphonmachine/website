@@ -1,5 +1,17 @@
 export const MediaList = [
   {
+    img: "/media/IMG_8382.CR2.jpg",
+    url: " https://photos.app.goo.gl/9ntGaAc7CD7Ax1FM6",
+    title: "Windsor Essex Great Lakes Event",
+    subtitle: "FIRST Charged Up - 2023",
+  },
+  {
+    img: "/media/IMG_3386.jpg",
+    url: "https://photos.app.goo.gl/m8YjKLqZ9Dn4s4uGA",
+    title: "Western University Event",
+    subtitle: "FIRST Charged Up - 2023",
+  },
+  {
     img: "/awards/28515219_1840517919346586_4816363233668407574_o.jpg",
     url: "https://photos.google.com/share/AF1QipNc55Eumz_bkhC5WZdGbG2cj0ANmVu_i6czDTechAdE6_o-3rbPU5lHNiFxlRaTgw?key=X3BJZDlpQ0tGZTJWZGZvZ3Y2eFdjeFBHRl9Rb2J3",
     title: "Durham College District Event",

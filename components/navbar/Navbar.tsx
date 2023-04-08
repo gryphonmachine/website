@@ -3,7 +3,7 @@ import { NavbarItem } from "./NavbarItem";
 import Image from "next/image";
 
 export const Navbar = () => {
-  const navbarItems = ["Builds", "Awards", "Events", "Media", "Sponsors"];
+  const navbarItems = ["About", "Builds", "Awards", "Events", "Media", "Sponsors"];
 
   return (
     <>
