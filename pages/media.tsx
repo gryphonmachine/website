@@ -57,11 +57,13 @@ export default function MediaPage() {
         subtitle="Highlights of our competitions in photos & videos!"
       />
 
-      <Title className="text-center ">🎥 Video Highlights</Title>
+      <Title className="text-center">
+        <span className="mr-2">🎥</span> Video Highlights
+      </Title>
 
-      <div className="flex flex-col justify-center text-center mb-10">
+      <div className="flex flex-col justify-center text-center mb-16">
         {isLoading ? (
-          <p>Loading videos...</p>
+          <p className="text-gray-400">Loading videos...</p>
         ) : (
           <div className="md:flex items-center justify-center">
             <div className="flex flex-col md:w-[1100px] md:grid md:grid-cols-3 gap-5 pr-10 pl-10">
@@ -73,9 +75,11 @@ export default function MediaPage() {
         )}
       </div>
 
-      <Title className="text-center">📷 Photo/Album Highlights</Title>
+      <Title className="text-center">
+        <span className="mr-2">📷</span> Photo Highlights
+      </Title>
 
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center mt-10">
         <div className="flex flex-col md:w-[1100px] md:grid md:grid-cols-3 gap-5 pr-10 pl-10">
           {MediaList.map((media: any) => {
             return (
