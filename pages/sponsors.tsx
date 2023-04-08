@@ -43,7 +43,7 @@ export default function SponsorsPage() {
             }
           />
           <div className="flex items-center justify-center">
-            <div className="rounded-xl w-[1200px] mt-[-50px] px-10 flex justify-center">
+            <div className="rounded-xl w-[1200px] mt-[-47px] px-10 flex justify-center">
               <Image
                 width="1000"
                 height="1000"
