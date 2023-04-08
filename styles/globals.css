@@ -124,6 +124,10 @@ a {
   background-blend-mode: multiply;
 }
 
+.albumCover:hover {
+  transform: scale(1.02);
+}
+
 .logo6070 {
   transition: all 1s ease;
 }

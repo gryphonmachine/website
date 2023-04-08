@@ -6,20 +6,7 @@ import { Title } from "@/components/Title";
 import { VideoEmbed } from "@/components/VideoEmbed";
 import Head from "next/head";
 import { MediaList } from "@/lib/Media";
-import axios from "axios";
 import { useEffect, useState } from "react";
-
-const ViewAlbum = (props: any) => {
-  return (
-    <a
-      href={props.link}
-      target="_blank"
-      className="absolute mt-[75px] bg-black text-gray-200 border-2 border-primary p-3 rounded-lg m-2 transition ease-in-out delay-50 hover:font-bold duration-300 hover:bg-transparent"
-    >
-      <button>View Album →</button>
-    </a>
-  );
-};
 
 const Description = (props: any) => {
   const styles = "text-center md:text-sm text-md mt-3";
@@ -61,6 +48,10 @@ export default function MediaPage() {
         <span className="mr-2">🎥</span> Video Highlights
       </Title>
 
+      <Subtitle className="text-center mt-[-20px] mb-5 text-s">
+        check out our <a href="https://www.youtube.com/channel/UCPayYKB8-812GDZdHmfNk3g" className="text-primary hover:text-white" target="_blank">youtube</a> channel :)
+      </Subtitle>
+
       <div className="flex flex-col justify-center text-center mb-16">
         {isLoading ? (
           <p className="text-gray-400">Loading videos...</p>
@@ -78,22 +69,28 @@ export default function MediaPage() {
       <Title className="text-center">
         <span className="mr-2">📷</span> Photo Highlights
       </Title>
+      <Subtitle className="text-center mt-[-20px] mb-[-10px] text-s">
+        click album cover photo to view google photos!
+      </Subtitle>
 
       <div className="flex items-center justify-center mt-10">
         <div className="flex flex-col md:w-[1100px] md:grid md:grid-cols-3 gap-5 pr-10 pl-10">
           {MediaList.map((media: any) => {
             return (
               <>
-                <div className="flex flex-col items-center">
-                  <Photo
-                    className="opacity-50 md:h-[200px] md:w-[500px]"
-                    img={media.img}
-                  />
+                <a href={media.url} target="_blank">
+                  <div className="albumCover flex flex-col items-center group">
+                    <Photo
+                      className="opacity-50 md:h-[200px] md:w-[500px] hover:opacity-90"
+                      img={media.img}
+                    />
 
-                  <ViewAlbum link={media.url} />
-
-                  <Description title={media.title} subtitle={media.subtitle} />
-                </div>
+                    <Description
+                      title={media.title}
+                      subtitle={media.subtitle}
+                    />
+                  </div>
+                </a>
               </>
             );
           })}
