@@ -11,7 +11,7 @@ export default function Home() {
       <div className="flex-grow">
         <Navbar />
 
-        <div className="flex flex-col md:items-center md:justify-center mt-[150px] md:mt-[250px] md:pl-0 pl-10 flex-grow">
+        <div className="flex flex-col md:items-center md:justify-center mt-[150px] md:mt-[250px] md:pl-0 md:pr-0 pl-10 pr-10 flex-grow">
           <h1 className="font-black text-8xl md:text-9xl">
             WE ARE <span className="text-primary">6070</span>.
           </h1>
