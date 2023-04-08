@@ -3,7 +3,14 @@ import { NavbarItem } from "./NavbarItem";
 import Image from "next/image";
 
 export const Navbar = () => {
-  const navbarItems = ["About", "Builds", "Awards", "Events", "Media", "Sponsors"];
+  const navbarItems = [
+    "About",
+    "Builds",
+    "Awards",
+    "Events",
+    "Media",
+    "Sponsors",
+  ];
 
   return (
     <>
@@ -17,6 +24,8 @@ export const Navbar = () => {
                 alt="6070 Logo"
                 width="25"
                 height="25"
+                priority={true}
+                quality={1}
               />
             </a>
           </Link>
