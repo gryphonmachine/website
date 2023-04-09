@@ -17,8 +17,8 @@ export default function AboutPage() {
       </Head>
 
       <Header
-        title="About Us"
-        subtitle="Learn a bit more about 6070 + our team!"
+        title="⚙️ About Us"
+        subtitle="Discover the people, passion, and purpose behind Team 6070"
       />
 
       <div className="flex items-center justify-center pr-5 pl-5">

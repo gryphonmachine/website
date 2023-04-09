@@ -12,7 +12,7 @@ export default function BuildsPage() {
       </Head>
 
       <Header
-        title="Builds / Past Robots"
+        title="⚒️ Builds / Past Robots"
         subtitle="6070 has been hard at work since 2016. Take a look at what we've
         built:"
       />

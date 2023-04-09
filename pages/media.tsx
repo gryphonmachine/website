@@ -40,8 +40,8 @@ export default function MediaPage() {
       </Head>
 
       <Header
-        title="Media"
-        subtitle="Highlights of our competitions in photos & videos!"
+        title="📸 Media"
+        subtitle="Our competitions captured in stunning photos and videos."
       />
 
       <Title className="text-center">

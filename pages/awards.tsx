@@ -14,8 +14,8 @@ export default function AwardsPage() {
       </Head>
 
       <Header
-        title="🏅 Awards"
-        subtitle="Here are some awards we have won since 2016 ;)"
+        title="🏆 Awards"
+        subtitle="Celebrating the exceptional achievements of Team 6070:"
       />
 
       <div className="flex items-center justify-center">
@@ -30,7 +30,15 @@ export default function AwardsPage() {
                       img={award.img}
                     />
                   </Zoom>
-                  <Description title={award.title} subtitle={<span><span className="font-bold">{award.year}</span> | {award.subtitle}</span>} />
+                  <Description
+                    title={award.title}
+                    subtitle={
+                      <span>
+                        <span className="font-bold">{award.year}</span> |{" "}
+                        {award.subtitle}
+                      </span>
+                    }
+                  />
                 </div>
               </>
             );

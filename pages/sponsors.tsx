@@ -30,11 +30,11 @@ export default function SponsorsPage() {
             <title>Sponsors [6070: Gryphon Machine]</title>
           </Head>
           <Header
-            title="6070 x Sponsors"
+            title="💸 6070 x Sponsors"
             subtitle={
               <span>
-                We would like to appreciate each and every one of our sponsors.{" "}
-                <br /> Want to{" "}
+                Celebrating our valued partners, dedicated sponsors, and
+                supporters. <br /> Want to{" "}
                 <a
                   onClick={() =>
                     window.open("/6070_SponsorshipPackage-2023.pdf")
