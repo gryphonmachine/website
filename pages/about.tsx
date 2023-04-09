@@ -20,7 +20,7 @@ export default function AboutPage() {
         title="About Us"
         subtitle="Learn a bit more about 6070 + our team!"
       />
-      
+
       <div className="flex items-center justify-center pr-5 pl-5">
         <div className="border-2 border-gray-600 rounded-lg md:w-[700px] px-10 py-8">
           <Image
@@ -76,12 +76,17 @@ export default function AboutPage() {
 
           <div className={`rounded-lg flex flex-wrap gap-3 mb-5`}>
             {TeamList.mentors.map((member) => (
-              <Tooltip key={member.name} content={`${member.name} [Mentor]`}>
+              <Tooltip
+                placement="topStart"
+                key={member.name}
+                content={`${member.name} [Mentor]`}
+              >
                 <TeamMember src={member.img} name={member.name} />
               </Tooltip>
             ))}
             {TeamList.headCaptains.map((member) => (
               <Tooltip
+                placement="topStart"
                 key={member.name}
                 content={`${member.name} [Head Captain]`}
               >
@@ -97,6 +102,7 @@ export default function AboutPage() {
           <div className={`rounded-lg flex flex-wrap gap-3`}>
             {/* {TeamList.build.map((member) => (
         <Tooltip
+          placement="topStart"
           key={member.name}
           content={`${member.name} [Build Captain]`}
         >
@@ -105,6 +111,7 @@ export default function AboutPage() {
       ))} */}
             {TeamList.programming.map((member) => (
               <Tooltip
+                placement="topStart"
                 key={member.name}
                 content={`${member.name} [Programming Captain]`}
               >
@@ -113,6 +120,7 @@ export default function AboutPage() {
             ))}
             {TeamList.design.map((member) => (
               <Tooltip
+                placement="topStart"
                 key={member.name}
                 content={`${member.name} [Design Captain]`}
               >
@@ -121,6 +129,7 @@ export default function AboutPage() {
             ))}
             {TeamList.outreach.map((member) => (
               <Tooltip
+                placement="topStart"
                 key={member.name}
                 content={`${member.name} [Outreach Captain]`}
               >
@@ -129,6 +138,7 @@ export default function AboutPage() {
             ))}
             {TeamList.media.map((member) => (
               <Tooltip
+                placement="topStart"
                 key={member.name}
                 content={`${member.name} [Media Captain]`}
               >

@@ -35,9 +35,17 @@ export default function SponsorsPage() {
               <span>
                 We would like to appreciate each and every one of our sponsors.{" "}
                 <br /> Want to{" "}
-                <span className="text-white hover:text-primary font-bold hover:cursor-not-allowed">
+                <a
+                  onClick={() =>
+                    window.open("/6070_SponsorshipPackage-2023.pdf")
+                  }
+                  download
+                  className="text-white hover:text-primary font-bold underline cursor-pointer"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   sponsor us?
-                </span>{" "}
+                </a>{" "}
                 (2024 Season)
               </span>
             }

@@ -45,15 +45,14 @@ export default function Home() {
             <Navbar />
             <div className="flex-grow">
               <div className="flex flex-col md:items-center md:justify-center mt-[150px] md:mt-[225px] md:pl-0 md:pr-0 pl-10 pr-10 flex-grow">
-                <h1 className="font-black text-white text-8xl md:text-9xl group">
-                  <span className="group-hover:text-primary hover:text-white">
-                    WE ARE
-                  </span>{" "}
+                <h1 className="font-black text-white text-8xl md:text-9xl">
+                  WE ARE
                   <a
                     href="https://frc-events.firstinspires.org/team/6070"
                     target="_blank"
                   >
                     <span className="text-primary hover:text-white hover:cursor-pointer group-hover:text-white">
+                      {" "}
                       6070
                     </span>
                     .
