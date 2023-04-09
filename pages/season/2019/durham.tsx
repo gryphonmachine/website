@@ -4,22 +4,10 @@ import { Header } from "@/components/Header";
 import { Subtitle } from "@/components/Subtitle";
 import { Title } from "@/components/Title";
 import { Season } from "@/components/season/Season";
-import { useEffect, useState } from "react";
+import { GetServerSideProps } from "next";
+import { API_URL } from "@/lib/constants";
 
-export default function Season2023() {
-  const [data, setData] = useState<any>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-
-  useEffect(() => {
-    setIsLoading(true);
-    fetch("/api/2019/durham")
-      .then((res) => res.json())
-      .then((data) => {
-        setIsLoading(false);
-        setData(data);
-      });
-  }, []);
-
+export default function Durham2019({ qualData }: any) {
   return (
     <>
       <Header
@@ -29,14 +17,23 @@ export default function Season2023() {
 
       <Season className="w-[350px]">
         <Title className="mt-[-30px]">Qualification Matches</Title>
-        <EventData data={data} isLoading={isLoading} />
+        <EventData data={qualData} />
 
         <Title className="mt-10">Playoff Matches</Title>
-        <Subtitle className="mt-[-20px]">Unfortunately, we did not participate in playoffs.
-</Subtitle>
+        <Subtitle className="mt-[-20px]">
+          Unfortunately, we did not participate in playoffs.
+        </Subtitle>
       </Season>
 
       <Footer />
     </>
   );
 }
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const qualData = await fetch(`${API_URL}/api/2019/durham`).then((res) =>
+    res.json()
+  );
+
+  return { props: { qualData } };
+};

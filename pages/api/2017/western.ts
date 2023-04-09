@@ -6,11 +6,6 @@ export default async function westernData2017(
   res: NextApiResponse
 ) {
   const { type } = req.query;
-  const types = ["Qualification", "Playoff"];
-
-  if (!types.includes(String(type))) {
-    res.send("Invalid type. Pick between Qualification or Playoff!");
-  }
 
   return fetchData(res, "ONLON", "2017", type);
 }

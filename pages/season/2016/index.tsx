@@ -5,7 +5,6 @@ import { VideoEmbed } from "@/components/VideoEmbed";
 import { Photo } from "@/components/Photo";
 import Zoom from "react-medium-image-zoom";
 import Link from "next/link";
-import { Subtitle } from "@/components/Subtitle";
 import { Title } from "@/components/Title";
 import { SeasonEvent } from "@/components/SeasonEvent";
 

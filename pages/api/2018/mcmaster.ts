@@ -6,11 +6,6 @@ export default async function mcmasterData2018(
   res: NextApiResponse
 ) {
   const { type } = req.query;
-  const types = ["Qualification", "Playoff"];
-
-  if (!types.includes(String(type))) {
-    res.send("Invalid type. Pick between Qualification or Playoff!");
-  }
 
   return fetchData(res, "ONHAM", "2018", type);
 }

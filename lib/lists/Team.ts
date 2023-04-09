@@ -69,5 +69,5 @@ export const Team = {
       name: "Amy",
       img: "/people/amy.png",
     },
-  ]
+  ],
 };

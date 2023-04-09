@@ -49,7 +49,15 @@ export default function MediaPage() {
       </Title>
 
       <Subtitle className="text-center mt-[-20px] mb-5 text-s">
-        check out our <a href="https://www.youtube.com/channel/UCPayYKB8-812GDZdHmfNk3g" className="text-primary hover:text-white" target="_blank">youtube</a> channel :)
+        check out our{" "}
+        <a
+          href="https://www.youtube.com/channel/UCPayYKB8-812GDZdHmfNk3g"
+          className="text-primary hover:text-white"
+          target="_blank"
+        >
+          youtube
+        </a>{" "}
+        channel :)
       </Subtitle>
 
       <div className="flex flex-col justify-center text-center mb-16">

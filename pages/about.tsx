@@ -4,7 +4,6 @@ import { Tooltip } from "@nextui-org/react";
 import { FaDiscord, FaInstagram, FaTwitter } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import Image from "next/image";
-import { Navbar } from "@/components/navbar/Navbar";
 import Head from "next/head";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";

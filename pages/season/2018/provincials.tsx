@@ -1,33 +1,12 @@
 import { EventData } from "@/components/EventData";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import { Subtitle } from "@/components/Subtitle";
 import { Title } from "@/components/Title";
 import { Season } from "@/components/season/Season";
-import { useEffect, useState } from "react";
+import { API_URL } from "@/lib/constants";
+import { GetServerSideProps } from "next";
 
-export default function Season2023() {
-  const [qualData, setQualData] = useState<any>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [playoffData, setPlayoffData] = useState<any>(null);
-
-  useEffect(() => {
-    setIsLoading(true);
-    fetch("/api/2018/provincials?type=Qualification")
-      .then((res) => res.json())
-      .then((data) => {
-        setIsLoading(false);
-        setQualData(data);
-      });
-
-      fetch("/api/2018/provincials?type=Playoff")
-      .then((res) => res.json())
-      .then((data) => {
-        setIsLoading(false);
-        setPlayoffData(data);
-      });
-  }, []);
-
+export default function Provincials2018({ qualData, playoffData }: any) {
   return (
     <>
       <Header
@@ -37,13 +16,24 @@ export default function Season2023() {
 
       <Season className="w-[350px]">
         <Title className="mt-[-30px]">Qualification Matches</Title>
-        <EventData data={qualData} isLoading={isLoading} />
+        <EventData data={qualData} />
 
         <Title className="mt-10">Playoff Matches</Title>
-        <EventData data={playoffData} isLoading={isLoading} />
+        <EventData data={playoffData} />
       </Season>
 
       <Footer />
     </>
   );
 }
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const qualData = await fetch(`${API_URL}/api/2018/provincials`).then((res) =>
+    res.json()
+  );
+  const playoffData = await fetch(
+    `${API_URL}/api/2018/provincials?type=Playoff`
+  ).then((res) => res.json());
+
+  return { props: { qualData, playoffData } };
+};

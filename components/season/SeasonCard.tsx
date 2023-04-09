@@ -5,9 +5,7 @@ export const SeasonCard = (props: any) => {
     >
       <h1 className="text-4xl text-white font-bold text-center mb-2">
         {props.title}{" "}
-        <span className="hidden group-hover/arrow:inline-block">
-          →
-        </span>
+        <span className="hidden group-hover/arrow:inline-block">→</span>
       </h1>
       <p className="text-center text-gray-300 font-bold">
         {props.subtitle} Season

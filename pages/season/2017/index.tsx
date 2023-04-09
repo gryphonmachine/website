@@ -4,7 +4,6 @@ import { VideoEmbed } from "@/components/VideoEmbed";
 import { Photo } from "@/components/Photo";
 import { Footer } from "@/components/Footer";
 import Zoom from "react-medium-image-zoom";
-import { Subtitle } from "@/components/Subtitle";
 import Link from "next/link";
 import { Title } from "@/components/Title";
 import { SeasonEvent } from "@/components/SeasonEvent";

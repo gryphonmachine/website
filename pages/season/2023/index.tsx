@@ -3,7 +3,6 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Season } from "@/components/season/Season";
 import { VideoEmbed } from "@/components/VideoEmbed";
-import { Subtitle } from "@/components/Subtitle";
 import { Title } from "@/components/Title";
 import { SeasonEvent } from "@/components/SeasonEvent";
 
@@ -24,7 +23,7 @@ export default function Season2023() {
         <div className="flex flex-col">
           <Link href="/season/2023/western" legacyBehavior>
             <a>
-            <SeasonEvent
+              <SeasonEvent
                 title="Western University District Event"
                 date="March 17th - March 19th, 2023"
               />

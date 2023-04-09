@@ -1,7 +1,6 @@
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { SeasonEvent } from "@/components/SeasonEvent";
-import { Subtitle } from "@/components/Subtitle";
 import { Title } from "@/components/Title";
 import { Season } from "@/components/season/Season";
 import Link from "next/link";
