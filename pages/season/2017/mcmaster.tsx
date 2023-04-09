@@ -1,6 +1,7 @@
 import { EventData } from "@/components/EventData";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { Subtitle } from "@/components/Subtitle";
 import { Title } from "@/components/Title";
 import { Season } from "@/components/season/Season";
 import { useEffect, useState } from "react";
@@ -29,6 +30,10 @@ export default function Season2023() {
       <Season className="w-[350px]">
         <Title className="mt-[-30px]">Qualification Matches</Title>
         <EventData data={data} isLoading={isLoading} />
+
+        <Title className="mt-10">Playoff Matches</Title>
+        <Subtitle className="mt-[-20px]">Unfortunately, we did not participate in playoffs.
+</Subtitle>
       </Season>
 
       <Footer />

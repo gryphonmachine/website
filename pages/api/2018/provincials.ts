@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { fetchData } from "@/lib/fetchData";
 
-export default async function westernData2017(
+export default async function provincialsData2019(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
@@ -12,5 +12,5 @@ export default async function westernData2017(
     res.send("Invalid type. Pick between Qualification or Playoff!");
   }
 
-  return fetchData(res, "ONLON", "2017", type);
+  return fetchData(res, "ONCMP2", "2018", type);
 }

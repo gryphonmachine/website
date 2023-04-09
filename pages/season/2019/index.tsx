@@ -31,6 +31,14 @@ export default function Season2019() {
               />
             </a>
           </Link>
+          <Link href="/season/2019/provincials" legacyBehavior>
+            <a>
+              <SeasonEvent
+                title="FIRST Ontario Provincial Championship - Technology Division"
+                date="April 10th - 13th, 2018"
+              />
+            </a>
+          </Link>
         </div>
       </Season>
 

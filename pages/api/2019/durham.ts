@@ -1,23 +1,9 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import axios from "axios";
+import { fetchData } from "@/lib/fetchData";
 
 export default async function durhamData2019(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  await axios
-    .get(
-      `https://frc-api.firstinspires.org/v3.0/2019/matches/ONOSH?tournamentLevel=Qualification&teamNumber=6070`,
-      {
-        headers: {
-          Authorization: `Basic ${process.env.FIRST_API_KEY}`,
-        },
-      }
-    )
-    .then(function (response) {
-      res.send(response.data.Matches);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+  return fetchData(res, "ONOSH", "2019");
 }

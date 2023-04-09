@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import axios from "axios";
+import { fetchData } from "@/lib/fetchData";
 
 export default async function westernData2023(
   req: NextApiRequest,
@@ -12,19 +12,5 @@ export default async function westernData2023(
     res.send("Invalid type. Pick between Qualification or Playoff!");
   }
 
-  await axios
-    .get(
-      `https://frc-api.firstinspires.org/v3.0/2023/matches/ONLON?tournamentLevel=${type}&teamNumber=6070`,
-      {
-        headers: {
-          Authorization: `Basic ${process.env.FIRST_API_KEY}`,
-        },
-      }
-    )
-    .then(function (response) {
-      res.send(response.data.Matches);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+  return fetchData(res, "ONLON", "2023", type);
 }

@@ -12,7 +12,7 @@ export default function Season2023() {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch("/api/2016/toronto")
+    fetch("/api/2016/worlds")
       .then((res) => res.json())
       .then((data) => {
         setIsLoading(false);
@@ -23,7 +23,7 @@ export default function Season2023() {
   return (
     <>
       <Header
-        title="Greater Toronto East Regional Event"
+        title="FIRST Championship - Hopper Subdivision"
         subtitle="2016 Season - FIRST Stronghold"
       />
 
@@ -32,10 +32,8 @@ export default function Season2023() {
         <EventData data={data} isLoading={isLoading} />
 
         <Title className="mt-10">Playoff Matches</Title>
-        <Subtitle className="mt-[-20px]">
-          Unfortunately, we did not participate in playoffs.
-
-        </Subtitle>
+        <Subtitle className="mt-[-20px]">Unfortunately, we did not participate in playoffs.
+</Subtitle>
       </Season>
 
       <Footer />

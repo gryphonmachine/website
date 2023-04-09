@@ -49,8 +49,16 @@ export default function Season2016() {
           <Link href="/season/2016/toronto" legacyBehavior>
             <a>
               <SeasonEvent
-                title="Greater Toronto East Regionals District Event"
+                title="Greater Toronto East Regional District Event"
                 date="March 9th - 12th, 2016"
+              />
+            </a>
+          </Link>
+          <Link href="/season/2016/worlds" legacyBehavior>
+            <a>
+              <SeasonEvent
+                title="FIRST Championship - Hopper Subdivision"
+                date="April 27th - 30th, 2016"
               />
             </a>
           </Link>

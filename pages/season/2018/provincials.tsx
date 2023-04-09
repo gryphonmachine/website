@@ -7,35 +7,40 @@ import { Season } from "@/components/season/Season";
 import { useEffect, useState } from "react";
 
 export default function Season2023() {
-  const [data, setData] = useState<any>(null);
+  const [qualData, setQualData] = useState<any>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [playoffData, setPlayoffData] = useState<any>(null);
 
   useEffect(() => {
     setIsLoading(true);
-    fetch("/api/2016/toronto")
+    fetch("/api/2018/provincials?type=Qualification")
       .then((res) => res.json())
       .then((data) => {
         setIsLoading(false);
-        setData(data);
+        setQualData(data);
+      });
+
+      fetch("/api/2018/provincials?type=Playoff")
+      .then((res) => res.json())
+      .then((data) => {
+        setIsLoading(false);
+        setPlayoffData(data);
       });
   }, []);
 
   return (
     <>
       <Header
-        title="Greater Toronto East Regional Event"
-        subtitle="2016 Season - FIRST Stronghold"
+        title="FIRST Ontario Provincial Championship"
+        subtitle="2018 Season [Technology Division] - FIRST Power Up"
       />
 
       <Season className="w-[350px]">
         <Title className="mt-[-30px]">Qualification Matches</Title>
-        <EventData data={data} isLoading={isLoading} />
+        <EventData data={qualData} isLoading={isLoading} />
 
         <Title className="mt-10">Playoff Matches</Title>
-        <Subtitle className="mt-[-20px]">
-          Unfortunately, we did not participate in playoffs.
-
-        </Subtitle>
+        <EventData data={playoffData} isLoading={isLoading} />
       </Season>
 
       <Footer />
