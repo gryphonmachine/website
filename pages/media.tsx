@@ -5,10 +5,10 @@ import { Subtitle } from "@/components/Subtitle";
 import { Title } from "@/components/Title";
 import { VideoEmbed } from "@/components/VideoEmbed";
 import Head from "next/head";
-import { MediaList } from "@/lib/Media";
+import { Media } from "@/lib/lists/Media";
 import { useEffect, useState } from "react";
 
-const Description = (props: any) => {
+export const Description = (props: any) => {
   const styles = "text-center md:text-sm text-md mt-3";
 
   return (
@@ -75,13 +75,13 @@ export default function MediaPage() {
 
       <div className="flex items-center justify-center mt-10">
         <div className="flex flex-col md:w-[1100px] md:grid md:grid-cols-3 gap-5 pr-10 pl-10">
-          {MediaList.map((media: any) => {
+          {Media.map((media: any) => {
             return (
               <>
                 <a href={media.url} target="_blank">
-                  <div className="albumCover flex flex-col items-center group">
+                  <div className="mediaImage flex flex-col items-center group">
                     <Photo
-                      className="opacity-50 md:h-[200px] md:w-[500px] hover:opacity-90"
+                      className="opacity-90 md:h-[200px] md:w-[500px] hover:opacity-100"
                       img={media.img}
                     />
 

@@ -1,7 +1,10 @@
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import { MediaImage } from "@/components/MediaImage";
+import Zoom from "react-medium-image-zoom";
+import { Photo } from "@/components/Photo";
+import { Awards } from "@/lib/lists/Awards";
 import Head from "next/head";
+import { Description } from "./media";
 
 export default function AwardsPage() {
   return (
@@ -17,36 +20,21 @@ export default function AwardsPage() {
 
       <div className="flex items-center justify-center">
         <div className="flex flex-col justify-center md:w-[1100px] md:grid md:grid-cols-3 gap-5 pr-10 pl-10">
-          <MediaImage
-            img="/awards/IMG_0549.jpg"
-            title="McMaster University District Event"
-            subtitle="(2018, Safety Award)"
-          />
-
-          <MediaImage
-            img="/awards/28515219_1840517919346586_4816363233668407574_o.jpg"
-            title="Durham College District Event"
-            subtitle="(2018, Safety Award & District Engineering Inspiration Award)"
-          />
-
-          <MediaImage
-            img="/awards/IMG_0556.jpg"
-            title="McMaster University District Event"
-            subtitle="(2017, Safety Award & Team Spirit Award)"
-          />
-
-          <MediaImage
-            img="/awards/Western.jpg"
-            title="Western University District Event"
-            subtitle="(2017, Winning Alliance, Team Spirit Award, & Safety Star of
-            The Day)"
-          />
-
-          <MediaImage
-            img="/awards/2016-Team-Photo.jpg"
-            title="Greater Toronto East Regionals"
-            subtitle="(2016, Rookie All-Star Award)"
-          />
+          {Awards.map((award: any, key: number) => {
+            return (
+              <>
+                <div className="mediaImage flex flex-col items-center group">
+                  <Zoom>
+                    <Photo
+                      className="opacity-90 md:h-[200px] md:w-[500px] hover:opacity-100"
+                      img={award.img}
+                    />
+                  </Zoom>
+                  <Description title={award.title} subtitle={<span><span className="font-bold">{award.year}</span> | {award.subtitle}</span>} />
+                </div>
+              </>
+            );
+          })}
         </div>
       </div>
 

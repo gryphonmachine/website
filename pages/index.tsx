@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/navbar/Navbar";
 import Image from "next/image";
-import { phrases } from "@/lib/Phrases";
+import { phrases } from "@/lib/lists/Phrases";
 
 export default function Home() {
   const [phrase, setPhrase] = useState("Gryphon Machine");

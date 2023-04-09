@@ -1,4 +1,4 @@
-export const MediaList = [
+export const Media = [
   {
     img: "/media/IMG_8382.CR2.jpg",
     url: " https://photos.app.goo.gl/9ntGaAc7CD7Ax1FM6",

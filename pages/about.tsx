@@ -1,5 +1,5 @@
 import { TeamMember } from "@/components/TeamMember";
-import { TeamList } from "@/lib/TeamList";
+import { Team } from "@/lib/lists/Team";
 import { Tooltip } from "@nextui-org/react";
 import { FaDiscord, FaInstagram, FaTwitter } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
@@ -75,7 +75,7 @@ export default function AboutPage() {
           </p>
 
           <div className={`rounded-lg flex flex-wrap gap-3 mb-5`}>
-            {TeamList.mentors.map((member) => (
+            {Team.mentors.map((member) => (
               <Tooltip
                 placement="topStart"
                 key={member.name}
@@ -84,7 +84,7 @@ export default function AboutPage() {
                 <TeamMember src={member.img} name={member.name} />
               </Tooltip>
             ))}
-            {TeamList.headCaptains.map((member) => (
+            {Team.headCaptains.map((member) => (
               <Tooltip
                 placement="topStart"
                 key={member.name}
@@ -100,7 +100,7 @@ export default function AboutPage() {
           </p>
 
           <div className={`rounded-lg flex flex-wrap gap-3`}>
-            {/* {TeamList.build.map((member) => (
+            {/* {Team.build.map((member) => (
         <Tooltip
           placement="topStart"
           key={member.name}
@@ -109,7 +109,7 @@ export default function AboutPage() {
           <TeamMember src={member.img} name={member.name} />
         </Tooltip>
       ))} */}
-            {TeamList.programming.map((member) => (
+            {Team.programming.map((member) => (
               <Tooltip
                 placement="topStart"
                 key={member.name}
@@ -118,7 +118,7 @@ export default function AboutPage() {
                 <TeamMember src={member.img} name={member.name} />
               </Tooltip>
             ))}
-            {TeamList.design.map((member) => (
+            {Team.design.map((member) => (
               <Tooltip
                 placement="topStart"
                 key={member.name}
@@ -127,7 +127,7 @@ export default function AboutPage() {
                 <TeamMember src={member.img} name={member.name} />
               </Tooltip>
             ))}
-            {TeamList.outreach.map((member) => (
+            {Team.outreach.map((member) => (
               <Tooltip
                 placement="topStart"
                 key={member.name}
@@ -136,7 +136,7 @@ export default function AboutPage() {
                 <TeamMember src={member.img} name={member.name} />
               </Tooltip>
             ))}
-            {TeamList.media.map((member) => (
+            {Team.media.map((member) => (
               <Tooltip
                 placement="topStart"
                 key={member.name}

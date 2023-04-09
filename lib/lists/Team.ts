@@ -1,4 +1,4 @@
-export const TeamList = {
+export const Team = {
   mentors: [
     {
       name: "Mr. Angelkovski",

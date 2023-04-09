@@ -1,8 +1,10 @@
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import { MediaImage } from "@/components/MediaImage";
-import { Events } from "@/lib/Events";
+import Zoom from "react-medium-image-zoom";
+import { Events } from "@/lib/lists/Events";
 import Head from "next/head";
+import { Description } from "./media";
+import { Photo } from "@/components/Photo";
 
 export default function EventsPage() {
   return (
@@ -21,11 +23,15 @@ export default function EventsPage() {
           {Events.map((event: any) => {
             return (
               <>
-                <MediaImage
-                  title={event.title}
-                  subtitle={event.subtitle}
-                  img={event.img}
-                />
+                <div className="mediaImage flex flex-col items-center group">
+                  <Zoom>
+                    <Photo
+                      className="opacity-90 md:h-[200px] md:w-[500px] hover:opacity-100"
+                      img={event.img}
+                    />
+                  </Zoom>
+                  <Description title={event.title} subtitle={event.subtitle} />
+                </div>
               </>
             );
           })}

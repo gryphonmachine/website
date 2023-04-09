@@ -124,7 +124,7 @@ a {
   background-blend-mode: multiply;
 }
 
-.albumCover:hover {
+.mediaImage:hover {
   transform: scale(1.02);
 }
 

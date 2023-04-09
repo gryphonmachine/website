@@ -88,7 +88,7 @@ export default function SponsorsPage() {
                   subtitle={
                     <span>
                       <li>Off-Season Events</li>
-                      <li>Transporation</li>
+                      <li>Transportation</li>
                       <li>Registration & Event Fees</li>
                     </span>
                   }
