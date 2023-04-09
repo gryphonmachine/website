@@ -27,7 +27,12 @@ export default function Western2023({ qualData, playoffData }: any) {
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
+  res.setHeader(
+    "Cache-Control",
+    "public, s-maxage=10, stale-while-revalidate=59"
+  );
+
   const qualData = await fetch(`${API_URL}/api/2023/western`).then((res) =>
     res.json()
   );
