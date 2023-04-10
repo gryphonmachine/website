@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/navbar/Navbar";
 import Image from "next/image";
 import { phrases } from "@/lib/lists/Phrases";
+import Link from "next/link";
 
 export default function Home() {
   const [phrase, setPhrase] = useState("Gryphon Machine");
@@ -35,7 +36,7 @@ export default function Home() {
         <div className="relative h-screen">
           <Image
             className="absolute inset-0 w-full h-full object-cover opacity-25"
-            src="/season/6070-steamworks.jpg"
+            src="/6070-landing.png"
             alt="Background Image"
             priority={true}
             fill
@@ -45,13 +46,37 @@ export default function Home() {
             <Navbar />
             <div className="flex-grow">
               <div className="flex flex-col md:items-center md:justify-center mt-[150px] md:mt-[225px] md:pl-0 md:pr-0 pl-10 pr-10 flex-grow">
+                <div className="flex">
+                  <a href="https://www.firstroboticscanada.org">
+                    {" "}
+                    <Image
+                      className="mr-3"
+                      src="/first-logo.png"
+                      height="150"
+                      width="150"
+                      alt="FIRST Robotics Logo"
+                    />
+                  </a>
+                  <p className="font-black text-3xl">x</p>
+                  <Link href="/" legacyBehavior>
+                    <a>
+                      <Image
+                        className="logo6070 mb-1 ml-3"
+                        src="/6070-logo.png"
+                        height="30"
+                        width="40"
+                        alt="6070 Logo"
+                      />
+                    </a>
+                  </Link>
+                </div>
                 <h1 className="font-black text-white text-8xl md:text-9xl">
                   WE ARE
                   <a
                     href="https://frc-events.firstinspires.org/team/6070"
                     target="_blank"
                   >
-                    <span className="text-primary hover:text-white hover:cursor-pointer group-hover:text-white">
+                    <span className="text-primary hover:cursor-pointer">
                       {" "}
                       6070
                     </span>
@@ -67,6 +92,9 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <button className="absolute bottom-0 right-0 mb-4 mr-4 text-lg">
+        🐍
+      </button>
     </>
   );
 }

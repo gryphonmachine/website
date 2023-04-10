@@ -13,11 +13,10 @@ export default function Season2016() {
     <>
       <Header title="FIRST Stronghold" subtitle="2016 Season" />
       <Season title="Iron Curtain">
-        <h3 className="text-secondary text-2xl mt-2 font-semibold">
-          <b>Recap Video + Media</b>
-        </h3>
+        <Title>Game Reveal + Media</Title>
 
-        <div className="mb-[60px]">
+        <div className="flex flex-col justify-center md:grid md:grid-cols-2 gap-4 mt-[-15px] mb-[25px]">
+          <VideoEmbed id="VqOKzoHJDjA" />
           <VideoEmbed id="E-MpsOlM3U0" />
         </div>
 

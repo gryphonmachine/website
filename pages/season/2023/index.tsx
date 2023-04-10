@@ -12,10 +12,10 @@ export default function Season2023() {
       <Header title="Charged Up presented by Haas" subtitle="2023 Season" />
 
       <Season title="Intercontintinental Ballistic Mini Me (ICBM)">
-        <Title>Recap Video</Title>
+        <Title>Game Reveal</Title>
 
         <div className="mb-[60px]">
-          <VideoEmbed id="dQw4w9WgXcQ" />
+          <VideoEmbed id="0zpflsYc4PA" />
         </div>
 
         <Title>Events Attended</Title>

@@ -14,11 +14,10 @@ export default function Season2017() {
       <Header title="FIRST Steamworks" subtitle="2017 Season" />
 
       <Season title="Prattbot A.K.A Geary">
-        <h3 className="text-secondary text-2xl mt-2 font-semibold">
-          <b>Recap Video + Media</b>
-        </h3>
+        <Title>Game Reveal + Media</Title>
 
-        <div className="mb-10">
+        <div className="flex flex-col justify-center md:grid md:grid-cols-2 gap-4 mt-[-15px] mb-[25px]">
+          <VideoEmbed id="EMiNmJW7enI" />
           <VideoEmbed id="u3hDYpXdCBg" />
         </div>
 

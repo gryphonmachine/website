@@ -2,6 +2,7 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { SeasonEvent } from "@/components/SeasonEvent";
 import { Title } from "@/components/Title";
+import { VideoEmbed } from "@/components/VideoEmbed";
 import { Season } from "@/components/season/Season";
 import Link from "next/link";
 
@@ -11,6 +12,12 @@ export default function Season2019() {
       <Header title="Destination: Deep Space" subtitle="2019 Season" />
 
       <Season title="Pingu">
+        <Title>Game Reveal</Title>
+
+        <div className="mb-[60px]">
+          <VideoEmbed id="Mew6G_og-PI" />
+        </div>
+
         <Title>Events Attended</Title>
 
         <div className="flex flex-col">
