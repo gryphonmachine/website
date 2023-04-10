@@ -16,7 +16,7 @@ export default function Season2017() {
       <Season title="Prattbot A.K.A Geary">
         <Title>Game Reveal + Media</Title>
 
-        <div className="flex flex-col justify-center md:grid md:grid-cols-2 mt-[-15px] mb-[16px]">
+        <div className="flex flex-col justify-center md:grid md:grid-cols-2 md:gap-4 mt-[-15px] mb-[16px]">
           <VideoEmbed id="EMiNmJW7enI" className="mb-[-4px]" />
           <VideoEmbed id="u3hDYpXdCBg" />
         </div>
