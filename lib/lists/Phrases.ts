@@ -25,7 +25,6 @@ export const phrases: string[] = [
   "Robotics: Where creativity meets engineering.",
   "Working hard, playing hard, building robots.",
   "Making the impossible, possible.",
-  "If it ain't broke, we haven't built it yet.",
   "Aim high, build higher.",
   "The only limit is the one you set.",
   "We don't just build robots, we build leaders.",

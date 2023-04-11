@@ -17,11 +17,7 @@ export default function Home() {
     const interval = setInterval(() => {
       setBgImageOpacity(0);
       setTimeout(() => {
-        let newIndex = bgImageIndex;
-        while (newIndex === bgImageIndex) {
-          newIndex = Math.floor(Math.random() * bgImages.length);
-        }
-        setBgImageIndex(newIndex);
+        setBgImageIndex(Math.floor(Math.random() * bgImages.length));
         setBgImageOpacity(0.2);
 
         let randomIndex = Math.floor(Math.random() * phrases.length);
