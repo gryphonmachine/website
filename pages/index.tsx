@@ -3,13 +3,10 @@ import { useState, useEffect } from "react";
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/navbar/Navbar";
 import Image from "next/image";
-import { phrases } from "@/lib/lists/Phrases";
 import Link from "next/link";
 import { bgImages } from "@/lib/lists/bgImages";
 
 export default function Home() {
-  const [phrase, setPhrase] = useState("Gryphon Machine");
-  const [usedPhrases, setUsedPhrases] = useState<string[]>([]);
   const [bgImageIndex, setBgImageIndex] = useState(
     Math.floor(Math.random() * bgImages.length)
   );
@@ -23,24 +20,12 @@ export default function Home() {
       setTimeout(() => {
         setBgImageIndex(Math.floor(Math.random() * bgImages.length));
 
-        let randomIndex = Math.floor(Math.random() * phrases.length);
-        while (usedPhrases.includes(phrases[randomIndex])) {
-          randomIndex = (randomIndex + 1) % phrases.length;
-        }
-        const newPhrase = phrases[randomIndex];
-        setPhrase(newPhrase);
-        setUsedPhrases([...usedPhrases, newPhrase]);
-
-        if (usedPhrases.length === phrases.length) {
-          setUsedPhrases([]);
-        }
-
         setBgImageOpacity(0.2);
       }, 1000);
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [usedPhrases]);
+  }, []);
 
   return (
     <>
@@ -65,7 +50,7 @@ export default function Home() {
             <Navbar />
             <div className="flex-grow">
               <div className="flex flex-col md:items-center md:justify-center mt-[100px] md:mt-[200px] md:pl-0 md:pr-0 pl-10 pr-10 flex-grow">
-                <div className="flex mb-5">
+                <div className="flex md:mb-5 mb-[50px]">
                   <a href="https://www.firstroboticscanada.org">
                     {" "}
                     <Image
@@ -104,8 +89,8 @@ export default function Home() {
                     .
                   </a>
                 </h1>
-                <p className="text-xl font-bold uppercase mt-3 text-gray-400 pl-2">
-                  {phrase}
+                <p className="text-xl md:text-3xl font-extrabold uppercase mt-3 text-gray-400 pl-2">
+                  Gryphon Machine
                 </p>
               </div>
             </div>
