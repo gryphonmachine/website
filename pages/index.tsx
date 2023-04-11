@@ -47,7 +47,7 @@ export default function Home() {
             }}
           />
           <div className="flex flex-col min-h-screen z-10">
-            <Navbar className="mb-[100px] md:mb-[150px]" />
+            <Navbar className="mb-[100px] md:mb-[125px]" />
             <div className="flex-grow">
               <div className="flex flex-col md:items-center md:justify-center pl-10 pr-10 flex-grow">
                 <div className="flex md:mb-5 mb-[50px]">
@@ -62,7 +62,7 @@ export default function Home() {
                       priority={true}
                     />
                   </a>
-                  <p className="font-black text-3xl">x</p>
+                  <p className="font-black text-white text-3xl">x</p>
                   <Link href="/" legacyBehavior>
                     <a>
                       <Image
