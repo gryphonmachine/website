@@ -154,7 +154,7 @@ a {
 }
 
 .glow {
-  text-shadow: 0 0 7px transparent, 0 0 10px #000, 0 0 21px #000,
+  text-shadow: 0 0 7px transparent, 0 0 2px #000, 0 0 2px #000,
     0 0 22px #fbbb04, 0 0 42px #fbbb04, 0 0 52px #fbbb04, 0 0 62px #fbbb04,
     0 0 101px #fbbb04;
 }
