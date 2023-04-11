@@ -35,7 +35,7 @@ export default function Home() {
           setUsedPhrases([]);
         }
 
-        setBgImageOpacity(0.3);
+        setBgImageOpacity(0.2);
       }, 1000);
     }, 5000);
 
@@ -54,7 +54,6 @@ export default function Home() {
             src={bgImages[bgImageIndex]}
             alt="Background Image"
             priority={true}
-            quality={100}
             fill
             onLoad={() => setLoaded(true)}
             style={{
@@ -65,8 +64,8 @@ export default function Home() {
           <div className="flex flex-col min-h-screen z-10">
             <Navbar />
             <div className="flex-grow">
-              <div className="flex flex-col md:items-center md:justify-center mt-[100px] md:mt-[225px] md:pl-0 md:pr-0 pl-10 pr-10 flex-grow">
-                <div className="flex">
+              <div className="flex flex-col md:items-center md:justify-center mt-[100px] md:mt-[200px] md:pl-0 md:pr-0 pl-10 pr-10 flex-grow">
+                <div className="flex mb-5">
                   <a href="https://www.firstroboticscanada.org">
                     {" "}
                     <Image
@@ -75,6 +74,7 @@ export default function Home() {
                       height="150"
                       width="150"
                       alt="FIRST Robotics Logo"
+                      priority={true}
                     />
                   </a>
                   <p className="font-black text-3xl">x</p>
@@ -86,6 +86,7 @@ export default function Home() {
                         height="30"
                         width="40"
                         alt="6070 Logo"
+                        priority={true}
                       />
                     </a>
                   </Link>
@@ -103,7 +104,7 @@ export default function Home() {
                     .
                   </a>
                 </h1>
-                <p className="text-xl font-bold uppercase mt-5 text-gray-400 pl-2">
+                <p className="text-xl font-bold uppercase mt-3 text-gray-400 pl-2">
                   {phrase}
                 </p>
               </div>
