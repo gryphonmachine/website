@@ -89,7 +89,7 @@ export default function Home() {
                     .
                   </a>
                 </h1>
-                <p className="text-xl md:text-3xl font-extrabold uppercase mt-3 text-gray-400 pl-2">
+                <p className="text-xl md:text-3xl font-extrabold uppercase mt-5 text-gray-400 pl-2">
                   Gryphon Machine
                 </p>
               </div>
