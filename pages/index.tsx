@@ -31,7 +31,7 @@ export default function Home() {
         if (usedPhrases.length === phrases.length) {
           setUsedPhrases([]);
         }
-      }, 2000);
+      }, 2500);
     }, 5000);
 
     return () => clearInterval(interval);
@@ -46,7 +46,7 @@ export default function Home() {
         <div className="relative h-screen">
           <Image
             className="backgroundImage absolute inset-0 w-full h-full object-cover"
-            src={`${bgImages[bgImageIndex]}`}
+            src={bgImages[bgImageIndex]}
             alt="Background Image"
             priority={true}
             fill
