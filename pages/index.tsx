@@ -47,7 +47,7 @@ export default function Home() {
             }}
           />
           <div className="flex flex-col min-h-screen z-10">
-            <Navbar className="mb-[100px] md:mb-[200px]" />
+            <Navbar className="mb-[100px] md:mb-[150px]" />
             <div className="flex-grow">
               <div className="flex flex-col md:items-center md:justify-center pl-10 pr-10 flex-grow">
                 <div className="flex md:mb-5 mb-[50px]">
