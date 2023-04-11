@@ -49,7 +49,7 @@ export default function Home() {
           <div className="flex flex-col min-h-screen z-10">
             <Navbar />
             <div className="flex-grow">
-              <div className="flex flex-col md:items-center md:justify-center mt-[100px] md:mt-[200px] md:pl-0 md:pr-0 pl-10 pr-10 flex-grow">
+              <div className="flex flex-col md:items-center md:justify-center mt-[100px] md:mt-[225px] md:pl-0 md:pr-0 pl-10 pr-10 flex-grow">
                 <div className="flex md:mb-5 mb-[50px]">
                   <a href="https://www.firstroboticscanada.org">
                     {" "}
