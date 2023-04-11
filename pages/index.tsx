@@ -14,9 +14,11 @@ export default function Home() {
     Math.floor(Math.random() * bgImages.length)
   );
   const [bgImageOpacity, setBgImageOpacity] = useState(0.2);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
+      setLoaded(false);
       setBgImageOpacity(0);
       setTimeout(() => {
         setBgImageIndex(Math.floor(Math.random() * bgImages.length));
@@ -34,7 +36,7 @@ export default function Home() {
         }
 
         setBgImageOpacity(0.2);
-      }, 3000);
+      }, 1000);
     }, 5000);
 
     return () => clearInterval(interval);
@@ -53,7 +55,11 @@ export default function Home() {
             alt="Background Image"
             priority={true}
             fill
-            style={{ opacity: bgImageOpacity, transition: "opacity 1s" }}
+            onLoad={() => setLoaded(true)}
+            style={{
+              opacity: loaded ? bgImageOpacity : 0,
+              transition: "opacity 1s",
+            }}
           />
           <div className="flex flex-col min-h-screen z-10">
             <Navbar />
