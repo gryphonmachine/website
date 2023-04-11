@@ -10,14 +10,13 @@ import { bgImages } from "@/lib/lists/bgImages";
 export default function Home() {
   const [phrase, setPhrase] = useState("Gryphon Machine");
   const [usedPhrases, setUsedPhrases] = useState<string[]>([]);
-  const [bgImageIndex, setBgImageIndex] = useState(Math.random() * phrases.length);
+  const [bgImageIndex, setBgImageIndex] = useState(0);
   const [bgImageOpacity, setBgImageOpacity] = useState(0.2);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setBgImageOpacity(0);
       setTimeout(() => {
-        setBgImageOpacity(0.2);
         setBgImageIndex(Math.floor(Math.random() * bgImages.length));
 
         let randomIndex = Math.floor(Math.random() * phrases.length);
@@ -31,6 +30,8 @@ export default function Home() {
         if (usedPhrases.length === phrases.length) {
           setUsedPhrases([]);
         }
+
+        setBgImageOpacity(0.2);
       }, 2000);
     }, 5000);
 
