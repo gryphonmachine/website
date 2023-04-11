@@ -51,7 +51,7 @@ export default function Home() {
             alt="Background Image"
             priority={true}
             fill
-            style={{ opacity: bgImageOpacity, transition: "opacity 1s" }} // use CSS transition to fade in/out the images
+            style={{ opacity: bgImageOpacity, transition: "opacity 2s" }}
           />
           <div className="flex flex-col min-h-screen z-10">
             <Navbar />
