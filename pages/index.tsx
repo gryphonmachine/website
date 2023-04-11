@@ -47,9 +47,9 @@ export default function Home() {
             }}
           />
           <div className="flex flex-col min-h-screen z-10">
-            <Navbar />
+            <Navbar className="mb-[100px] md:mb-[200px]" />
             <div className="flex-grow">
-              <div className="flex flex-col md:items-center md:justify-center mt-[100px] md:mt-[200px] pl-10 pr-10 flex-grow">
+              <div className="flex flex-col md:items-center md:justify-center pl-10 pr-10 flex-grow">
                 <div className="flex md:mb-5 mb-[50px]">
                   <a href="https://www.firstroboticscanada.org">
                     {" "}
@@ -76,7 +76,7 @@ export default function Home() {
                     </a>
                   </Link>
                 </div>
-                <h1 className="font-black text-white text-8xl md:text-9xl">
+                <h1 className="font-black text-white text-8xl md:text-[140px]">
                   WE ARE
                   <a
                     href="https://frc-events.firstinspires.org/team/6070"
