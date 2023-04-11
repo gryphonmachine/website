@@ -82,14 +82,14 @@ export default function Home() {
                     href="https://frc-events.firstinspires.org/team/6070"
                     target="_blank"
                   >
-                    <span className="text-primary hover:cursor-pointer">
+                    <span className="glow text-primary hover:cursor-pointer">
                       {" "}
-                      6070
+                      6070.
                     </span>
-                    .
+                    
                   </a>
                 </h1>
-                <p className="text-xl md:text-3xl font-extrabold uppercase mt-5 text-gray-400 pl-2">
+                <p className="text-xl md:text-3xl font-extrabold uppercase mt-5 text-blue-400 pl-2">
                   Gryphon Machine
                 </p>
               </div>
