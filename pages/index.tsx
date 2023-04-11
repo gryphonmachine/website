@@ -5,27 +5,43 @@ import { Navbar } from "@/components/navbar/Navbar";
 import Image from "next/image";
 import { phrases } from "@/lib/lists/Phrases";
 import Link from "next/link";
+import { bgImages } from "@/lib/lists/bgImages";
 
 export default function Home() {
   const [phrase, setPhrase] = useState("Gryphon Machine");
   const [usedPhrases, setUsedPhrases] = useState<string[]>([]);
+  const [bgImageIndex, setBgImageIndex] = useState(
+    Math.floor(Math.random() * bgImages.length)
+  );
+  const [bgImageOpacity, setBgImageOpacity] = useState(0.2);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      let randomIndex = Math.floor(Math.random() * phrases.length);
-      while (usedPhrases.includes(phrases[randomIndex])) {
-        randomIndex = (randomIndex + 1) % phrases.length;
-      }
-      const newPhrase = phrases[randomIndex];
-      setPhrase(newPhrase);
-      setUsedPhrases([...usedPhrases, newPhrase]);
-      if (usedPhrases.length === phrases.length) {
-        setUsedPhrases([]);
-      }
-    }, 2000);
+      setBgImageOpacity(0);
+      setTimeout(() => {
+        let newIndex = bgImageIndex;
+        while (newIndex === bgImageIndex) {
+          newIndex = Math.floor(Math.random() * bgImages.length);
+        }
+        setBgImageIndex(newIndex);
+        setBgImageOpacity(0.2);
+
+        let randomIndex = Math.floor(Math.random() * phrases.length);
+        while (usedPhrases.includes(phrases[randomIndex])) {
+          randomIndex = (randomIndex + 1) % phrases.length;
+        }
+        const newPhrase = phrases[randomIndex];
+        setPhrase(newPhrase);
+        setUsedPhrases([...usedPhrases, newPhrase]);
+
+        if (usedPhrases.length === phrases.length) {
+          setUsedPhrases([]);
+        }
+      }, 2000);
+    }, 5000);
 
     return () => clearInterval(interval);
-  }, [usedPhrases]);
+  }, [bgImageIndex, usedPhrases]);
 
   return (
     <>
@@ -35,14 +51,14 @@ export default function Home() {
       <div className="bg-sky-300 bg-opacity-10">
         <div className="relative h-screen">
           <Image
-            className="absolute inset-0 w-full h-full object-cover opacity-25"
-            src="/6070-landing.png"
+            className="backgroundImage absolute inset-0 w-full h-full object-cover"
+            src={`${bgImages[bgImageIndex]}`}
             alt="Background Image"
             priority={true}
             fill
-            style={{ zIndex: -1 }}
+            style={{ opacity: bgImageOpacity, transition: "opacity 1s" }} // use CSS transition to fade in/out the images
           />
-          <div className="flex flex-col min-h-screen">
+          <div className="flex flex-col min-h-screen z-10">
             <Navbar />
             <div className="flex-grow">
               <div className="flex flex-col md:items-center md:justify-center mt-[150px] md:mt-[225px] md:pl-0 md:pr-0 pl-10 pr-10 flex-grow">
@@ -92,9 +108,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <button className="absolute bottom-0 right-0 mb-4 mr-4 text-lg">
-        🐍
-      </button>
     </>
   );
 }

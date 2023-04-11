@@ -145,3 +145,7 @@ a {
   background-color: rgb(75, 75, 105);
   background-blend-mode: multiply;
 }
+
+.backgroundImage {
+  z-index: -1;
+}
