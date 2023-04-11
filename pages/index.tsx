@@ -10,7 +10,9 @@ import { bgImages } from "@/lib/lists/bgImages";
 export default function Home() {
   const [phrase, setPhrase] = useState("Gryphon Machine");
   const [usedPhrases, setUsedPhrases] = useState<string[]>([]);
-  const [bgImageIndex, setBgImageIndex] = useState(0);
+  const [bgImageIndex, setBgImageIndex] = useState(
+    Math.floor(Math.random() * bgImages.length)
+  );
   const [bgImageOpacity, setBgImageOpacity] = useState(0.2);
 
   useEffect(() => {
@@ -32,7 +34,7 @@ export default function Home() {
         }
 
         setBgImageOpacity(0.2);
-      }, 2000);
+      }, 3000);
     }, 5000);
 
     return () => clearInterval(interval);
@@ -51,7 +53,7 @@ export default function Home() {
             alt="Background Image"
             priority={true}
             fill
-            style={{ opacity: bgImageOpacity, transition: "opacity 2s" }}
+            style={{ opacity: bgImageOpacity, transition: "opacity 1s" }}
           />
           <div className="flex flex-col min-h-screen z-10">
             <Navbar />
