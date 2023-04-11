@@ -5,7 +5,6 @@ export const bgImages = [
   "/landing/IMG_8464.CR2.jpg",
   "/landing/IMG_8560.CR2.jpg",
   "/landing/IMG_8586.CR2.jpg",
-  "/landing/IMG_8586.CR2.jpg",
   "/landing/IMG_8648.CR2.jpg",
   "/landing/IMG_8654.CR2.jpg",
   "/landing/IMG_8662.CR2.jpg",
