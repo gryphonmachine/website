@@ -35,7 +35,7 @@ export default function Home() {
           setUsedPhrases([]);
         }
 
-        setBgImageOpacity(0.2);
+        setBgImageOpacity(0.3);
       }, 1000);
     }, 5000);
 
@@ -54,6 +54,7 @@ export default function Home() {
             src={bgImages[bgImageIndex]}
             alt="Background Image"
             priority={true}
+            quality={100}
             fill
             onLoad={() => setLoaded(true)}
             style={{
