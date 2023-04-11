@@ -10,9 +10,7 @@ import { bgImages } from "@/lib/lists/bgImages";
 export default function Home() {
   const [phrase, setPhrase] = useState("Gryphon Machine");
   const [usedPhrases, setUsedPhrases] = useState<string[]>([]);
-  const [bgImageIndex, setBgImageIndex] = useState(
-    Math.floor(Math.random() * bgImages.length)
-  );
+  const [bgImageIndex, setBgImageIndex] = useState(0);
   const [bgImageOpacity, setBgImageOpacity] = useState(0.2);
 
   useEffect(() => {
@@ -77,7 +75,7 @@ export default function Home() {
                   <Link href="/" legacyBehavior>
                     <a>
                       <Image
-                        className="logo6070 mb-1 ml-3"
+                        className="logo6070 ml-3"
                         src="/6070-logo.png"
                         height="30"
                         width="40"
