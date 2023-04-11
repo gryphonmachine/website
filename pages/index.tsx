@@ -35,7 +35,7 @@ export default function Home() {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [bgImageIndex, usedPhrases]);
+  }, [usedPhrases]);
 
   return (
     <>
