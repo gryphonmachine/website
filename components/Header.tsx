@@ -6,7 +6,7 @@ export const Header = (props: any) => {
       <Navbar />
 
       <div className="flex flex-col px-4 mt-16 mb-8">
-        <p className="h text-center text-5xl font-bold text-primary">
+        <p className="h text-center text-5xl font-black text-primary">
           {props.title}
         </p>
         <p className="text-center text-xl text-gray-400 py-3">

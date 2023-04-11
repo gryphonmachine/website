@@ -86,7 +86,6 @@ export default function Home() {
                       {" "}
                       6070.
                     </span>
-                    
                   </a>
                 </h1>
                 <p className="text-xl md:text-3xl font-extrabold uppercase mt-5 text-blue-400 pl-2">
