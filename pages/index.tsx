@@ -47,7 +47,7 @@ export default function Home() {
             }}
           />
           <div className="flex flex-col min-h-screen z-10">
-            <Navbar className="mb-[100px] md:mb-[125px]" />
+            <Navbar className="mb-[100px] md:mb-[205px]" />
             <div className="flex-grow">
               <div className="flex flex-col md:items-center md:justify-center pl-10 pr-10 flex-grow">
                 <div className="flex md:mb-5 mb-[50px]">
@@ -76,20 +76,13 @@ export default function Home() {
                     </a>
                   </Link>
                 </div>
-                <h1 className="font-black text-white text-8xl md:text-[140px]">
-                  WE ARE
-                  <a
-                    href="https://frc-events.firstinspires.org/team/6070"
-                    target="_blank"
-                  >
-                    <span className="glow text-primary hover:cursor-pointer">
-                      {" "}
-                      6070.
-                    </span>
-                  </a>
-                </h1>
-                <p className="text-xl md:text-3xl font-extrabold uppercase mt-5 text-blue-400 pl-2">
-                  Gryphon Machine
+
+                <div className="font-black text-8xl md:text-[100px]">
+                  WE ARE <span className="glow text-primary">60</span>
+                  <span className="glow text-blue-400">70</span>.
+                </div>
+                <p className="text-xl md:text-3xl font-medium mt-5 text-gray-400 pl-2">
+                  A <span className="italic mr-1">FIRST®</span> Robotics Team
                 </p>
               </div>
             </div>
