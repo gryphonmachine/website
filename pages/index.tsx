@@ -77,9 +77,15 @@ export default function Home() {
                   </Link>
                 </div>
 
-                <div className="font-black text-8xl md:text-[100px]">
-                  WE ARE <span className="glow text-primary">60</span>
-                  <span className="glow text-blue-400">70</span>.
+                <div className="typewriter font-black text-8xl md:text-[100px]">
+                  WE ARE{" "}
+                  <a
+                    href="https://frc-events.firstinspires.org/team/6070"
+                    target="_blank"
+                  >
+                    <span className=" text-primary">6070.</span>
+                  </a>
+                  <span className=" text-blue-400"></span>
                 </div>
                 <p className="text-xl md:text-3xl font-medium mt-5 text-gray-400 pl-2">
                   A <span className="italic mr-1">FIRST®</span> Robotics Team

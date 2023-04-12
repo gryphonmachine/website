@@ -152,13 +152,3 @@ a {
 .backgroundImage {
   z-index: -1;
 }
-
-.glow {
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke-width: 5px;
-}
-
-.glow {
-  -webkit-text-fill-color: transparent;
-  background-size: 0 100%;
-}
