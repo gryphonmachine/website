@@ -19,7 +19,7 @@ export default function AboutPage() {
       </Head>
 
       <Header
-        title="👥 About Us"
+        title="❔ About Us"
         subtitle="Discover the people, passion, and purpose behind Team 6070"
       />
 
@@ -32,7 +32,7 @@ export default function AboutPage() {
           }`}
           onClick={() => handleTabClick(1)}
         >
-          General
+          <span className="mr-2">🤔</span> General
         </button>
         <button
           className={`px-5 py-2 rounded-lg font-semibold ${
@@ -42,7 +42,7 @@ export default function AboutPage() {
           }`}
           onClick={() => handleTabClick(2)}
         >
-          Mentors & Captains
+          <span className="mr-2">👥</span> Mentors & Captains
         </button>
       </div>
 

@@ -17,7 +17,7 @@ export default function Home() {
   useEffect(() => {
     setTimeout(() => {
       setScreenLoaded(true);
-    }, 5000);
+    }, 3000);
 
     const interval = setInterval(() => {
       setBgImageOpacity(0);
@@ -114,7 +114,7 @@ export default function Home() {
                   <span className=" text-blue-400"></span>
                 </div>
                 <p className="text-xl md:text-3xl font-medium mt-5 text-gray-400 pl-2">
-                  A <span className="italic mr-1">FIRST®</span> Robotics Team
+                  A <a href="https://www.firstinspires.org/" target="_blank"><span className="italic mr-1">FIRST®</span></a> Robotics Team
                 </p>
               </div>
             </div>

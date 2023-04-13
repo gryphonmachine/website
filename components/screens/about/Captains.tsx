@@ -57,7 +57,7 @@ export const CaptainsScreen = () => {
       <div className="border-2 border-gray-600 rounded-lg px-10 py-8">
         <Title>
           Captains <span className="font-bold text-gray-400">| </span>
-          <span className="text-gray-400 font-medium">2023 - 2024</span>
+          <span className="text-gray-400 font-medium">Current Leadership</span>
         </Title>
 
         <div className="flex flex-col md:grid md:grid-cols-3 gap-5">

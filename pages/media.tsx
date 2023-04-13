@@ -7,6 +7,8 @@ import { VideoEmbed } from "@/components/VideoEmbed";
 import Head from "next/head";
 import { Media } from "@/lib/lists/Media";
 import { useEffect, useState } from "react";
+import { GetServerSideProps } from "next";
+import { API_URL } from "@/lib/constants";
 
 export const Description = (props: any) => {
   const styles = "text-center md:text-sm text-md mt-3";
@@ -19,20 +21,7 @@ export const Description = (props: any) => {
   );
 };
 
-export default function MediaPage() {
-  const [videos, setVideos] = useState<any>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
-
-  useEffect(() => {
-    setIsLoading(true);
-    fetch("/api/videos")
-      .then((res) => res.json())
-      .then((data) => {
-        setIsLoading(false);
-        setVideos(data);
-      });
-  }, []);
-
+export default function MediaPage({ videos }: any) {
   return (
     <>
       <Head>
@@ -61,17 +50,13 @@ export default function MediaPage() {
       </Subtitle>
 
       <div className="flex flex-col justify-center text-center mb-16">
-        {isLoading ? (
-          <p className="text-gray-400">Loading videos...</p>
-        ) : (
-          <div className="md:flex items-center justify-center">
-            <div className="flex flex-col md:w-[1100px] md:grid md:grid-cols-3 gap-5 pr-10 pl-10">
-              {...videos.slice(0, 9).map((video: any, i: number) => {
-                return <VideoEmbed key={i} id={video.link.split("?v=")[1]} />;
-              })}
-            </div>
+        <div className="md:flex items-center justify-center">
+          <div className="flex flex-col md:w-[1100px] md:grid md:grid-cols-3 gap-5 pr-10 pl-10">
+            {...videos.slice(0, 9).map((video: any, i: number) => {
+              return <VideoEmbed key={i} id={video.link.split("?v=")[1]} />;
+            })}
           </div>
-        )}
+        </div>
       </div>
 
       <Title className="text-center">
@@ -109,3 +94,14 @@ export default function MediaPage() {
     </>
   );
 }
+
+export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
+  res.setHeader(
+    "Cache-Control",
+    "public, s-maxage=10, stale-while-revalidate=59"
+  );
+
+  const videos = await fetch(`${API_URL}/api/videos`).then((res) => res.json());
+
+  return { props: { videos } };
+};
