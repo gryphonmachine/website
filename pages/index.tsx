@@ -77,7 +77,7 @@ export default function Home() {
                   </Link>
                 </div>
 
-                <div className="typewriter font-black text-8xl md:text-[100px]">
+                <div className="text-white font-black text-8xl md:text-[100px]">
                   WE ARE{" "}
                   <a
                     href="https://frc-events.firstinspires.org/team/6070"
