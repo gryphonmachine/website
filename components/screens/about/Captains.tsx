@@ -42,7 +42,7 @@ export const CaptainsScreen = () => {
         <Title>Mentors</Title>
 
         <div className="flex flex-col md:grid md:grid-cols-3 gap-5">
-        {Mentors.map((member: any, key: number) => {
+          {Mentors.map((member: any, key: number) => {
             return (
               <Captain
                 key={key}
@@ -62,12 +62,33 @@ export const CaptainsScreen = () => {
 
         <div className="flex flex-col md:grid md:grid-cols-3 gap-5">
           <Captain name="Utkarsh Dubey" role="Head" img="/people/utkarsh.png" />
-          <Placeholder />
-          <Placeholder />
-          <Placeholder />
-          <Placeholder />
-          <Placeholder />
-          <Placeholder />
+          <Captain name="Lan Le" role="Build" img="/people/current/lan.png" />
+          <Captain
+            name="Emerik Cheng"
+            role="Build"
+            img="/people/current/emerik.png"
+          />
+          <Captain name="Ben Zhou" role="Build" img="/people/current/ben.png" />
+          <Captain
+            name="Armaan Khosla"
+            role="Design"
+            img="/people/armaan.png"
+          />
+          <Captain
+            name="Aakansh Panda"
+            role="Design"
+            img="/people/current/lan.png"
+          />
+          <Captain
+            name="Bereket Semagn"
+            role="Programming"
+            img="/people/current/bereket.png"
+          />
+          <Captain
+            name="Valentina Gheorge"
+            role="Outreach"
+            img="/people/current/val.png"
+          />
         </div>
       </div>
       <div className="border-2 border-gray-600 rounded-lg px-10 py-8">
