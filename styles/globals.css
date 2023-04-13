@@ -140,3 +140,78 @@ a {
 .backgroundImage {
   z-index: -1;
 }
+
+.fadeOut {
+  opacity: 0;
+  animation: fade-out 4s 0s ease-out forwards;
+}
+
+@keyframes fade-out {
+  0%, 10%, 20%, 30%, 40%, 50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: open-curtains 4s ease-out forwards;
+  animation: fade-out 4s 0s ease-out forwards;
+}
+
+.curtain {
+  position: fixed;
+  top: 0;
+  width: 50vw;
+  height: 100vh;
+  background-color: black;
+  z-index: 101;
+}
+
+.curtain.left {
+  left: 0;
+  animation: move-left-curtain 4s ease-out forwards;
+}
+
+.curtain.right {
+  right: 0;
+  animation: move-right-curtain 4s ease-out forwards;
+}
+
+@keyframes move-left-curtain {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -50vw;
+  }
+}
+
+@keyframes move-right-curtain {
+  0% {
+    right: 0;
+  }
+  100% {
+    right: -50vw;
+  }
+}
+
+@keyframes open-curtains {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

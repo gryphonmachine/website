@@ -14,7 +14,7 @@ export const GeneralScreen = () => {
         priority={true}
       />
 
-      <h1 className="text-secondary md:text-4xl text-3xl font-bold text-left mb-5">
+      <h1 className="md:text-4xl text-3xl font-bold text-left mb-5">
         <span className="text-gray-400">
           We are team <span className="text-primary">6070</span> 🦁 🦅
         </span>

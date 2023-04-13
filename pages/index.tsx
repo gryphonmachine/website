@@ -12,11 +12,16 @@ export default function Home() {
   );
   const [bgImageOpacity, setBgImageOpacity] = useState(0.2);
   const [loaded, setLoaded] = useState(false);
+  const [screenLoaded, setScreenLoaded] = useState(false);
 
   useEffect(() => {
+    setTimeout(() => {
+      setScreenLoaded(true);
+    }, 5000);
+
     const interval = setInterval(() => {
-      setLoaded(false);
       setBgImageOpacity(0);
+      setLoaded(false);
       setTimeout(() => {
         setBgImageIndex(Math.floor(Math.random() * bgImages.length));
 
@@ -34,6 +39,27 @@ export default function Home() {
       </Head>
       <div className="bg-sky-300 bg-opacity-10">
         <div className="relative h-screen">
+          {!screenLoaded && (
+            <div className="fadeOut flex items-center justify-center absolute bg-black inset-0 z-50">
+              <div className="loading-screen">
+            <div className="curtain left"></div>
+            <div className="curtain right"></div>
+              <div className="flex items-center">
+                <Image
+                  className="mr-5"
+                  src="/6070-logo.png"
+                  height="40"
+                  width="50"
+                  alt="6070 Logo"
+                  priority={true}
+                />
+                <p className="font-black text-white text-4xl md:text-5xl">
+                  TEAM 6070
+                </p>
+              </div>
+              </div>
+            </div>
+          )}
           <Image
             className="backgroundImage absolute inset-0 w-full h-full object-cover"
             src={bgImages[bgImageIndex]}
