@@ -28,7 +28,7 @@ export default function AboutPage() {
           className={`px-5 py-2 rounded-lg font-semibold ${
             activeTab === 1
               ? "bg-gray-600 text-white"
-              : "text-gray-400 bg-gray-800 hover:bg-gray-600"
+              : "text-gray-400 bg-gray-800 hover:bg-gray-600 hover:text-white"
           }`}
           onClick={() => handleTabClick(1)}
         >

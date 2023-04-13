@@ -20,6 +20,7 @@ export const SeasonCard = (props: any) => {
         alt="Background Image"
         priority={true}
         fill
+        quality={20}
       />
     </div>
   );
