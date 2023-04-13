@@ -1,3 +1,25 @@
+export const Mentors = [
+  {
+    name: "Mr. Angelkovski",
+    img: "/people/angelkovski.png",
+    role: "Head Mentor"
+  },
+  {
+    name: "Mr. Bertovic",
+    img: "/6070-logo.png",
+    role: "Head Mentor"
+  },
+  {
+    name: "Mrs. Virdi",
+    img: "/people/virdi.png",
+    role: "Mentor",
+  },
+  {
+    name: "Mr. Mundlur",
+    img: "/people/mundler.png",
+    role: "Mentor"
+  }
+]
 export const Team = [
   {
     name: "Muhammed Awan",
