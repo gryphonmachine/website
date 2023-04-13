@@ -21,9 +21,9 @@ export default function BuildsPage() {
         <Link href="/season/2023" legacyBehavior>
           <a>
             <SeasonCard
-              className="chargedUp bg-[url('/season/6070-charged-up.png')]"
               title="Charged Up presented by Haas"
               subtitle="2023"
+              bg="/season/6070-charged-up.png"
             />
           </a>
         </Link>
@@ -31,9 +31,9 @@ export default function BuildsPage() {
         <Link href="/season/2019" legacyBehavior>
           <a>
             <SeasonCard
-              className="destinationDeepSpace bg-[url('/season/6070-destination-deep-space.jpg')]"
               title="Destination: Deep Space"
               subtitle="2019"
+              bg="/season/6070-destination-deep-space.jpg"
             />
           </a>
         </Link>
@@ -41,9 +41,9 @@ export default function BuildsPage() {
         <Link href="/season/2018" legacyBehavior>
           <a>
             <SeasonCard
-              className="firstPowerUp bg-[url('/season/6070-power-up.png')]"
               title="FIRST Power Up"
               subtitle="2018"
+              bg="/season/6070-power-up.png"
             />
           </a>
         </Link>
@@ -51,9 +51,9 @@ export default function BuildsPage() {
         <Link href="/season/2017" legacyBehavior>
           <a>
             <SeasonCard
-              className="firstSteamworks bg-[url('/season/6070-steamworks.jpg')]"
               title="FIRST Steamworks"
               subtitle="2017"
+              bg="/season/6070-steamworks.jpg"
             />
           </a>
         </Link>
@@ -61,9 +61,9 @@ export default function BuildsPage() {
         <Link href="/season/2016" legacyBehavior>
           <a>
             <SeasonCard
-              className="firstStronghold bg-[url('/season/6070-stronghold.jpg')]"
               title="FIRST Stronghold"
               subtitle="2016"
+              bg="/season/6070-stronghold.jpg"
             />
           </a>
         </Link>

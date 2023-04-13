@@ -104,27 +104,15 @@ a {
   }
 }
 
-.chargedUp,
-.destinationDeepSpace,
-.firstPowerUp,
-.firstSteamworks,
-.firstStronghold {
+.seasonBgImage {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
-  background-color: rgb(125, 125, 125);
-  background-blend-mode: multiply;
 }
 
-.chargedUp:hover,
-.destinationDeepSpace:hover,
-.firstPowerUp:hover,
-.firstSteamworks:hover,
-.firstStronghold:hover {
+.seasonBgImage:hover {
   transform: scale(1.02);
-  background-color: rgb(150, 150, 150);
-  background-blend-mode: multiply;
 }
 
 .mediaImage:hover {

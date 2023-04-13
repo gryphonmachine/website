@@ -19,9 +19,9 @@ export const Navbar = (props: any) => {
   return (
     <>
       <div
-        className={`${props.className} flex flex-col mt-10 4 space-y-2 text-gray-300`}
+        className={`${props.className} flex flex-col mt-10 space-y-2 text-gray-300`}
       >
-        <div className="flex-wrap flex justify-center items-center md:pr-0 md:pl-0 pr-10 pl-10 transition delay-50 hover:text-gray-400">
+        <div className="flex-wrap flex justify-center items-center md:pr-0 md:pl-0 pr-10 pl-10 transition delay-50 hover:text-gray-500">
           <Link href="/" legacyBehavior>
             <a>
               <Image
