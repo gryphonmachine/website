@@ -2,4 +2,4 @@ const dev = process.env.NODE_ENV !== "production";
 
 export const API_URL = dev
   ? "http://localhost:3000"
-  : "https://6070.vercel.app";
+  : "https://frc6070.ca";
