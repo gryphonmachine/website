@@ -62,7 +62,16 @@ export const CaptainsScreen = () => {
 
         <div className="flex flex-col md:grid md:grid-cols-3 gap-5">
           <Captain name="Utkarsh Dubey" role="Head" img="/people/utkarsh.png" />
-          <Captain name="Lan Le" role="Build" img="/people/current/lan.png" />
+          <Captain
+            name="Lan Le"
+            role="Vice Head (Build)"
+            img="/people/current/lan.png"
+          />
+          <Captain
+            name="Valentina Gheorge"
+            role="Vice Head (Admin)"
+            img="/people/current/val.png"
+          />
           <Captain
             name="Emerik Cheng"
             role="Build"
@@ -77,17 +86,12 @@ export const CaptainsScreen = () => {
           <Captain
             name="Aakansh Panda"
             role="Design"
-            img="/people/current/lan.png"
+            img="/people/current/panda.png"
           />
           <Captain
             name="Bereket Semagn"
             role="Programming"
             img="/people/current/bereket.png"
-          />
-          <Captain
-            name="Valentina Gheorge"
-            role="Outreach"
-            img="/people/current/val.png"
           />
         </div>
       </div>

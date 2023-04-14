@@ -17,7 +17,7 @@ export default function Home() {
   useEffect(() => {
     setTimeout(() => {
       setScreenLoaded(true);
-    }, 3000);
+    }, 4000);
 
     const interval = setInterval(() => {
       setBgImageOpacity(0);

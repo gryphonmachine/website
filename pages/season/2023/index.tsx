@@ -5,17 +5,126 @@ import { Season } from "@/components/season/Season";
 import { VideoEmbed } from "@/components/VideoEmbed";
 import { Title } from "@/components/Title";
 import { SeasonEvent } from "@/components/SeasonEvent";
+import Image from "next/image";
 
+const Details = (props: any) => {
+  return (
+    <>
+      <div className="flex">
+        <h1 className="bg-gray-600 hover:bg-gray-500 hover:cursor-pointer w-[85px] py-1 px-4 rounded-lg text-center font-black text-sm mr-3">
+          Name
+        </h1>
+        <span className="text-gray-300 font-medium">{props.name}</span>
+      </div>
+      <div className="flex">
+        <h1 className="bg-gray-600 hover:bg-gray-500 hover:cursor-pointer w-[85px] py-1 px-4 rounded-lg text-center font-black text-sm mr-3">
+          Weight
+        </h1>
+        <span className="text-gray-300 font-medium">{props.weight} lbs</span>
+      </div>
+      <div className="flex">
+        <h1 className="flex justify-center items-center bg-gray-600 hover:bg-gray-500 hover:cursor-pointer md:w-[85px] w-[110px] py-1 px-4 rounded-lg text-center font-black text-sm mr-3">
+          Size
+        </h1>
+        <span className="text-gray-300 font-medium">
+          {props.width}″ W x {props.length}″ L x {props.height}″ H
+        </span>
+      </div>
+      <div className="flex">
+        <h1
+          className={`${
+            props.status == "Active" ? "bg-green-500 hover:bg-green-400" : "bg-red-500 hover:bg-red-400"
+          } hover:cursor-pointer w-[85px] py-1 px-4 rounded-lg text-center font-black text-sm mr-3`}
+        >
+          Status
+        </h1>
+        <span
+          className={`${
+            props.status == "Active" ? "text-green-500" : "text-red-500"
+          } uppercase font-medium`}
+        >
+          {props.status}
+        </span>
+      </div>
+      <h1 className="font-black text-gray-300 text-xl">Robot Highlights</h1>
+      <span className="text-sm text-gray-400">
+        → {props.highlights[0]}
+      </span>{" "}
+      <br />
+      <span className="text-sm text-gray-400">
+        → {props.highlights[1]}
+      </span>{" "}
+      <br />
+      <span className="text-sm text-gray-400">
+        → {props.highlights[2]}
+      </span>{" "}
+    </>
+  );
+};
 export default function Season2023() {
   return (
     <>
       <Header title="Charged Up presented by Haas" subtitle="2023 Season" />
 
-      <Season title="Intercontintinental Ballistic Mini Me (ICBM)">
+      <Season title="Intercontinental Ballistic Mini Me">
         <Title>Game Reveal</Title>
 
         <div className="mb-[60px]">
           <VideoEmbed id="0zpflsYc4PA" />
+        </div>
+
+        <Title>Robot(s) Breakdown</Title>
+
+        <div className="flex md:flex-row flex-col mb-5 bg-gray-700 border-2 border-gray-500 rounded-lg p-10">
+          <Image
+            src="/icbm.png"
+            className="md:mb-0 mb-10"
+            alt="2023 ICBM Bot"
+            width="350"
+            height="350"
+            priority={true}
+          />
+          <div className="flex-col space-y-4">
+            <Details
+              name="ICBM"
+              weight="112"
+              width="33"
+              length="39"
+              height="54"
+              status="Inactive"
+              highlights={[
+                "6 Wheel Arcade Drive",
+                "1 Stage Telescoping Arm",
+                "Revamped version of Mini Me",
+              ]}
+            />
+          </div>
+        </div>
+
+        <div className="flex md:flex-row flex-col mb-[60px] bg-gray-700 border-2 border-gray-500 rounded-lg p-10">
+          <Image
+            src="/mini-me.png"
+            className="md:mb-0 mb-10 md:mr-[125px]"
+            alt="2023 ICBM Bot"
+            width="225"
+            height="225"
+            priority={true}
+          />
+          <div className="flex-col space-y-4">
+            <Details
+              name="Mini Me"
+              weight="116"
+              width="33"
+              length="39"
+              height="52"
+              status="Dismantled"
+              highlights={[
+                "6 Wheel Tank Drive",
+                "Chain System for Arm",
+                "2 Robots in 1",
+              ]}
+            />
+          </div>
         </div>
 
         <Title>Events Attended</Title>

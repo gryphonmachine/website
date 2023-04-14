@@ -1,5 +1,10 @@
 export const Events = [
   {
+    title: "The 6070 Showcase",
+    subtitle: "February 2022",
+    img: "/events/IMG_6087.JPG",
+  },
+  {
     title: "Discovery Day Workshop with Glenforest STEM",
     subtitle: "December 2022",
     img: "/events/dec2022.jpg",

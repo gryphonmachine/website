@@ -2,27 +2,27 @@ export const Mentors = [
   {
     name: "Mr. Angelkovski",
     img: "/people/angelkovski.png",
-    role: "Head (GFSS)"
+    role: "GFSS"
   },
   {
     name: "Mr. Bertovic",
     img: "/6070-logo.png",
-    role: "Head (GFSS)"
+    role: "GFSS"
   },
   {
     name: "Mrs. Virdi",
     img: "/people/virdi.png",
-    role: "Mentor (GFSS)",
+    role: "GFSS",
   },
   {
     name: "Mr. Mundlur",
     img: "/people/mundler.png",
-    role: "Mentor (Bempro)"
+    role: "BEMPRO"
   }
 ]
 export const Team = [
   {
-    name: "Muhammed Awan",
+    name: "Muhammad Awan",
     img: "/people/muhammed.png",
     role: "Head",
   },
