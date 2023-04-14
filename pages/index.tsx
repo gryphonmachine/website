@@ -80,7 +80,7 @@ export default function Home() {
                   <a href="https://www.firstroboticscanada.org">
                     {" "}
                     <Image
-                      className="mr-3"
+                      className="mr-3 md:block hidden"
                       src="/first-logo.png"
                       height="150"
                       width="150"
@@ -88,11 +88,11 @@ export default function Home() {
                       priority={true}
                     />
                   </a>
-                  <p className="font-black text-white text-3xl">x</p>
+                  <p className="font-black text-white text-3xl md:block hidden">x</p>
                   <Link href="/" legacyBehavior>
                     <a>
                       <Image
-                        className="logo6070 ml-3"
+                        className="logo6070 ml-3 md:block hidden"
                         src="/6070-logo.png"
                         height="30"
                         width="40"
