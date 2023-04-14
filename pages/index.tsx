@@ -73,14 +73,14 @@ export default function Home() {
             }}
           />
           <div className="flex flex-col min-h-screen z-10">
-            <Navbar className="mb-[100px] md:mb-[205px]" />
+            <Navbar className="mb-[100px] md:mb-[205px] overflow-y-hidden overflow-y-auto" />
             <div className="flex-grow">
               <div className="flex flex-col md:items-center md:justify-center pl-10 pr-10 flex-grow">
                 <div className="flex md:mb-5 mb-[50px]">
                   <a href="https://www.firstroboticscanada.org">
                     {" "}
                     <Image
-                      className="mr-3 md:block hidden"
+                      className="mr-3"
                       src="/first-logo.png"
                       height="150"
                       width="150"
@@ -88,11 +88,11 @@ export default function Home() {
                       priority={true}
                     />
                   </a>
-                  <p className="font-black text-white text-3xl md:block hidden">x</p>
+                  <p className="font-black text-white text-3xl">x</p>
                   <Link href="/" legacyBehavior>
                     <a>
                       <Image
-                        className="logo6070 ml-3 md:block hidden"
+                        className="logo6070 ml-3"
                         src="/6070-logo.png"
                         height="30"
                         width="40"
