@@ -57,42 +57,19 @@ export const CaptainsScreen = () => {
       <div className="border-2 border-gray-600 rounded-lg px-10 py-8">
         <Title>
           Captains <span className="font-bold text-gray-400">| </span>
-          <span className="text-gray-400 font-medium">Current Leadership</span>
+          <span className="text-gray-400 font-medium">2023 - 2024 (TBD)</span>
         </Title>
 
         <div className="flex flex-col md:grid md:grid-cols-3 gap-5">
-          <Captain name="Utkarsh Dubey" role="Head" img="/people/utkarsh.png" />
-          <Captain
-            name="Lan Le"
-            role="Vice Head (Build)"
-            img="/people/current/lan.png"
-          />
-          <Captain
-            name="Valentina Gheorge"
-            role="Vice Head (Admin)"
-            img="/people/current/val.png"
-          />
-          <Captain
-            name="Emerik Cheng"
-            role="Build"
-            img="/people/current/emerik.png"
-          />
-          <Captain name="Ben Zhou" role="Build" img="/people/current/ben.png" />
-          <Captain
-            name="Armaan Khosla"
-            role="Design"
-            img="/people/armaan.png"
-          />
-          <Captain
-            name="Aakansh Panda"
-            role="Design"
-            img="/people/current/panda.png"
-          />
-          <Captain
-            name="Bereket Semagn"
-            role="Programming"
-            img="/people/current/bereket.png"
-          />
+          <Captain name="???" role="Head" img="/6070-logo.png" />
+          <Captain name="???" role="Vice Head" img="/6070-logo.png" />
+          <Captain name="???" role="Vice Head" img="/6070-logo.png" />
+          <Captain name="???" role="Build" img="/6070-logo.png" />
+          <Captain name="???" role="Build" img="/6070-logo.png" />
+          <Captain name="???" role="Programming" img="/6070-logo.png" />
+          <Captain name="???" role="Design" img="/6070-logo.png" />
+          <Captain name="???" role="Design" img="/6070-logo.png" />
+          <Captain name="???" role="Outreach" img="/6070-logo.png" />
         </div>
       </div>
       <div className="border-2 border-gray-600 rounded-lg px-10 py-8">

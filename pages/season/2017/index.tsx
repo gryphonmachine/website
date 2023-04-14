@@ -6,7 +6,7 @@ import { Footer } from "@/components/Footer";
 import Zoom from "react-medium-image-zoom";
 import Link from "next/link";
 import { Title } from "@/components/Title";
-import { SeasonEvent } from "@/components/SeasonEvent";
+import { SeasonEvent } from "@/components/season/SeasonEvent";
 
 export default function Season2017() {
   return (

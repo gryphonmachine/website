@@ -6,7 +6,6 @@ import { Title } from "@/components/Title";
 import { VideoEmbed } from "@/components/VideoEmbed";
 import Head from "next/head";
 import { Media } from "@/lib/lists/Media";
-import { useEffect, useState } from "react";
 import { GetServerSideProps } from "next";
 import { API_URL } from "@/lib/constants";
 

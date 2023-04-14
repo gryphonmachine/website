@@ -4,34 +4,34 @@ import { Header } from "@/components/Header";
 import { Season } from "@/components/season/Season";
 import { VideoEmbed } from "@/components/VideoEmbed";
 import { Title } from "@/components/Title";
-import { SeasonEvent } from "@/components/SeasonEvent";
+import { SeasonEvent } from "@/components/season/SeasonEvent";
 import Image from "next/image";
 
 const Details = (props: any) => {
   return (
     <>
       <div className="flex">
-        <h1 className="bg-gray-600 hover:bg-gray-500 hover:cursor-pointer w-[85px] py-1 px-4 rounded-lg text-center font-black text-sm mr-3">
+        <h1 className="text-gray-300 bg-gray-600 hover:bg-gray-500 hover:cursor-pointer w-[85px] py-1 px-4 rounded-lg text-center font-black text-sm mr-3">
           Name
         </h1>
         <span className="text-gray-300 font-medium">{props.name}</span>
       </div>
       <div className="flex">
         <h1
-          className={`bg-gray-600 hover:bg-gray-500 hover:cursor-pointer w-[85px] py-1 px-4 rounded-lg text-center font-black text-sm mr-3`}
+          className={`bg-gray-600 text-gray-300 hover:bg-gray-500 hover:cursor-pointer w-[85px] py-1 px-4 rounded-lg text-center font-black text-sm mr-3`}
         >
           Status
         </h1>
         <span className={`text-gray-300 font-medium`}>{props.status}</span>
       </div>
       <div className="flex">
-        <h1 className="bg-gray-600 hover:bg-gray-500 hover:cursor-pointer w-[85px] py-1 px-4 rounded-lg text-center font-black text-sm mr-3">
+        <h1 className="bg-gray-600 text-gray-300 hover:bg-gray-500 hover:cursor-pointer w-[85px] py-1 px-4 rounded-lg text-center font-black text-sm mr-3">
           Weight
         </h1>
         <span className="text-gray-300 font-medium">{props.weight} lbs</span>
       </div>
       <div className="flex">
-        <h1 className="flex justify-center items-center bg-gray-600 hover:bg-gray-500 hover:cursor-pointer md:w-[85px] w-[110px] py-1 px-4 rounded-lg text-center font-black text-sm mr-3">
+        <h1 className="flex justify-center text-gray-300 items-center bg-gray-600 hover:bg-gray-500 hover:cursor-pointer md:w-[85px] w-[110px] py-1 px-4 rounded-lg text-center font-black text-sm mr-3">
           Size
         </h1>
         <span className="text-gray-300 font-medium">

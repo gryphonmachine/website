@@ -14,8 +14,9 @@ export const Footer = () => {
       >
         <Image
           src="/vercel.svg"
-          height="175"
-          width="175"
+          className="w-auto h-auto"
+          height="150"
+          width="150"
           alt="Vercel Powered By"
           priority={true}
           quality={1}

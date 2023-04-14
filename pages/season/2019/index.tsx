@@ -1,6 +1,6 @@
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import { SeasonEvent } from "@/components/SeasonEvent";
+import { SeasonEvent } from "@/components/season/SeasonEvent";
 import { Title } from "@/components/Title";
 import { VideoEmbed } from "@/components/VideoEmbed";
 import { Season } from "@/components/season/Season";
