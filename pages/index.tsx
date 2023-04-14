@@ -42,21 +42,21 @@ export default function Home() {
           {!screenLoaded && (
             <div className="fadeOut flex items-center justify-center absolute bg-black inset-0 z-50">
               <div className="loading-screen">
-            <div className="curtain left"></div>
-            <div className="curtain right"></div>
-              <div className="flex items-center">
-                <Image
-                  className="mr-5"
-                  src="/6070-logo.png"
-                  height="40"
-                  width="50"
-                  alt="6070 Logo"
-                  priority={true}
-                />
-                <p className="font-black text-white text-4xl md:text-5xl">
-                  TEAM 6070
-                </p>
-              </div>
+                <div className="curtain left"></div>
+                <div className="curtain right"></div>
+                <div className="flex items-center animate-bounce">
+                  <Image
+                    className="mr-5"
+                    src="/6070-logo.png"
+                    height="40"
+                    width="50"
+                    alt="6070 Logo"
+                    priority={true}
+                  />
+                  <p className="font-black text-white text-4xl md:text-5xl">
+                    TEAM 6070
+                  </p>
+                </div>
               </div>
             </div>
           )}
@@ -114,7 +114,11 @@ export default function Home() {
                   <span className=" text-blue-400"></span>
                 </div>
                 <p className="text-xl md:text-3xl font-medium mt-5 text-gray-400 pl-2">
-                  A <a href="https://www.firstinspires.org/" target="_blank"><span className="italic mr-1">FIRST®</span></a> Robotics Team
+                  A{" "}
+                  <a href="https://www.firstinspires.org/" target="_blank">
+                    <span className="italic mr-1">FIRST®</span>
+                  </a>{" "}
+                  Robotics Team
                 </p>
               </div>
             </div>

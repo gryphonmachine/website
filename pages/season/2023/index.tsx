@@ -17,6 +17,14 @@ const Details = (props: any) => {
         <span className="text-gray-300 font-medium">{props.name}</span>
       </div>
       <div className="flex">
+        <h1
+          className={`bg-gray-600 hover:bg-gray-500 hover:cursor-pointer w-[85px] py-1 px-4 rounded-lg text-center font-black text-sm mr-3`}
+        >
+          Status
+        </h1>
+        <span className={`text-gray-300 font-medium`}>{props.status}</span>
+      </div>
+      <div className="flex">
         <h1 className="bg-gray-600 hover:bg-gray-500 hover:cursor-pointer w-[85px] py-1 px-4 rounded-lg text-center font-black text-sm mr-3">
           Weight
         </h1>
@@ -28,22 +36,6 @@ const Details = (props: any) => {
         </h1>
         <span className="text-gray-300 font-medium">
           {props.width}″ W x {props.length}″ L x {props.height}″ H
-        </span>
-      </div>
-      <div className="flex">
-        <h1
-          className={`${
-            props.status == "Active" ? "bg-green-500 hover:bg-green-400" : "bg-red-500 hover:bg-red-400"
-          } hover:cursor-pointer w-[85px] py-1 px-4 rounded-lg text-center font-black text-sm mr-3`}
-        >
-          Status
-        </h1>
-        <span
-          className={`${
-            props.status == "Active" ? "text-green-500" : "text-red-500"
-          } uppercase font-medium`}
-        >
-          {props.status}
         </span>
       </div>
       <h1 className="font-black text-gray-300 text-xl">Robot Highlights</h1>
@@ -87,11 +79,11 @@ export default function Season2023() {
           <div className="flex-col space-y-4">
             <Details
               name="ICBM"
+              status="Inactive"
               weight="112"
               width="33"
               length="39"
               height="54"
-              status="Inactive"
               highlights={[
                 "6 Wheel Arcade Drive",
                 "1 Stage Telescoping Arm",
@@ -113,11 +105,11 @@ export default function Season2023() {
           <div className="flex-col space-y-4">
             <Details
               name="Mini Me"
+              status="Dismantled"
               weight="116"
               width="33"
               length="39"
               height="52"
-              status="Dismantled"
               highlights={[
                 "6 Wheel Tank Drive",
                 "Chain System for Arm",
