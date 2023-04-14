@@ -5,20 +5,32 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, user-scalable=no, user-scalable=0"
+        />
+        <meta
           name="description"
           content="Team FRC 6070 from Glenforest Secondary School"
         />
         <meta
-          property="og:description"
+          name="keywords"
+          content="frc,robotics,6070,mississauga,ontario,peel,pdsb"
+        />
+        <meta name="og:title" content="Team 6070" />
+        <meta
+          name="og:description"
           content="Team FRC 6070 from Glenforest Secondary School"
         />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Team 6070" />
         <meta
           name="twitter:description"
           content="Team FRC 6070 from Glenforest Secondary School"
         />
-        <meta property="og:image" content="/meta-img.png" />
         <meta name="twitter:image" content="/meta-img.png" />
-        <link rel="icon" href="/6070-logo.png" />
+        <meta name="theme-color" content="#FBBB04" />
+        <link rel="shortcut icon" href="/6070-logo.png" />
+        <meta name="og:image" content="/meta-img.png" />
       </Head>
       <body>
         <Main />
