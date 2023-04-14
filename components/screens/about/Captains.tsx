@@ -11,7 +11,7 @@ const Captain = (props: any) => {
         height="350"
         width="350"
         priority={true}
-        className="h-12 w-12 mr-5 rounded-full border border-primary"
+        className="h-12 w-12 mr-5 rounded-full"
       />
       <div>
         <h1 className="font-bold text-md text-white">{props.name}</h1>

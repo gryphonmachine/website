@@ -5,10 +5,6 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, user-scalable=no, user-scalable=0"
-        />
-        <meta
           name="description"
           content="Team FRC 6070 from Glenforest Secondary School"
         />
