@@ -22,20 +22,20 @@ export default function SponsorsPage() {
             title="💸 6070 x Sponsors"
             subtitle={
               <span>
-                Celebrating our valued partners, dedicated sponsors, and
-                supporters. <br /> Check out our{" "}
+                Celebrating our dedicated sponsors and supporters. <br />{" "}
+                Want to sponsor us? Check out our{" "}
                 <a
                   onClick={() =>
                     window.open("/6070_SponsorshipPackage-2023.pdf")
                   }
                   download
-                  className="text-primary italic hover:text-primary font-bold cursor-pointer"
+                  className="text-primary text-white hover:text-primary font-bold cursor-pointer"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <span className="underline">Sponsorship Package</span> <span className="text-gray-400">(2023-24)</span>
+                  <span className="">Sponsorship Package</span>{" "}
+                  <span className="text-gray-400">(2023-24).</span>
                 </a>{" "}
-                
               </span>
             }
           />

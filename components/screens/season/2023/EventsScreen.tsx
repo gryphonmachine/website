@@ -8,7 +8,7 @@ export const EventsScreen2023 = () => {
       <Title>Events Attended</Title>
       <div className="flex flex-col">
         <Link href="/season/2023/western" legacyBehavior>
-          <a>
+          <a className="mb-5">
             <SeasonEvent
               title="Western University District Event"
               date="March 17th - March 19th, 2023"

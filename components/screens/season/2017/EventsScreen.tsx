@@ -9,7 +9,7 @@ export const EventsScreen2017 = () => {
 
       <div className="flex flex-col">
         <Link href="/season/2017/western" legacyBehavior>
-          <a>
+          <a className="mb-5">
             <SeasonEvent
               title="Western University District Event 🥇"
               date="March 31st - April 2nd, 2017"
@@ -17,7 +17,7 @@ export const EventsScreen2017 = () => {
           </a>
         </Link>
         <Link href="/season/2017/mcmaster" legacyBehavior>
-          <a>
+          <a className="mb-5">
             <SeasonEvent
               title="McMaster University District Event"
               date="April 7th - April 9th, 2017"

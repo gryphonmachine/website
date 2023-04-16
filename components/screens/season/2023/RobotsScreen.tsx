@@ -77,7 +77,7 @@ export const RobotsScreen2023 = () => {
           />
         </div>
       </div>
-      <div className="flex md:flex-row flex-col mb-[60px] bg-gray-700 border-2 border-gray-500 rounded-lg p-10">
+      <div className="flex md:flex-row flex-col bg-gray-700 border-2 border-gray-500 rounded-lg p-10">
         <Image
           src="/mini-me.png"
           className="md:mb-0 mb-10 md:mr-[125px]"

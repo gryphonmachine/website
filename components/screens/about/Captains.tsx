@@ -57,19 +57,19 @@ export const CaptainsScreen = () => {
       <div className="border-2 border-gray-600 rounded-lg px-10 py-8">
         <Title>
           Captains <span className="font-bold text-gray-400">| </span>
-          <span className="text-gray-400 font-medium">2023 - 2024 (TBD)</span>
+          <span className="text-gray-400 font-medium">Current Leadership (TBD)</span>
         </Title>
 
         <div className="flex flex-col md:grid md:grid-cols-3 gap-5">
-          <Captain name="???" role="Head" img="/6070-logo.png" />
-          <Captain name="???" role="Vice Head" img="/6070-logo.png" />
-          <Captain name="???" role="Vice Head" img="/6070-logo.png" />
-          <Captain name="???" role="Build" img="/6070-logo.png" />
-          <Captain name="???" role="Build" img="/6070-logo.png" />
-          <Captain name="???" role="Programming" img="/6070-logo.png" />
-          <Captain name="???" role="Design" img="/6070-logo.png" />
-          <Captain name="???" role="Design" img="/6070-logo.png" />
-          <Captain name="???" role="Outreach" img="/6070-logo.png" />
+          <Placeholder />
+          <Placeholder />
+          <Placeholder />
+          <Placeholder />
+          <Placeholder />
+          <Placeholder />
+          <Placeholder />
+          <Placeholder />
+          <Placeholder />
         </div>
       </div>
       <div className="border-2 border-gray-600 rounded-lg px-10 py-8">

@@ -20,10 +20,23 @@ export default function EventsPage() {
 
       <div className="flex items-center justify-center">
         <div className="flex flex-col md:w-[1100px] md:grid md:grid-cols-3 gap-5 pr-10 pl-10">
+          <div className="flex justify-center items-center border-2 border-gray-400 h-[200px] text-center rounded-lg">
+            <div className="flex-col">
+              <span className="font-black text-2xl">6070 x YOUR EVENT</span> <br />
+              <span className="text-sm font-bold items-center">
+                Email us @ {" "}
+                <a href="mailto:gryphonmachine@gmail.com">
+                  <span className="text-primary hover:text-white">
+                    gryphonmachine@gmail.com
+                  </span>
+                </a>
+              </span>
+            </div>
+          </div>
           {Events.map((event: any) => {
             return (
               <>
-                <div className="mediaImage flex flex-col items-center group">
+                <div className="mediaImage group">
                   <Zoom>
                     <Photo
                       className="opacity-90 md:h-[200px] md:w-[500px] hover:opacity-100"

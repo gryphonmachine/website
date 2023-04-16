@@ -109,10 +109,15 @@ a {
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
+  transition: all .2s ease-in-out;
 }
 
 .seasonBgImage:hover {
   transform: scale(1.02);
+}
+
+.mediaImage {
+  transition: all .2s ease-in-out;
 }
 
 .mediaImage:hover {

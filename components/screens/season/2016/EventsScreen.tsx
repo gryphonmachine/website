@@ -8,7 +8,7 @@ export const EventsScreen2016 = () => {
       <Title>Events Attended</Title>
       <div className="flex flex-col">
         <Link href="/season/2016/toronto" legacyBehavior>
-          <a>
+          <a className="mb-5">
             <SeasonEvent
               title="Greater Toronto East Regional District Event"
               date="March 9th - 12th, 2016"

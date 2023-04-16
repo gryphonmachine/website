@@ -11,6 +11,7 @@ export const Navbar = (props: any) => {
     { title: "Events", path: "/events" },
     { title: "Media", path: "/media" },
     { title: "Sponsors", path: "/sponsors" },
+    { title: "Branding", path: "/branding" },
   ];
 
   const router = useRouter();
@@ -25,7 +26,7 @@ export const Navbar = (props: any) => {
           <Link href="/" legacyBehavior>
             <a>
               <Image
-                className="mr-5 logo6070"
+                className="md:mr-5 mr-1 logo6070"
                 src="/6070-logo.png"
                 alt="6070 Logo"
                 width="25"

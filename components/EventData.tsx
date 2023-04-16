@@ -11,7 +11,7 @@ export const EventData = (props: any) => {
     <>
       {isClient && (
         <div className="relative overflow-x-auto">
-          <table className="bg-gray-700 w-full text-sm text-left border-2 border-gray-600">
+          <table className="w-full text-sm text-left border-2 border-gray-600">
             <thead className="text-xs text-white uppercase">
               <tr>
                 <th scope="col" className="px-6 py-3">
@@ -65,7 +65,7 @@ export const EventData = (props: any) => {
 
                 return (
                   <tr
-                    className="text-gray-300 border-2 border-gray-600 hover:bg-gray-600"
+                    className="text-gray-300 border-2 border-gray-600 hover:bg-gray-700"
                     key={i}
                   >
                     <th

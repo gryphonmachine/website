@@ -5,9 +5,7 @@ export const GameRevealScreen2023 = () => {
   return (
     <>
       <Title>Game Reveal</Title>
-      <div className="mb-[60px]">
-        <VideoEmbed id="0zpflsYc4PA" />
-      </div>
+      <VideoEmbed id="0zpflsYc4PA" />
     </>
   );
 };
