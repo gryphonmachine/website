@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { useState } from "react";
 import { GeneralScreen } from "@/components/screens/about/General";
 import { CaptainsScreen } from "@/components/screens/about/Captains";
+import { TabButton } from "@/components/TabButton";
 
 export default function AboutPage() {
   const [activeTab, setActiveTab] = useState(1);
@@ -24,26 +25,12 @@ export default function AboutPage() {
       />
 
       <div className="flex items-center justify-center space-x-4 mb-8 mt-[-15px]">
-        <button
-          className={`px-5 py-2 rounded-lg font-semibold ${
-            activeTab === 1
-              ? "bg-gray-600 text-white"
-              : "text-gray-400 bg-gray-800 hover:bg-gray-600 hover:text-white"
-          }`}
-          onClick={() => handleTabClick(1)}
-        >
+        <TabButton active={activeTab} tab={1} onClick={() => handleTabClick(1)}>
           <span className="mr-2">🤔</span> General
-        </button>
-        <button
-          className={`px-5 py-2 rounded-lg font-semibold ${
-            activeTab === 2
-              ? "bg-gray-600 text-white"
-              : "text-gray-400 bg-gray-800 hover:bg-gray-600 hover:text-white"
-          }`}
-          onClick={() => handleTabClick(2)}
-        >
+        </TabButton>
+        <TabButton active={activeTab} tab={2} onClick={() => handleTabClick(2)}>
           <span className="mr-2">👥</span> Mentors & Captains
-        </button>
+        </TabButton>
       </div>
 
       <div className="flex items-center justify-center pr-5 pl-5">

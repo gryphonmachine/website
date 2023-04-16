@@ -10,7 +10,7 @@ export const Header = (props: any) => {
           {props.title}
         </p>
         <p className="text-center text-xl text-gray-400 py-3">
-          {props.subtitle}
+          {props.season ? `${props.season} Season` : props.subtitle}
         </p>
       </div>
     </>

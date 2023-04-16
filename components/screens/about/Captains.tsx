@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Captain = (props: any) => {
   return (
-    <div className="flex bg-gray-800 hover:bg-gray-700 hover:cursor-pointer py-4 px-5 rounded-lg">
+    <div className="flex bg-gray-800 hover:bg-gray-700 hover:cursor-default py-4 px-5 rounded-lg">
       <Image
         src={props.img}
         alt={props.name}

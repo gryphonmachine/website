@@ -1,50 +1,34 @@
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import { SeasonEvent } from "@/components/season/SeasonEvent";
-import { Title } from "@/components/Title";
-import { VideoEmbed } from "@/components/VideoEmbed";
 import { Season } from "@/components/season/Season";
-import Link from "next/link";
+import { useState } from "react";
+import { TabButton } from "@/components/TabButton";
+import { EventsScreen2018 } from "@/components/screens/season/2018/EventsScreen";
+import { GameRevealScreen2018 } from "@/components/screens/season/2018/GameRevealScreen";
 
 export default function Season2018() {
+  const [activeTab, setActiveTab] = useState(1);
+
+  const handleTabClick = (tabIndex: number) => {
+    setActiveTab(tabIndex);
+  };
+
   return (
     <>
-      <Header title="FIRST Power Up" subtitle="2018 Season" />
+      <Header title="FIRST Power Up" season="2018" />
+
+      <div className="flex items-center justify-center space-x-4 mb-8 mt-[-15px]">
+        <TabButton active={activeTab} tab={1} onClick={() => handleTabClick(1)}>
+          <span className="mr-2">🎮</span> Game Reveal
+        </TabButton>
+        <TabButton active={activeTab} tab={2} onClick={() => handleTabClick(2)}>
+          <span className="mr-2">🎉</span> Events
+        </TabButton>
+      </div>
+
       <Season title="Pingu">
-        <Title>Game Reveal</Title>
-
-        <div className="mb-[60px]">
-          <VideoEmbed id="HZbdwYiCY74" />
-        </div>
-
-        <Title>Events Attended</Title>
-
-        <div className="flex flex-col">
-          <Link href="/season/2018/durham" legacyBehavior>
-            <a>
-              <SeasonEvent
-                title="Durham College District Event"
-                date="March 2nd - 4th, 2018"
-              />
-            </a>
-          </Link>
-          <Link href="/season/2018/mcmaster" legacyBehavior>
-            <a>
-              <SeasonEvent
-                title="McMaster University District Event"
-                date="April 6th - 8th, 2018"
-              />
-            </a>
-          </Link>
-          <Link href="/season/2018/provincials" legacyBehavior>
-            <a>
-              <SeasonEvent
-                title="FIRST Ontario Provincial Championship - Technology Division"
-                date="April 11th - 14th, 2018"
-              />
-            </a>
-          </Link>
-        </div>
+        {activeTab === 1 && <GameRevealScreen2018 />}
+        {activeTab === 2 && <EventsScreen2018 />}
       </Season>
 
       <Footer />

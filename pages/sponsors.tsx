@@ -23,19 +23,19 @@ export default function SponsorsPage() {
             subtitle={
               <span>
                 Celebrating our valued partners, dedicated sponsors, and
-                supporters. <br /> Want to{" "}
+                supporters. <br /> Check out our{" "}
                 <a
                   onClick={() =>
                     window.open("/6070_SponsorshipPackage-2023.pdf")
                   }
                   download
-                  className="text-white hover:text-primary font-bold underline cursor-pointer"
+                  className="text-primary italic hover:text-primary font-bold cursor-pointer"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  sponsor us?
+                  <span className="underline">Sponsorship Package</span> <span className="text-gray-400">(2023-24)</span>
                 </a>{" "}
-                (2024 Season)
+                
               </span>
             }
           />
