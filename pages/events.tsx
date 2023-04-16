@@ -24,7 +24,7 @@ export default function EventsPage() {
             <div className="flex-col">
               <span className="font-black text-2xl">6070 x YOUR EVENT</span>{" "}
               <br />
-              <span className="text-sm font-bold items-center">
+              <span className="text-sm font-regular items-center">
                 Email us @{" "}
                 <a href="mailto:gryphonmachine@gmail.com">
                   <span className="text-primary hover:text-white">
