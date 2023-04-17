@@ -34,7 +34,7 @@ export default function Branding() {
           <div>
             <Image
               src="/6070-griffy-logo.png"
-              className="mb-5 border-2 border-white rounded-full"
+              className="mb-5 rounded-full"
               alt="6070 Logo"
               height="175"
               width="175"
@@ -53,7 +53,7 @@ export default function Branding() {
           <div>
             <Image
               src="/6070-griffydev-logo.png"
-              className="mb-5 border-2 border-white rounded-full"
+              className="mb-5 rounded-full"
               alt="6070 Logo"
               height="175"
               width="175"
