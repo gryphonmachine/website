@@ -23,7 +23,7 @@ const Captain = (props: any) => {
 
 const Placeholder = () => {
   return (
-    <div className="bg-gray-800 group hover:bg-gray-700 hover:cursor-pointer shadow rounded-lg p-4 max-w-sm w-full mx-auto">
+    <div className="bg-gray-800 group hover:bg-gray-700 hover:cursor-default shadow rounded-lg p-4 max-w-sm w-full mx-auto">
       <div className="animate-pulse flex space-x-4">
         <div className="rounded-full bg-slate-700 group-hover:bg-slate-500 h-10 w-10"></div>
         <div className="flex-1 space-y-4 py-1">

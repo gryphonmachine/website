@@ -77,32 +77,7 @@ export const GeneralScreen = () => {
         </div>
       </div>
 
-      <h2 className="font-bold text-gray-300 text-lg mt-5 mb-3">
-        Have any questions?
-      </h2>
-
-      <div className="flex flex-wrap gap-5">
-        <a href="https://discord.gg/JUunNhnf2v" target="_blank">
-          <p className="text-sm text-violet-400 hover:text-white">
-            <FaDiscord className="inline mr-1" size={20} /> Discord
-          </p>
-        </a>
-        <a href="https://www.instagram.com/frc6070" target="_blank">
-          <p className="text-sm text-pink-400 hover:text-white">
-            <FaInstagram className="inline mr-1" size={20} /> Instagram
-          </p>
-        </a>
-        <a href="https://twitter.com/frc6070" target="_blank">
-          <p className="text-sm text-sky-400 hover:text-white">
-            <FaTwitter className="inline mr-1" size={20} /> Twitter
-          </p>
-        </a>
-        <a href="mailto:gryphonmachine@gmail.com" target="_blank">
-          <p className="text-sm text-primary hover:text-white">
-            <IoMdMail className="inline mr-1" size={20} /> Email
-          </p>
-        </a>
-      </div>
+      
     </div>
   );
 };

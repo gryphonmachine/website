@@ -18,7 +18,7 @@ export default function Season2023() {
     <>
       <Header title="Charged Up presented by Haas" season="2023" />
 
-      <div className="flex items-center justify-center space-x-4 mb-8 mt-[-15px]">
+      <div className="flex flex-wrap items-center justify-center gap-4 mb-2 mt-[-15px]">
         <TabButton active={activeTab} tab={1} onClick={() => handleTabClick(1)}>
           <span className="mr-2">🎮</span> Game Reveal
         </TabButton>
