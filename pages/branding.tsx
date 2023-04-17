@@ -22,7 +22,7 @@ export default function Branding() {
             />{" "}
             <a href="/6070-griffy-logo.png" download>
               <button className="bg-gray-700 hover:bg-gray-600 py-2 px-8 rounded-lg font-bold">
-                <div className="flex mb-[-3px]">
+                <div className="flex mb-[-3px] text-white">
                   <RiDownloadCloudFill className="mr-2 text-2xl" /> Download
                 </div>
                 <span className="text-gray-400 uppercase text-xs font-medium">
@@ -41,7 +41,7 @@ export default function Branding() {
             />{" "}
             <a href="/6070-griffy-logo.png" download>
               <button className="bg-gray-700 hover:bg-gray-600 py-2 px-8 rounded-lg font-bold">
-                <div className="flex mb-[-3px]">
+                <div className="flex mb-[-3px] text-white">
                   <RiDownloadCloudFill className="mr-2 text-2xl" /> Download
                 </div>
                 <span className="text-gray-400 uppercase text-xs font-medium">
@@ -60,7 +60,7 @@ export default function Branding() {
             />{" "}
             <a href="/6070-griffydev-logo.png" download>
               <button className="bg-gray-700 hover:bg-gray-600 py-2 px-8 rounded-lg font-bold">
-                <div className="flex mb-[-3px]">
+                <div className="flex mb-[-3px] text-white">
                   <RiDownloadCloudFill className="mr-2 text-2xl" /> Download
                 </div>
 
