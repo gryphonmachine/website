@@ -29,16 +29,16 @@ export const GeneralScreen = () => {
     <div className="border-2 border-gray-600 rounded-lg md:w-[939px] px-10 py-8">
       <div className="flex flex-col md:grid md:grid-cols-3 gap-5 mb-10">
         <a href="https://github.com/gryphonmachine" target="_blank">
-          <AboutCard title="Learn" bg="/team-pics/IMG_3793.jpg" />
+          <AboutCard title="Learn." bg="/team-pics/IMG_3793.jpg" />
         </a>
         <Link href="/events" legacyBehavior>
           <a>
-            <AboutCard title="Share" bg="/events/IMG_6087.JPG" />
+            <AboutCard title="Share." bg="/events/IMG_6087.JPG" />
           </a>
         </Link>
         <Link href="/builds" legacyBehavior>
           <a>
-            <AboutCard title="Compete" bg="/season/6070-charged-up.png" />
+            <AboutCard title="Compete." bg="/season/6070-charged-up.png" />
           </a>
         </Link>
       </div>

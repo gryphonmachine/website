@@ -22,9 +22,11 @@ export default function EventsPage() {
         <div className="flex flex-col md:w-[1100px] md:grid md:grid-cols-3 gap-5 pr-10 pl-10">
           <div className="flex justify-center items-center border-2 border-primary h-[200px] text-center rounded-lg">
             <div className="flex-col">
-              <span className="font-black text-2xl">6070 x YOUR EVENT</span>{" "}
+              <span className="font-black text-2xl text-white">
+                6070 x YOUR EVENT
+              </span>{" "}
               <br />
-              <span className="text-sm font-regular items-center">
+              <span className="text-sm text-white font-regular items-center">
                 Email us @{" "}
                 <a href="mailto:gryphonmachine@gmail.com">
                   <span className="text-primary hover:text-white">
