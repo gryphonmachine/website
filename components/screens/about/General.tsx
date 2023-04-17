@@ -1,18 +1,45 @@
 import { FaDiscord, FaInstagram, FaTwitter } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import Image from "next/image";
+import Link from "next/link";
 
+export const AboutCard = (props: any) => {
+  return (
+    <div
+      className={`${props.className} group hover:cursor-pointer border-solid border-2 border-primary hover:border-white rounded-lg md:w-[275px] px-10 py-24 relative`}
+    >
+      <div className="relative">
+        <h1 className="text-4xl text-white font-bold text-center mb-2 uppercase">
+          {props.title}{" "}
+        </h1>
+      </div>
+      <Image
+        className="backgroundImage opacity-50 group-hover:opacity-60 absolute inset-0 w-full h-full object-cover"
+        src={props.bg}
+        alt="Background Image"
+        priority={true}
+        fill
+        quality={20}
+      />
+    </div>
+  );
+};
 export const GeneralScreen = () => {
   return (
     <div className="border-2 border-gray-600 rounded-lg md:w-[939px] px-10 py-8">
-      <Image
-        className="rounded-lg mb-6"
-        src="/team-pics/IMG_3793.jpg"
-        height="1000"
-        width="1000"
-        alt="Windsor Team Photo"
-        priority={true}
-      />
+      <div className="flex flex-col md:grid md:grid-cols-3 gap-5 mb-10">
+        <AboutCard title="Learn" bg="/team-pics/IMG_3793.jpg" />
+        <Link href="/events" legacyBehavior>
+          <a>
+            <AboutCard title="Share" bg="/events/IMG_6087.JPG" />
+          </a>
+        </Link>
+        <Link href="/builds" legacyBehavior>
+          <a>
+            <AboutCard title="Compete" bg="/season/6070-charged-up.png" />
+          </a>
+        </Link>
+      </div>
 
       <h1 className="md:text-4xl text-3xl font-bold text-left mb-5">
         <span className="text-gray-400">
@@ -31,8 +58,8 @@ export const GeneralScreen = () => {
             <br />
             <br />
             Our team has been competing in the FIRST Robotics Competition (FRC)
-            for several years now and we&apos;ve gained a reputation for being
-            a fierce competitor on the field. But more than that, we&apos;re a
+            for several years now and we&apos;ve gained a reputation for being a
+            fierce competitor on the field. But more than that, we&apos;re a
             tight-knit community of individuals who share a common love for STEM
             and the spirit of gracious professionalism.{" "}
           </p>

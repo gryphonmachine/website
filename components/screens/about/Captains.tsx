@@ -38,6 +38,17 @@ const Placeholder = () => {
 export const CaptainsScreen = () => {
   return (
     <div className="flex flex-col space-y-10">
+      <div className="border-2 border-gray-600 rounded-lg px-10 py-8 justify-center items-center flex">
+        <Image
+          className="rounded-lg"
+          src="/team-pics/IMG_3793.jpg"
+          height="850"
+          width="850"
+          alt="Windsor Team Photo"
+          priority={true}
+        />
+      </div>
+
       <div className="border-2 border-gray-600 rounded-lg px-10 py-8">
         <Title>Mentors</Title>
 
@@ -57,7 +68,9 @@ export const CaptainsScreen = () => {
       <div className="border-2 border-gray-600 rounded-lg px-10 py-8">
         <Title>
           Captains <span className="font-bold text-gray-400">| </span>
-          <span className="text-gray-400 font-medium">Current Leadership (TBD)</span>
+          <span className="text-gray-400 font-medium">
+            Current Leadership (TBD)
+          </span>
         </Title>
 
         <div className="flex flex-col md:grid md:grid-cols-3 gap-5">
