@@ -1,8 +1,15 @@
 import { FaDiscord, FaInstagram, FaTwitter } from "react-icons/fa";
-import { IoMdMail } from "react-icons/io";
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
+
+const Subteam = (props: any) => {
+  return (
+    <div className="bg-gray-800 py-5 px-5 rounded-lg hover:bg-gray-700 hover:cursor-default">
+      <h1 className="font-bold text-md text-white">{props.title}</h1>
+      <p className="text-gray-400 text-sm">{props.subtitle}</p>
+    </div>
+  );
+};
 
 export const AboutCard = (props: any) => {
   return (
@@ -31,17 +38,17 @@ export const RegisterScreen = () => {
 
   const handleHover = (num: number) => {
     if (num === 1) {
-        setHoverText("Applications open soon!");
+      setHoverText("Applications open soon!");
     } else {
-        setHoverText("Apply here")
+      setHoverText("Apply here");
     }
   };
 
   const handleHover2 = (num: number) => {
     if (num === 1) {
-        setHoverText2("Applications open soon!");
+      setHoverText2("Applications open soon!");
     } else {
-        setHoverText2("Apply here.")
+      setHoverText2("Apply here.");
     }
   };
 
@@ -56,22 +63,62 @@ export const RegisterScreen = () => {
 
       <div className="space-y-5">
         <div>
-          <h2 className="font-bold text-gray-300 text-lg">Information</h2>
+          <h2 className="font-bold text-gray-300 text-lg mb-3">Information</h2>
           <p className="text-left text-gray-400">
             → All general members and captains wishing to paricipate <b>MUST</b>{" "}
             pay and register (including signing safety forms), by the due date
             that would be determined and informed to you (TBD).
-            <br /> <br />→ Registration Fee: TBD <b> (typically $90-$150)</b>
+            <br /> <br />→ Registration Fee: TBD <b> (typically ~$100)</b>
             <br /> <br />→ All payments for FRC 6070 are made via SchoolCash
             Online (merch, fees, etc). It&apos;s simple and safe to use and goes
             directly to 6070.
           </p>
         </div>
 
+        <h2 className="font-bold text-gray-300 text-lg">Subteams</h2>
+        <div className="flex flex-col md:grid grid-cols-3 gap-5">
+          <Subteam
+            title="🔨 Build"
+            subtitle="Constructs and designs the robot's mechanical components while ensuring the robot's structural integrity"
+          />
+          <Subteam
+            title="🔌 Electrical"
+            subtitle="Manages the robot's electrical components, including wiring and safety"
+          />
+          <Subteam
+            title="👨‍💻 Programming"
+            subtitle="Codes the robot's movements, sensors, and interactions with the game field and other robots"
+          />
+          <Subteam
+            title="🧑‍🎨 Design"
+            subtitle="Creates the robot's aesthetic and branding, including graphics and promotional materials"
+          />
+          <Subteam
+            title="⭐ Admin"
+            subtitle="Coordinates the team's logistics and organization, managing communications, paperwork, and scheduling"
+          />
+          <Subteam
+            title="📸 Media"
+            subtitle="Handles the team's publicity and outreach efforts, including social media, videos, and media coordination"
+          />
+          <Subteam
+            title="🧐 Scouting"
+            subtitle="Analyzes the competition by scouting out other teams' robots, strengths, and weaknesses"
+          />
+          <Subteam
+            title="💰 Finance"
+            subtitle="Manages the team's finances and fundraising efforts, including budgeting, fundraising events, and sponsorships"
+          />
+          <Subteam
+            title="🚗 Logistics"
+            subtitle="Handles transportation and equipment for the team, including travel arrangements and equipment management"
+          />
+        </div>
+
         <div>
-          <h2 className="font-bold text-gray-300 text-lg">Registration</h2>
+          <h2 className="font-bold text-gray-300 text-lg mb-3">Registration</h2>
           <p className="text-left text-gray-400">
-            Looking to apply as a captain?{" "}
+            Want to apply for Captain?{" "}
             <b
               className="cursor-not-allowed text-primary"
               onMouseEnter={() => handleHover(1)}
@@ -80,9 +127,8 @@ export const RegisterScreen = () => {
               {" "}
               {hoverText ? hoverText : "Apply here"}
             </b>
-            
             <br />
-            Looking to apply as a general member?{" "}
+            Want to apply for General Member?{" "}
             <b
               className="cursor-not-allowed text-primary"
               onMouseEnter={() => handleHover2(1)}

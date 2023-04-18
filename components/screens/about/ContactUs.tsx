@@ -38,7 +38,7 @@ export const ContactUsScreen = () => {
       </span>
       <iframe
         style={{
-          filter: "invert(90%) hue-rotate(180deg)",
+          filter: "invert(100%) hue-rotate(180deg)",
           borderRadius: "20px",
         }}
         className="md:w-[850px] md:h-[450px] h-[300px]"

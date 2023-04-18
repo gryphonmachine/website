@@ -1,7 +1,14 @@
+import useSound from "use-sound";
+
 export const TabButton = (props: any) => {
+  const [play] = useSound("/switch-page.mp3");
+
     return (
       <button
-        onClick={props.onClick}
+        onClick={() => {
+          props.onClick()
+          play()
+        }}
         className={`px-5 py-2 rounded-lg font-semibold ${
           props.active === props.tab
             ? "bg-gray-600 text-white"
