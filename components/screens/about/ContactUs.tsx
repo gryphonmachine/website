@@ -41,7 +41,7 @@ export const ContactUsScreen = () => {
           filter: "invert(100%) hue-rotate(180deg)",
           borderRadius: "20px",
         }}
-        className="md:w-[850px] md:h-[450px] h-[300px]"
+        className="md:w-[850px] md:h-[450px] h-[300px] border-2 border-gray-300"
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.9794644333642!2d-79.59473948789925!3d43.627786353953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b387a74621bc9%3A0x48123a1faebcc518!2sGlenforest%20Secondary%20School!5e0!3m2!1sen!2sca!4v1681771474867!5m2!1sen!2sca"
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"

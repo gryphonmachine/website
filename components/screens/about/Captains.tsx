@@ -67,7 +67,7 @@ export const CaptainsScreen = () => {
       </div>
       <div className="border-2 border-gray-600 rounded-lg px-10 py-8">
         <Title>
-          Captains <span className="font-bold text-gray-400">| </span>
+          Captains <span className="font-bold text-gray-400">/ </span>
           <span className="text-gray-400 font-medium">
             Current Leadership (TBD)
           </span>
@@ -87,7 +87,7 @@ export const CaptainsScreen = () => {
       </div>
       <div className="border-2 border-gray-600 rounded-lg px-10 py-8">
         <Title>
-          Captains <span className="font-bold text-gray-400">| </span>
+          Captains <span className="font-bold text-gray-400">/ </span>
           <span className="text-gray-400 font-medium">2022 - 2023</span>
         </Title>
 
