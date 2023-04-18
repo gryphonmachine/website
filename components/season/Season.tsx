@@ -1,18 +1,50 @@
+import { FaBookOpen, FaCube, FaGithub } from "react-icons/fa";
+
 export const Season = (props: any) => {
   return (
     <div className="flex items-center justify-center p-5">
       <div
-        className={`${props.className} bg-gray-900 rounded-lg md:w-[800px] px-10 py-10`}
+        className={`${props.className} bg-[#232936] rounded-lg md:w-[800px] px-10 py-10`}
       >
-        <h1 className="md:text-3xl text-3xl font-bold text-left mb-10">
-          <span className="text-gray-400">
-            <span>{props.title && `Introducing... `}</span>
-            <span className="text-white">
-              {props.title && `${props.title}`}
+        <div>
+          <h1 className="md:text-3xl text-3xl font-bold text-left mb-4">
+            <span className="text-gray-400">
+              <span>{props.title && `Introducing... `}</span>
+              <span className="text-white">
+                {props.title && `${props.title}`}
+              </span>
+              {props.title && `!`}
             </span>
-            {props.title && `!`}
-          </span>
-        </h1>
+          </h1>
+
+          <div className="flex md:flex-row flex-col gap-5 mb-8 text-gray-300 cursor-pointer">
+            <a href={props.manual} target="_blank">
+              <div className="flex hover:text-white">
+                <FaBookOpen className="mr-2 text-xl" /> Game Manual
+              </div>
+            </a>
+            <a href={props.code} target="_blank">
+              <div className={`flex ${
+                  !props.code
+                    ? "text-gray-500 cursor-not-allowed"
+                    : "hover:text-white "
+                }`}>
+                <FaGithub className="mr-2 text-xl" /> Code Release
+              </div>
+            </a>
+            <a href={props.cad} target="_blank">
+              <div
+                className={`flex ${
+                  !props.cad
+                    ? "text-gray-500 cursor-not-allowed"
+                    : "hover:text-white "
+                }`}
+              >
+                <FaCube className="mr-2 text-xl" /> CAD Model
+              </div>
+            </a>
+          </div>
+        </div>
 
         {...props?.children}
       </div>

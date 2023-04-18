@@ -26,7 +26,11 @@ export default function Season2017() {
         </TabButton>
       </div>
 
-      <Season title="Prattbot A.K.A Geary">
+      <Season
+        title="Prattbot A.K.A Geary"
+        manual="https://firstfrc.blob.core.windows.net/frc2017/Manual/2017FRCGameSeasonManual.pdf"
+        code="https://github.com/FRC6070/2017SteamworksUpdated"
+      >
         {activeTab === 1 && <GameRevealScreen2017 />}
         {activeTab === 2 && <EventsScreen2017 />}
       </Season>

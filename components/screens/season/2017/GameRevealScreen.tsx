@@ -6,12 +6,13 @@ import Zoom from "react-medium-image-zoom";
 export const GameRevealScreen2017 = () => {
   return (
     <>
-      <Title>Game Reveal + Media</Title>
+      <Title>Game Reveal</Title>
 
-      <div className="flex flex-col justify-center md:grid md:grid-cols-2 md:gap-4 mt-[-15px] mb-[25px]">
-        <VideoEmbed id="EMiNmJW7enI" className="mb-[-4px]" />
-        <VideoEmbed id="u3hDYpXdCBg" />
-      </div>
+      <VideoEmbed id="EMiNmJW7enI" className="mb-[50px]" />
+
+      <Title>Other Media</Title>
+
+      <VideoEmbed id="u3hDYpXdCBg" className="mb-5" />
 
       <div className="flex flex-col justify-center md:grid md:grid-cols-3 gap-4">
         <Zoom>

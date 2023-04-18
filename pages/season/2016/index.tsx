@@ -26,7 +26,11 @@ export default function Season2016() {
         </TabButton>
       </div>
 
-      <Season title="Iron Curtain">
+      <Season
+        title="Iron Curtain"
+        manual="https://firstfrc.blob.core.windows.net/frc2016manuals/GameManual/FRC-2016-game-manual.pdf"
+        code="https://github.com/FRC6070/FRC-6070-Updated-2016"
+      >
         {activeTab === 1 && <GameRevealScreen2016 />}
         {activeTab === 2 && <EventsScreen2016 />}
       </Season>

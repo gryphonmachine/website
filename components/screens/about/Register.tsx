@@ -7,6 +7,7 @@ const Subteam = (props: any) => {
     <div className="bg-gray-800 py-5 px-5 rounded-lg hover:bg-gray-700 hover:cursor-default">
       <h1 className="font-bold text-md text-white">{props.title}</h1>
       <p className="text-gray-400 text-sm">{props.subtitle}</p>
+      {props.subteams && <p className="text-[11px] mt-3 text-gray-400"><span className="uppercase font-bold">Subteams:</span> {props.subteams}</p>}
     </div>
   );
 };
@@ -96,22 +97,11 @@ export const RegisterScreen = () => {
           <Subteam
             title="⭐ Admin"
             subtitle="Coordinates the team's logistics and organization, managing communications, paperwork, and scheduling"
+            subteams="Finance, Logistics, Scouting"
           />
           <Subteam
             title="📸 Media"
             subtitle="Handles the team's publicity and outreach efforts, including social media, videos, and media coordination"
-          />
-          <Subteam
-            title="🧐 Scouting"
-            subtitle="Analyzes the competition by scouting out other teams' robots, strengths, and weaknesses"
-          />
-          <Subteam
-            title="💰 Finance"
-            subtitle="Manages the team's finances and fundraising efforts, including budgeting, fundraising events, and sponsorships"
-          />
-          <Subteam
-            title="🚗 Logistics"
-            subtitle="Handles transportation and equipment for the team, including travel arrangements and equipment management"
           />
         </div>
 

@@ -13,7 +13,7 @@ export default function Season2023() {
   const handleTabClick = (tabIndex: number) => {
     setActiveTab(tabIndex);
   };
-  
+
   return (
     <>
       <Header title="Charged Up presented by Haas" season="2023" />
@@ -29,8 +29,12 @@ export default function Season2023() {
           <span className="mr-2">🎉</span> Events
         </TabButton>
       </div>
-      
-      <Season title="Intercontinental Ballistic Mini Me">
+
+      <Season
+        title="Intercontinental Ballistic Mini Me"
+        manual="https://firstfrc.blob.core.windows.net/frc2023/Manual/2023FRCGameManual.pdf"
+        code="https://github.com/gryphonmachine/2023"
+      >
         {activeTab === 1 && <GameRevealScreen2023 />}
         {activeTab === 2 && <RobotsScreen2023 />}
         {activeTab === 3 && <EventsScreen2023 />}

@@ -26,7 +26,11 @@ export default function Season2018() {
         </TabButton>
       </div>
 
-      <Season title="Pingu">
+      <Season
+        title="Pingu"
+        manual="https://firstfrc.blob.core.windows.net/frc2018/Manual/2018FRCGameSeasonManual.pdf"
+        code="https://github.com/FRC6070/2018Try2"
+      >
         {activeTab === 1 && <GameRevealScreen2018 />}
         {activeTab === 2 && <EventsScreen2018 />}
       </Season>
