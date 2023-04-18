@@ -2,6 +2,8 @@ import Link from "next/link";
 import { NavbarItem } from "./NavbarItem";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import useSound from "use-sound";
+import { useEffect } from "react";
 
 export const Navbar = (props: any) => {
   const navbarItems = [
@@ -11,7 +13,6 @@ export const Navbar = (props: any) => {
     { title: "Events", path: "/events" },
     { title: "Media", path: "/media" },
     { title: "Sponsors", path: "/sponsors" },
-    { title: "Branding", path: "/branding" },
   ];
 
   const router = useRouter();

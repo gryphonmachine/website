@@ -54,9 +54,16 @@ export const GeneralScreen = () => {
           <h2 className="font-bold text-gray-300 text-lg">About Us</h2>
           <p className="text-left text-gray-400">
             Hi there, welcome to our site! We&apos;re Team 6070 (A.K.A Gryphon
-            Machine) from Glenforest Secondary School! We&apos;re a team of
-            passionate and dedicated students who love everything about
-            Robotics.
+            Machine) from{" "}
+            <a
+              href="https://glenforest.peelschools.org/"
+              className="text-primary hover:text-white"
+              target="_blank"
+            >
+              Glenforest Secondary School
+            </a>
+            ! We&apos;re a team of passionate and dedicated students who love
+            everything about Robotics.
             <br />
             <br />
             Our team has been competing in the FIRST Robotics Competition (FRC)
@@ -76,8 +83,6 @@ export const GeneralScreen = () => {
           </p>
         </div>
       </div>
-
-      
     </div>
   );
 };

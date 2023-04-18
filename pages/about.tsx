@@ -22,7 +22,7 @@ export default function AboutPage() {
       </Head>
 
       <Header
-        title="❔ About Us"
+        title="💬 About Us"
         subtitle="Discover the purpose and people behind Team 6070"
       />
 
