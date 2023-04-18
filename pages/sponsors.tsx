@@ -42,12 +42,56 @@ export default function SponsorsPage() {
           <div className="flex flex-col items-center justify-center">
             <p className="uppercase text-gray-400 mb-[-5px]">$2500+</p>
             <h1 className="text-[#B9F2FF] text-4xl font-black mb-5">
-              Diamond Tier
+              Diamond Sponsors
             </h1>
 
-            <div className="flex md:flex-row flex-col mb-10 gap-10">
+            <div className="flex md:flex-row flex-col mb-10 gap-10 items-center justify-center">
+              <Image
+                src="/sponsors/glenforest.png"
+                alt="test"
+                height="100"
+                width="150"
+                priority={true}
+              />
+            </div>
+
+            <p className="uppercase text-gray-400 mb-[-5px]">$1000-$2500</p>
+            <h1 className="text-[#FFD700] text-4xl font-black mb-5">
+              Gold Sponsors
+            </h1>
+
+            <div className="flex md:flex-row flex-col mb-10 gap-10 items-center justify-center">
+              <Image
+                src="/sponsors/quality-inn.png"
+                alt="test"
+                height="300"
+                width="350"
+                priority={true}
+              />
               <Image
                 src="/sponsors/bempro.png"
+                alt="test"
+                height="400"
+                width="400"
+                priority={true}
+              />
+            </div>
+
+            <p className="uppercase text-gray-400 mb-[-5px]">Up to $1000</p>
+            <h1 className="text-[#CD7F32] text-4xl font-black mb-5">
+              Bronze Sponsors
+            </h1>
+
+            <div className="flex md:flex-row flex-col mb-10 gap-10 items-center justify-center">
+              <Image
+                src="/sponsors/gap-wireless.png"
+                alt="test"
+                height="300"
+                width="300"
+                priority={true}
+              />
+              <Image
+                src="/sponsors/zafin.png"
                 alt="test"
                 height="300"
                 width="300"
@@ -57,50 +101,6 @@ export default function SponsorsPage() {
                 src="/sponsors/pdsb.png"
                 alt="test"
                 height="300"
-                width="300"
-                priority={true}
-              />
-            </div>
-
-            <p className="uppercase text-gray-400 mb-[-5px]">$1000-$2500</p>
-            <h1 className="text-[#FFD700] text-4xl font-black mb-5">
-              Gold Tier
-            </h1>
-
-            <div className="flex md:flex-row flex-col mb-10 gap-10 items-center justify-center">
-              <Image
-                src="/sponsors/gap-wireless.png"
-                alt="test"
-                height="200"
-                width="300"
-                priority={true}
-              />
-              <Image
-                src="/sponsors/zafin.png"
-                alt="test"
-                height="250"
-                width="250"
-                priority={true}
-              />
-            </div>
-
-            <p className="uppercase text-gray-400 mb-[-5px]">Up to $1000</p>
-            <h1 className="text-[#CD7F32] text-4xl font-black mb-5">
-              Bronze Tier
-            </h1>
-
-            <div className="flex md:flex-row flex-col mb-10 gap-10 items-center justify-center">
-              <Image
-                src="/sponsors/glenforest.png"
-                alt="test"
-                height="125"
-                width="125"
-                priority={true}
-              />
-              <Image
-                src="/sponsors/quality-inn.png"
-                alt="test"
-                height="100"
                 width="300"
                 priority={true}
               />
