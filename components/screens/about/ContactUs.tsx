@@ -9,12 +9,12 @@ export const ContactUsScreen = () => {
       </h2>
       <div className="flex flex-wrap gap-4 mb-3 items-center justify-center">
         <a href="https://www.instagram.com/frc6070" target="_blank">
-          <p className="text-sm text-pink-400 hover:text-white">
+          <p className="text-md font-bold text-pink-400 hover:text-white">
             <FaInstagram className="inline mr-1" size={20} /> Instagram
           </p>
         </a>
         <a href="https://twitter.com/frc6070" target="_blank">
-          <p className="text-sm text-sky-400 hover:text-white">
+          <p className="text-md font-bold text-sky-400 hover:text-white">
             <FaTwitter className="inline mr-1" size={20} /> Twitter
           </p>
         </a>
@@ -23,12 +23,12 @@ export const ContactUsScreen = () => {
           target="_blank"
           className="md:block hidden"
         >
-          <p className="text-sm text-blue-600 hover:text-white">
+          <p className="text-md font-bold text-blue-600 hover:text-white">
             <FaFacebook className="inline mr-1" size={20} /> Facebook
           </p>
         </a>
         <a href="mailto:gryphonmachine@gmail.com" target="_blank">
-          <p className="text-sm text-primary hover:text-white">
+          <p className="text-md font-bold text-primary hover:text-white">
             <IoMdMail className="inline mr-1" size={20} /> Email
           </p>
         </a>

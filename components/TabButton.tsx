@@ -19,7 +19,7 @@ export const TabButton = (props: Props) => {
       }}
       className={`px-5 py-2 rounded-lg font-semibold ${
         props.active === props.tab
-          ? "bg-gray-600 text-white"
+          ? "bg-gray-700 text-white"
           : "text-gray-400 bg-gray-800 hover:bg-gray-600 hover:text-white"
       }`}
     >
