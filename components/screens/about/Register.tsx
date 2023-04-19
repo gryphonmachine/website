@@ -2,7 +2,13 @@ import { FaDiscord, FaInstagram, FaTwitter } from "react-icons/fa";
 import Image from "next/image";
 import { useState } from "react";
 
-const Subteam = (props: any) => {
+interface SubteamProps {
+    title: string;
+    subtitle: string;
+    subteams?: string
+}
+
+const Subteam = (props: SubteamProps) => {
   return (
     <div className="bg-gray-800 py-5 px-5 rounded-lg hover:bg-gray-700 hover:cursor-default">
       <h1 className="font-bold text-md text-white">{props.title}</h1>
@@ -12,7 +18,13 @@ const Subteam = (props: any) => {
   );
 };
 
-export const AboutCard = (props: any) => {
+interface AboutProps {
+  className?: string;
+  title: string;
+  bg: string;
+}
+
+export const AboutCard = (props: AboutProps) => {
   return (
     <div
       className={`${props.className} group hover:cursor-pointer border-solid border-2 border-primary hover:border-white rounded-lg md:w-[275px] px-10 py-24 relative`}
@@ -33,6 +45,7 @@ export const AboutCard = (props: any) => {
     </div>
   );
 };
+
 export const RegisterScreen = () => {
   const [hoverText, setHoverText] = useState("Apply here.");
   const [hoverText2, setHoverText2] = useState("Apply here.");

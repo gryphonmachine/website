@@ -7,7 +7,11 @@ import { Season } from "@/components/season/Season";
 import { API_URL } from "@/lib/constants";
 import { GetServerSideProps } from "next";
 
-export default function Provincials2019({ qualData }: any) {
+interface Props {
+  qualData: matchData;
+}
+
+export default function Provincials2019({ qualData }: Props) {
   return (
     <>
       <Header

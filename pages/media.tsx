@@ -8,8 +8,14 @@ import Head from "next/head";
 import { Media } from "@/lib/lists/Media";
 import { GetServerSideProps } from "next";
 import { API_URL } from "@/lib/constants";
+import { ReactNode } from "react";
 
-export const Description = (props: any) => {
+interface DescriptionProps {
+  title: string;
+  subtitle: string | ReactNode;
+}
+
+export const Description = (props: DescriptionProps) => {
   const styles = "text-center md:text-sm text-md mt-3";
 
   return (

@@ -7,7 +7,11 @@ import { Season } from "@/components/season/Season";
 import { GetServerSideProps } from "next";
 import { API_URL } from "@/lib/constants";
 
-export default function Durham2019({ qualData }: any) {
+interface Props {
+  qualData: matchData;
+}
+
+export default function Durham2019({ qualData }: Props) {
   return (
     <>
       <Header

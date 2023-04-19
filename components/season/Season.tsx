@@ -1,6 +1,17 @@
+import { ReactNode } from "react";
 import { FaBookOpen, FaCube, FaGithub } from "react-icons/fa";
 
-export const Season = (props: any) => {
+interface Props {
+  className?: string;
+  title?: string;
+  isSeason?: boolean;
+  manual?: string;
+  code?: string;
+  cad?: string;
+  children?: ReactNode;
+}
+
+export const Season = (props: Props) => {
   return (
     <div className="flex items-center justify-center p-5">
       <div
@@ -50,7 +61,7 @@ export const Season = (props: any) => {
           )}
         </div>
 
-        {...props?.children}
+        {props.children}
       </div>
     </div>
   );

@@ -1,6 +1,13 @@
 import Image from "next/image";
 
-export const SeasonCard = (props: any) => {
+interface Props {
+  className?: string;
+  title: string;
+  subtitle: string;
+  bg: string;
+}
+
+export const SeasonCard = (props: Props) => {
   return (
     <div
       className={`${props.className} group seasonBgImage group/arrow hover:cursor-pointer border-solid border-2 border-primary hover:border-white rounded-lg md:w-[800px] px-10 py-24 relative`}

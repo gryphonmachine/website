@@ -1,9 +1,13 @@
-import { FaDiscord, FaInstagram, FaTwitter } from "react-icons/fa";
-import { IoMdMail } from "react-icons/io";
 import Image from "next/image";
 import Link from "next/link";
 
-export const AboutCard = (props: any) => {
+interface Props {
+  className?: string;
+  title: string;
+  bg: string;
+}
+
+export const AboutCard = (props: Props) => {
   return (
     <div
       className={`${props.className} group hover:cursor-pointer border-solid border-2 border-primary hover:border-white rounded-lg md:w-[275px] px-10 py-24 relative`}

@@ -6,7 +6,12 @@ import { Season } from "@/components/season/Season";
 import { GetServerSideProps } from "next";
 import { API_URL } from "@/lib/constants";
 
-export default function McMaster2018({ qualData, playoffData }: any) {
+interface Props {
+  qualData: matchData;
+  playoffData: matchData;
+}
+
+export default function McMaster2018({ qualData, playoffData }: Props) {
   return (
     <>
       <Header

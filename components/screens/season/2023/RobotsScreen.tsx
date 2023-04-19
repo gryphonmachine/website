@@ -1,7 +1,17 @@
 import { Title } from "@/components/Title";
 import Image from "next/image";
 
-const Details = (props: any) => {
+interface Props {
+  name: string;
+  status: string;
+  weight: string;
+  height: string;
+  width: string;
+  length: string;
+  highlights: string[];
+}
+
+const Details = (props: Props) => {
   return (
     <>
       <div className="flex">

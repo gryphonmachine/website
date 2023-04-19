@@ -2,10 +2,12 @@ import Link from "next/link";
 import { NavbarItem } from "./NavbarItem";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import useSound from "use-sound";
-import { useEffect } from "react";
 
-export const Navbar = (props: any) => {
+interface Props {
+  className?: string;
+}
+
+export const Navbar = (props: Props) => {
   const navbarItems = [
     { title: "About", path: "/about" },
     { title: "Builds", path: "/builds" },
@@ -38,17 +40,19 @@ export const Navbar = (props: any) => {
             </a>
           </Link>
 
-          {navbarItems.map((item: any, key: number) => {
-            const isActive = item.path === currentPath;
+          {navbarItems.map(
+            (item: { title: string; path: string }, key: number) => {
+              const isActive = item.path === currentPath;
 
-            return (
-              <Link href={item.path} legacyBehavior key={key}>
-                <a>
-                  <NavbarItem title={item.title} isActive={isActive} />
-                </a>
-              </Link>
-            );
-          })}
+              return (
+                <Link href={item.path} legacyBehavior key={key}>
+                  <a>
+                    <NavbarItem title={item.title} isActive={isActive} />
+                  </a>
+                </Link>
+              );
+            }
+          )}
         </div>
       </div>
     </>

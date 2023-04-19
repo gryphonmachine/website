@@ -1,6 +1,12 @@
 import useSound from "use-sound";
 
-export const NavbarItem = (props: any) => {
+interface Props {
+  className?: string;
+  isActive: boolean;
+  title: string;
+}
+
+export const NavbarItem = (props: Props) => {
   const [play] = useSound("/switch-page.mp3");
 
   return (

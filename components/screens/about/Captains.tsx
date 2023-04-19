@@ -2,7 +2,13 @@ import { Mentors, Team } from "@/lib/lists/Team";
 import { Title } from "../../Title";
 import Image from "next/image";
 
-const Captain = (props: any) => {
+interface Props {
+  img: string;
+  name: string;
+  role: string
+}
+
+const Captain = (props: Props) => {
   return (
     <div className="flex bg-gray-800 hover:bg-gray-700 hover:cursor-default py-4 px-5 rounded-lg">
       <Image

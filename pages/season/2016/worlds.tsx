@@ -7,7 +7,11 @@ import { Season } from "@/components/season/Season";
 import { GetServerSideProps } from "next";
 import { API_URL } from "@/lib/constants";
 
-export default function Worlds2016({ qualData }: any) {
+interface Props {
+  qualData: matchData;
+}
+
+export default function Worlds2016({ qualData }: Props) {
   return (
     <>
       <Header

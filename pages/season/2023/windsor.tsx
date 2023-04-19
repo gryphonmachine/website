@@ -6,7 +6,12 @@ import { Season } from "@/components/season/Season";
 import { API_URL } from "@/lib/constants";
 import { GetServerSideProps } from "next";
 
-export default function Windsor2023({ qualData, playoffData }: any) {
+interface Props {
+  qualData: matchData;
+  playoffData: matchData;
+}
+
+export default function Windsor2023({ qualData, playoffData }: Props) {
   return (
     <>
       <Header

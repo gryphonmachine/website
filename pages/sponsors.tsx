@@ -9,7 +9,7 @@ const Sponsors = () => {
     <div className="flex flex-col items-center justify-center">
       <p className="uppercase text-gray-400 mb-[-5px]">$2500+</p>
       <h1 className="text-[#B9F2FF] text-4xl font-black mb-5">
-        Diamond Sponsors
+      💎 Diamond Sponsors
       </h1>
 
       <div className="flex md:flex-row flex-col mb-10 gap-10 items-center justify-center">
@@ -25,7 +25,7 @@ const Sponsors = () => {
       </div>
 
       <p className="uppercase text-gray-400 mb-[-5px]">$1000-$2500</p>
-      <h1 className="text-[#FFD700] text-4xl font-black mb-5">Gold Sponsors</h1>
+      <h1 className="text-[#FFD700] text-4xl font-black mb-5">🌟 Gold Sponsors</h1>
 
       <div className="flex md:flex-row flex-col mb-10 gap-10 items-center justify-center">
         <a
@@ -53,7 +53,7 @@ const Sponsors = () => {
 
       <p className="uppercase text-gray-400 mb-[-5px]">Up to $1000</p>
       <h1 className="text-[#CD7F32] text-4xl font-black mb-5">
-        Bronze Sponsors
+      🥉 Bronze Sponsors
       </h1>
 
       <div className="flex md:flex-row flex-col mb-10 gap-10 items-center justify-center">
@@ -103,7 +103,7 @@ export default function SponsorsPage() {
             <title>Sponsors [6070: Gryphon Machine]</title>
           </Head>
           <Header
-            title="💸 6070 x Sponsors"
+            title="💸 Our Sponsors"
             subtitle={
               <span>
                 Celebrating our dedicated sponsors and supporters. <br /> Want

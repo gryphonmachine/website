@@ -1,6 +1,11 @@
 import Image from "next/image";
 
-export const Photo = (props: any) => {
+interface Props {
+  className: string;
+  img: string;
+}
+
+export const Photo = (props: Props) => {
   return (
     <Image
       className={`rounded-lg ${props.className} border-2 border-primary hover:border-white`}

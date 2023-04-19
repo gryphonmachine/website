@@ -1,4 +1,9 @@
-export const VideoEmbed = (props: any) => {
+interface Props {
+  id: string;
+  className?: string;
+}
+
+export const VideoEmbed = (props: Props) => {
   return (
     <div className={`${props.className} flex items-center justify-center mt-5 aspect-w-8 aspect-h-7`}>
       <iframe

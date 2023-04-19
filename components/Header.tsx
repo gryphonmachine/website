@@ -1,6 +1,13 @@
+import { ReactNode } from "react";
 import { Navbar } from "./navbar/Navbar";
 
-export const Header = (props: any) => {
+interface Props {
+  title: string;
+  season?: string;
+  subtitle?: string | ReactNode;
+}
+
+export const Header = (props: Props) => {
   return (
     <>
       <Navbar />

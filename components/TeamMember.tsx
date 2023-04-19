@@ -1,6 +1,11 @@
 import Image from "next/image";
 
-export const TeamMember = (props: any) => {
+interface Props {
+  src: string;
+  name: string;
+}
+
+export const TeamMember = (props: Props) => {
   return (
     <Image
       className="rounded-full w-[50px] h-[50px] hover:opacity-75"
