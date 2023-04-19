@@ -22,6 +22,15 @@ const Sponsors = () => {
             priority={true}
           />
         </a>
+        <a href="https://www.peelschools.org/" target="_blank">
+          <Image
+            src="/sponsors/pdsb.png"
+            alt="Peel District School Board Logo"
+            height="400"
+            width="400"
+            priority={true}
+          />
+        </a>
       </div>
 
       <p className="uppercase text-gray-400 mb-[-5px]">$1000-$2500</p>
@@ -70,15 +79,6 @@ const Sponsors = () => {
           <Image
             src="/sponsors/zafin.png"
             alt="Zafin Logo"
-            height="300"
-            width="300"
-            priority={true}
-          />
-        </a>
-        <a href="https://www.peelschools.org/" target="_blank">
-          <Image
-            src="/sponsors/pdsb.png"
-            alt="Peel District School Board Logo"
             height="300"
             width="300"
             priority={true}

@@ -10,7 +10,7 @@ interface SubteamProps {
 
 const Subteam = (props: SubteamProps) => {
   return (
-    <div className="bg-gray-800 py-5 px-5 rounded-lg hover:bg-gray-700 hover:cursor-default">
+    <div className="bg-gray-700 border-2 border-gray-500 py-5 px-5 rounded-lg hover:bg-gray-600 hover:cursor-default">
       <h1 className="font-bold text-md text-white">{props.title}</h1>
       <p className="text-gray-400 text-sm">{props.subtitle}</p>
       {props.subteams && <p className="text-[11px] mt-3 text-gray-400"><span className="uppercase font-bold">Subteams:</span> {props.subteams}</p>}
