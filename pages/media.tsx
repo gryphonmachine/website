@@ -10,9 +10,37 @@ import { GetServerSideProps } from "next";
 import { API_URL } from "@/lib/constants";
 import { ReactNode } from "react";
 
+interface Props {
+  videos: VideoProps[];
+}
+
 interface DescriptionProps {
   title: string;
   subtitle: string | ReactNode;
+}
+
+interface MediaProps {
+  img: string;
+  url: string;
+  title: string;
+  subtitle: string;
+}
+
+interface VideoProps {
+  title: string;
+  pubDate: string;
+  link: string;
+  guild: string;
+  author: string;
+  thumbnail: string;
+  description: string;
+  content: string;
+  enclosure: {
+    link: string;
+    type: string;
+    thumbnail: string;
+  };
+  categories: string[];
 }
 
 export const Description = (props: DescriptionProps) => {
@@ -20,13 +48,16 @@ export const Description = (props: DescriptionProps) => {
 
   return (
     <Subtitle className={styles}>
-      <span className="text-white font-bold md:text-[16px] text-lg">{props.title}</span>
-      <br /> <span className="md:text-[14px] text-[18px]">{props.subtitle ?? ""}</span>
+      <span className="text-white font-bold md:text-[16px] text-lg">
+        {props.title}
+      </span>
+      <br />{" "}
+      <span className="md:text-[14px] text-[18px]">{props.subtitle ?? ""}</span>
     </Subtitle>
   );
 };
 
-export default function MediaPage({ videos }: any) {
+export default function MediaPage({ videos }: Props) {
   return (
     <>
       <Head>
@@ -57,8 +88,8 @@ export default function MediaPage({ videos }: any) {
       <div className="flex flex-col justify-center text-center mb-16">
         <div className="md:flex items-center justify-center">
           <div className="flex flex-col md:w-[1100px] md:grid md:grid-cols-3 gap-5 pr-10 pl-10">
-            {...videos.slice(0, 9).map((video: any, i: number) => {
-              return <VideoEmbed key={i} id={video.link.split("?v=")[1]} />;
+            {...videos.slice(0, 9).map((video: VideoProps, key: number) => {
+              return <VideoEmbed key={key} id={video.link.split("?v=")[1]} />;
             })}
           </div>
         </div>
@@ -73,7 +104,7 @@ export default function MediaPage({ videos }: any) {
 
       <div className="flex items-center justify-center mt-10">
         <div className="flex flex-col md:w-[1100px] md:grid md:grid-cols-3 md:gap-x-5 md:gap-y-10 gap-10 pr-10 pl-10">
-          {Media.map((media: any) => {
+          {Media.map((media: MediaProps) => {
             return (
               <>
                 <a href={media.url} target="_blank">

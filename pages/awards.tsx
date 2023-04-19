@@ -6,6 +6,13 @@ import { Awards } from "@/lib/lists/Awards";
 import Head from "next/head";
 import { Description } from "./media";
 
+interface AwardProps {
+  img: string;
+  title: string;
+  year: string;
+  subtitle: string;
+}
+
 export default function AwardsPage() {
   return (
     <>
@@ -20,10 +27,10 @@ export default function AwardsPage() {
 
       <div className="flex items-center justify-center">
         <div className="flex flex-col justify-center md:w-[1100px] md:grid md:grid-cols-3 md:gap-x-5 md:gap-y-10 gap-10 pr-10 pl-10">
-          {Awards.map((award: any, key: number) => {
+          {Awards.map((award: AwardProps, key: number) => {
             return (
               <>
-                <div className="mediaImage flex flex-col items-center group">
+                <div className="mediaImage flex flex-col items-center group" key={key}>
                   <Zoom>
                     <Photo
                       className="opacity-90 md:h-[200px] md:w-[500px] hover:opacity-100"

@@ -8,6 +8,12 @@ interface Props {
   role: string
 }
 
+interface TeamMember {
+  name: string;
+  img: string;
+  role: string;
+}
+
 const Captain = (props: Props) => {
   return (
     <div className="flex bg-gray-800 hover:bg-gray-700 hover:cursor-default py-4 px-5 rounded-lg">
@@ -59,7 +65,7 @@ export const CaptainsScreen = () => {
         <Title>Mentors</Title>
 
         <div className="flex flex-col md:grid md:grid-cols-3 gap-5">
-          {Mentors.map((member: any, key: number) => {
+          {Mentors.map((member: TeamMember, key: number) => {
             return (
               <Captain
                 key={key}
@@ -98,7 +104,7 @@ export const CaptainsScreen = () => {
         </Title>
 
         <div className="flex flex-col md:grid md:grid-cols-3 gap-5">
-          {Team.map((member: any, key: number) => {
+          {Team.map((member: TeamMember, key: number) => {
             return (
               <Captain
                 key={key}

@@ -1,6 +1,16 @@
 import { useState, useEffect } from "react";
 
-export const EventData = (props: any) => {
+interface Props {
+  data: matchData;
+}
+
+interface TeamProps {
+  teamNumber: number;
+  station: string;
+  dq: boolean;
+}
+
+export const EventData = (props: Props) => {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
@@ -29,20 +39,22 @@ export const EventData = (props: any) => {
               </tr>
             </thead>
             <tbody>
-              {props.data?.map((match: any, i: number) => {
+              {props.data?.map((match: matchData, key: number) => {
                 const team6070 = match.teams.filter(
-                  (team: any) => team.teamNumber == "6070"
+                  (team: TeamProps) => team.teamNumber == 6070
                 );
                 const alliance = team6070[0].station.replace(/[0-9]/g, "");
 
-                const firstAllianceFilter = match.teams.filter((team: any) => {
-                  return team.station.includes(
-                    team6070[0].station.replace(/[0-9]/g, "")
-                  );
-                });
+                const firstAllianceFilter = match.teams.filter(
+                  (team: TeamProps) => {
+                    return team.station.includes(
+                      team6070[0].station.replace(/[0-9]/g, "")
+                    );
+                  }
+                );
 
                 const secondAllianceFilter = firstAllianceFilter.map(
-                  (team: any) => {
+                  (team: TeamProps) => {
                     return team.teamNumber;
                   }
                 );
@@ -66,7 +78,7 @@ export const EventData = (props: any) => {
                 return (
                   <tr
                     className="text-gray-300 bg-gray-700 border-2 border-gray-500 hover:bg-gray-600"
-                    key={i}
+                    key={key}
                   >
                     <th
                       scope="row"

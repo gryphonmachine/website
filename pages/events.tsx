@@ -6,6 +6,12 @@ import Head from "next/head";
 import { Description } from "./media";
 import { Photo } from "@/components/Photo";
 
+interface EventProps {
+  title: string;
+  subtitle?: string;
+  img: string;
+}
+
 export default function EventsPage() {
   return (
     <>
@@ -36,7 +42,7 @@ export default function EventsPage() {
               </span>
             </div>
           </div>
-          {Events.map((event: any) => {
+          {Events.map((event: EventProps) => {
             return (
               <>
                 <div className="mediaImage group">
