@@ -25,6 +25,11 @@ export default function Western2017({ qualData, playoffData }: Props) {
 
         <Title className="mt-10">Playoff Matches</Title>
         <EventData data={playoffData} />
+        <p className="mt-5 text-sm text-gray-400 italic">
+          No further playoff data is avaliable due to our team unavailable to
+          play in matches: <br />
+          <b>Semifinal 4, Tiebreaker 1, Final 1, and Final 2</b>
+        </p>
       </Season>
 
       <Footer />

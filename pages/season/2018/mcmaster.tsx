@@ -15,7 +15,7 @@ export default function McMaster2018({ qualData, playoffData }: Props) {
   return (
     <>
       <Header
-        title="McMaster University Event"
+        title="McMaster University District Event"
         subtitle="2018 Season - FIRST Power Up"
       />
 

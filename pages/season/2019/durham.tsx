@@ -15,7 +15,7 @@ export default function Durham2019({ qualData }: Props) {
   return (
     <>
       <Header
-        title="Durham College Event"
+        title="Durham College District Event"
         subtitle="2019 Season - Destination: Deep Space"
       />
 

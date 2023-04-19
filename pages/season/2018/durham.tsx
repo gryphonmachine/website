@@ -15,7 +15,7 @@ export default function Durham2018({ qualData, playoffData }: Props) {
   return (
     <>
       <Header
-        title="Durham College Event"
+        title="Durham College District Event"
         subtitle="2018 Season - FIRST Power Up"
       />
 

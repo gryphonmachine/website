@@ -15,7 +15,7 @@ export default function Windsor2023({ qualData, playoffData }: Props) {
   return (
     <>
       <Header
-        title="Windsor Essex Great Lakes Event"
+        title="Windsor Essex Great Lakes District Event"
         subtitle="2023 Season - Charged Up presented by Haas"
       />
 

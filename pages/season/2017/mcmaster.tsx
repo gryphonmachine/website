@@ -15,7 +15,7 @@ export default function McMaster2017({ qualData }: Props) {
   return (
     <>
       <Header
-        title="McMaster University Event"
+        title="McMaster University District Event"
         subtitle="2017 Season - FIRST Steamworks"
       />
 

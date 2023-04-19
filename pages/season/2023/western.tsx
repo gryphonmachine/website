@@ -15,7 +15,7 @@ export default function Western2023({ qualData, playoffData }: Props) {
   return (
     <>
       <Header
-        title="Western University Event"
+        title="Western University District Event"
         subtitle="2023 Season - Charged Up presented by Haas"
       />
 
