@@ -14,8 +14,8 @@ export const Description = (props: any) => {
 
   return (
     <Subtitle className={styles}>
-      <span className="text-white font-bold">{props.title}</span>
-      <br /> {props.subtitle ?? ""}
+      <span className="text-white font-bold md:text-[16px] text-lg">{props.title}</span>
+      <br /> <span className="md:text-[14px] text-[18px]">{props.subtitle ?? ""}</span>
     </Subtitle>
   );
 };
@@ -66,7 +66,7 @@ export default function MediaPage({ videos }: any) {
       </Subtitle>
 
       <div className="flex items-center justify-center mt-10">
-        <div className="flex flex-col md:w-[1100px] md:grid md:grid-cols-3 gap-5 pr-10 pl-10">
+        <div className="flex flex-col md:w-[1100px] md:grid md:grid-cols-3 md:gap-x-5 md:gap-y-10 gap-10 pr-10 pl-10">
           {Media.map((media: any) => {
             return (
               <>

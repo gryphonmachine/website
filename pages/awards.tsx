@@ -19,7 +19,7 @@ export default function AwardsPage() {
       />
 
       <div className="flex items-center justify-center">
-        <div className="flex flex-col justify-center md:w-[1100px] md:grid md:grid-cols-3 gap-x-5 gap-y-10 pr-10 pl-10">
+        <div className="flex flex-col justify-center md:w-[1100px] md:grid md:grid-cols-3 md:gap-x-5 md:gap-y-10 gap-10 pr-10 pl-10">
           {Awards.map((award: any, key: number) => {
             return (
               <>

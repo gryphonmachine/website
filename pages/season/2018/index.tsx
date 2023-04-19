@@ -30,6 +30,7 @@ export default function Season2018() {
         title="Pingu"
         manual="https://firstfrc.blob.core.windows.net/frc2018/Manual/2018FRCGameSeasonManual.pdf"
         code="https://github.com/FRC6070/2018Try2"
+        isSeason={true}
       >
         {activeTab === 1 && <GameRevealScreen2018 />}
         {activeTab === 2 && <EventsScreen2018 />}

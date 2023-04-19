@@ -17,33 +17,37 @@ export const Season = (props: any) => {
             </span>
           </h1>
 
-          <div className="flex md:flex-row flex-col gap-5 mb-8 text-gray-300 cursor-pointer">
-            <a href={props.manual} target="_blank">
-              <div className="flex hover:text-white">
-                <FaBookOpen className="mr-2 text-xl" /> Game Manual
-              </div>
-            </a>
-            <a href={props.code} target="_blank">
-              <div className={`flex ${
-                  !props.code
-                    ? "text-gray-500 cursor-not-allowed"
-                    : "hover:text-white "
-                }`}>
-                <FaGithub className="mr-2 text-xl" /> Code Release
-              </div>
-            </a>
-            <a href={props.cad} target="_blank">
-              <div
-                className={`flex ${
-                  !props.cad
-                    ? "text-gray-500 cursor-not-allowed"
-                    : "hover:text-white "
-                }`}
-              >
-                <FaCube className="mr-2 text-xl" /> CAD Model
-              </div>
-            </a>
-          </div>
+          {props.isSeason === true && (
+            <div className="flex md:flex-row flex-col gap-5 mb-8 text-gray-300 cursor-pointer">
+              <a href={props.manual} target="_blank">
+                <div className="flex hover:text-white">
+                  <FaBookOpen className="mr-2 text-xl" /> Game Manual
+                </div>
+              </a>
+              <a href={props.code} target="_blank">
+                <div
+                  className={`flex ${
+                    !props.code
+                      ? "text-gray-500 cursor-not-allowed"
+                      : "hover:text-white "
+                  }`}
+                >
+                  <FaGithub className="mr-2 text-xl" /> Code Release
+                </div>
+              </a>
+              <a href={props.cad} target="_blank">
+                <div
+                  className={`flex ${
+                    !props.cad
+                      ? "text-gray-500 cursor-not-allowed"
+                      : "hover:text-white "
+                  }`}
+                >
+                  <FaCube className="mr-2 text-xl" /> CAD Model
+                </div>
+              </a>
+            </div>
+          )}
         </div>
 
         {...props?.children}

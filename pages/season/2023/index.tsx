@@ -34,6 +34,7 @@ export default function Season2023() {
         title="Intercontinental Ballistic Mini Me"
         manual="https://firstfrc.blob.core.windows.net/frc2023/Manual/2023FRCGameManual.pdf"
         code="https://github.com/gryphonmachine/2023"
+        isSeason={true}
       >
         {activeTab === 1 && <GameRevealScreen2023 />}
         {activeTab === 2 && <RobotsScreen2023 />}

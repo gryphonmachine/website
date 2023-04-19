@@ -1,33 +1,11 @@
-import { Photo } from "@/components/Photo";
 import { Title } from "@/components/Title";
 import { VideoEmbed } from "@/components/VideoEmbed";
-import Zoom from "react-medium-image-zoom";
 
 export const GameRevealScreen2017 = () => {
   return (
     <>
       <Title>Game Reveal</Title>
-
-      <VideoEmbed id="EMiNmJW7enI" className="mb-[50px]" />
-
-      <Title>Other Media</Title>
-
-      <VideoEmbed id="u3hDYpXdCBg" className="mb-5" />
-
-      <div className="flex flex-col justify-center md:grid md:grid-cols-3 gap-4">
-        <Zoom>
-          <Photo
-            className="hover:opacity-75"
-            img="/season/2017/IMG_0742-1.jpg"
-          />
-        </Zoom>
-        <Zoom>
-          <Photo className="hover:opacity-75" img="/season/2017/IMG_0759.jpg" />
-        </Zoom>
-        <Zoom>
-          <Photo className="hover:opacity-75" img="/season/2017/Eddy-G.jpg" />
-        </Zoom>
-      </div>
+      <VideoEmbed id="EMiNmJW7enI" />
     </>
   );
 };

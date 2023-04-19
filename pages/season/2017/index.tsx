@@ -5,6 +5,7 @@ import { TabButton } from "@/components/TabButton";
 import { useState } from "react";
 import { GameRevealScreen2017 } from "@/components/screens/season/2017/GameRevealScreen";
 import { EventsScreen2017 } from "@/components/screens/season/2017/EventsScreen";
+import { MediaScreen2017 } from "@/components/screens/season/2017/MediaScreen";
 
 export default function Season2017() {
   const [activeTab, setActiveTab] = useState(1);
@@ -24,15 +25,20 @@ export default function Season2017() {
         <TabButton active={activeTab} tab={2} onClick={() => handleTabClick(2)}>
           <span className="mr-2">🎉</span> Events
         </TabButton>
+        <TabButton active={activeTab} tab={3} onClick={() => handleTabClick(3)}>
+          <span className="mr-2">📸</span> Media
+        </TabButton>
       </div>
 
       <Season
         title="Prattbot A.K.A Geary"
         manual="https://firstfrc.blob.core.windows.net/frc2017/Manual/2017FRCGameSeasonManual.pdf"
         code="https://github.com/FRC6070/2017SteamworksUpdated"
+        isSeason={true}
       >
         {activeTab === 1 && <GameRevealScreen2017 />}
         {activeTab === 2 && <EventsScreen2017 />}
+        {activeTab === 3 && <MediaScreen2017 />}
       </Season>
 
       <Footer />

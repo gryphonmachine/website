@@ -19,7 +19,7 @@ export default function EventsPage() {
       />
 
       <div className="flex items-center justify-center">
-        <div className="flex flex-col md:w-[1100px] md:grid md:grid-cols-3 gap-5 pr-10 pl-10">
+        <div className="flex flex-col md:w-[1100px] md:grid md:grid-cols-3 md:gap-5 gap-10 pr-10 pl-10">
           <div className="flex justify-center items-center border-2 border-primary h-[200px] text-center rounded-lg">
             <div className="flex-col">
               <span className="font-black text-2xl text-white">
