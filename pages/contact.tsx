@@ -8,7 +8,7 @@ export default function ContactUsScreen() {
   return (
     <>
       <Head>
-        <title>About [6070: Gryphon Machine]</title>
+        <title>Contact [6070: Gryphon Machine]</title>
       </Head>
 
       <Header

@@ -5,6 +5,7 @@ import { Title } from "@/components/Title";
 import { Season } from "@/components/season/Season";
 import { API_URL } from "@/lib/constants";
 import { GetServerSideProps } from "next";
+import Head from "next/head";
 
 interface Props {
   qualData: matchData;
@@ -14,6 +15,13 @@ interface Props {
 export default function Windsor2023({ qualData, playoffData }: Props) {
   return (
     <>
+      <Head>
+        <title>
+          Windsor Essex Great Lakes District Event District Event [6070: Gryphon
+          Machine]
+        </title>
+      </Head>
+
       <Header
         title="Windsor Essex Great Lakes District Event"
         subtitle="2023 Season - Charged Up presented by Haas"

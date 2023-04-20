@@ -6,6 +6,7 @@ import { Title } from "@/components/Title";
 import { Season } from "@/components/season/Season";
 import { GetServerSideProps } from "next";
 import { API_URL } from "@/lib/constants";
+import Head from "next/head";
 
 interface Props {
   qualData: matchData;
@@ -14,6 +15,12 @@ interface Props {
 export default function Provincials2017({ qualData }: Props) {
   return (
     <>
+      <Head>
+        <title>
+          FIRST Ontario Provincial Championship [6070: Gryphon Machine]
+        </title>
+      </Head>
+
       <Header
         title="FIRST Ontario Provincial Championship"
         subtitle="2017 Season - FIRST Steamworks"
@@ -39,7 +46,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
     "Cache-Control",
     "public, s-maxage=10, stale-while-revalidate=59"
   );
-  
+
   const qualData = await fetch(`${API_URL}/api/2017/provincials`).then((res) =>
     res.json()
   );

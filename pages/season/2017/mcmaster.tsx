@@ -6,6 +6,7 @@ import { Title } from "@/components/Title";
 import { Season } from "@/components/season/Season";
 import { GetServerSideProps } from "next";
 import { API_URL } from "@/lib/constants";
+import Head from "next/head";
 
 interface Props {
   qualData: matchData;
@@ -14,6 +15,12 @@ interface Props {
 export default function McMaster2017({ qualData }: Props) {
   return (
     <>
+      <Head>
+        <title>
+          McMaster University District Event [6070: Gryphon Machine]
+        </title>
+      </Head>
+
       <Header
         title="McMaster University District Event"
         subtitle="2017 Season - FIRST Steamworks"

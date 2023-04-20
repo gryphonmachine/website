@@ -6,6 +6,7 @@ import { Title } from "@/components/Title";
 import { Season } from "@/components/season/Season";
 import { API_URL } from "@/lib/constants";
 import { GetServerSideProps } from "next";
+import Head from "next/head";
 
 interface Props {
   qualData: matchData;
@@ -14,6 +15,12 @@ interface Props {
 export default function Provincials2019({ qualData }: Props) {
   return (
     <>
+      <Head>
+        <title>
+          FIRST Ontario Provincial Championship [6070: Gryphon Machine]
+        </title>
+      </Head>
+
       <Header
         title="FIRST Ontario Provincial Championship"
         subtitle="2019 Season [Technology Division] - Destination: Deep Space"

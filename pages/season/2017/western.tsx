@@ -5,6 +5,7 @@ import { Title } from "@/components/Title";
 import { Season } from "@/components/season/Season";
 import { GetServerSideProps } from "next";
 import { API_URL } from "@/lib/constants";
+import Head from "next/head";
 
 interface Props {
   qualData: matchData;
@@ -14,8 +15,12 @@ interface Props {
 export default function Western2017({ qualData, playoffData }: Props) {
   return (
     <>
+      <Head>
+        <title>Western University District Event [6070: Gryphon Machine]</title>
+      </Head>
+
       <Header
-        title="Western University Event"
+        title="Western University District Event"
         subtitle="2017 Season - FIRST Steamworks"
       />
 
