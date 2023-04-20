@@ -6,7 +6,6 @@ import { GeneralScreen } from "@/components/screens/about/General";
 import { CaptainsScreen } from "@/components/screens/about/Captains";
 import { TabButton } from "@/components/TabButton";
 import { RegisterScreen } from "@/components/screens/about/Register";
-import { ContactUsScreen } from "@/components/screens/about/ContactUs";
 
 export default function AboutPage() {
   const [activeTab, setActiveTab] = useState(1);
@@ -23,7 +22,7 @@ export default function AboutPage() {
 
       <Header
         title="💬 About Us"
-        subtitle="Discover the purpose and people behind Team 6070"
+        subtitle="Discover the purpose, passion, and people behind Team 6070"
       />
 
       <div className="flex flex-wrap items-center justify-center gap-4 mb-8 mt-[-15px]">
@@ -36,16 +35,12 @@ export default function AboutPage() {
         <TabButton active={activeTab} tab={3} onClick={() => handleTabClick(3)}>
           <span className="mr-2">☄️</span> Join 6070
         </TabButton>
-        <TabButton active={activeTab} tab={4} onClick={() => handleTabClick(4)}>
-          <span className="mr-2">👋</span> Contact Us
-        </TabButton>
       </div>
 
       <div className="flex items-center justify-center pr-5 pl-5">
         {activeTab === 1 && <GeneralScreen />}
         {activeTab === 2 && <CaptainsScreen />}
         {activeTab === 3 && <RegisterScreen />}
-        {activeTab === 4 && <ContactUsScreen />}
       </div>
 
       <Footer />
