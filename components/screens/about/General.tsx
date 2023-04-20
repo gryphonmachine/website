@@ -64,7 +64,7 @@ export const GeneralScreen = () => {
               className="text-primary hover:text-white"
               target="_blank"
             >
-              Glenforest Secondary School
+              Glenforest Secondary School in Mississauga, ON, Canada 🇨🇦 
             </a>
             ! We&apos;re a team of passionate and dedicated students who love
             everything about Robotics.

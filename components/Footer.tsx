@@ -7,21 +7,6 @@ export const Footer = () => {
         Copyright © {new Date().getFullYear()} ⎯{" "}
         <span className="text-gray-400 font-bold">Team 6070 Gryphon Machine</span>
       </div>
-
-      <a
-        href="https://www.vercel.com?utm_source=6070-gryphon-machine&utm_campaign=oss"
-        target="_blank"
-      >
-        <Image
-          src="/vercel.svg"
-          className="w-auto h-auto"
-          height="150"
-          width="150"
-          alt="Vercel Powered By"
-          priority={true}
-          quality={1}
-        />
-      </a>
     </div>
   );
 };
