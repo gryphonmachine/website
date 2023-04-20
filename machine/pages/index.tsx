@@ -67,6 +67,14 @@ export default function Home({ initialTeams, initial }: any) {
               className="rounded-lg bg-gray-700 py-2 px-5 mt-5 md:pr-4 md:pl-4 pr-8 pl-8 md:w-[450px]"
             />
 
+            {allTeams.length === 0 && (
+              <div className="mt-5">
+                <span>
+                  😥 No results found for <strong>{query}</strong>.
+                </span>
+              </div>
+            )}
+
             <div className="flex flex-col md:grid md:grid-cols-5 gap-5 mt-10 md:pr-32 md:pl-32 pr-8 pl-8">
               {allTeams.map((team: any, key: number) => {
                 return (
@@ -95,14 +103,13 @@ export default function Home({ initialTeams, initial }: any) {
             </div>
 
             <button
-            onClick={loadMore}
-            className="rounded-lg bg-gray-700 py-2 px-5 mt-5 text-gray-200 hover:bg-gray-600"
-          >
-            Load more
-          </button>
+              onClick={loadMore}
+              className="rounded-lg bg-gray-700 py-2 px-5 mt-5 text-gray-200 hover:bg-gray-600"
+            >
+              Load more
+            </button>
           </div>
 
-          
           <Footer />
         </>
       )}
