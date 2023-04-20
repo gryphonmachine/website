@@ -3,12 +3,13 @@ import { API_URL } from "@/lib/constants";
 import { GetServerSideProps } from "next";
 import { useState, useEffect } from "react";
 
-export default function Home({ initialTeams }: any) {
+export default function Home({ initialTeams, initial }: any) {
   const [allTeams, setAllTeams] = useState(
-    initialTeams.sort(() => Math.random() - 0.5)
+    initial.sort(() => Math.random() - 0.5)
   );
   const [query, setQuery] = useState("");
   const [isClient, setIsClient] = useState(false);
+  const [page, setPage] = useState(0);
 
   useEffect(() => {
     setIsClient(true);
@@ -30,9 +31,17 @@ export default function Home({ initialTeams }: any) {
     if (query) {
       setAllTeams(filterTeams());
     } else {
-      setAllTeams(initialTeams.sort(() => Math.random() - 0.5));
+      setAllTeams(initial.sort(() => Math.random() - 0.5));
     }
-  }, [query, initialTeams]);
+  }, [query, initialTeams, initial]);
+
+  const loadMore = async () => {
+    const nextPage = page + 1;
+    const response = await fetch(`${API_URL}/api/teams?page=${nextPage}`);
+    const newTeams = await response.json();
+    setAllTeams([...allTeams, ...newTeams]);
+    setPage(nextPage);
+  };
 
   const changeSearch = (event: { target: { value: string } }) => {
     setQuery(event.target.value);
@@ -84,7 +93,16 @@ export default function Home({ initialTeams }: any) {
                 );
               })}
             </div>
+
+            <button
+            onClick={loadMore}
+            className="rounded-lg bg-gray-700 py-2 px-5 mt-5 text-gray-200 hover:bg-gray-600"
+          >
+            Load more
+          </button>
           </div>
+
+          
           <Footer />
         </>
       )}
@@ -102,6 +120,7 @@ export const getServerSideProps: GetServerSideProps = async ({
       res.json()
     );
 
+  const page0 = await baseFetch("0");
   const page1 = await baseFetch("1");
   const page2 = await baseFetch("2");
   const page3 = await baseFetch("3");
@@ -124,7 +143,9 @@ export const getServerSideProps: GetServerSideProps = async ({
 
   return {
     props: {
+      initial: page0,
       initialTeams: [
+        ...page0,
         ...page1,
         ...page2,
         ...page3,
