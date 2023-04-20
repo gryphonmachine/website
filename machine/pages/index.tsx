@@ -8,8 +8,6 @@ export default function Home({ initialTeams }: any) {
     initialTeams.sort(() => Math.random() - 0.5)
   );
   const [query, setQuery] = useState("");
-  const [page, setPage] = useState(0);
-
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
@@ -35,14 +33,6 @@ export default function Home({ initialTeams }: any) {
       setAllTeams(initialTeams.sort(() => Math.random() - 0.5));
     }
   }, [query, initialTeams]);
-
-  const loadMore = async () => {
-    const nextPage = page + 1;
-    const response = await fetch(`${API_URL}/api/teams?page=${nextPage}`);
-    const newTeams = await response.json();
-    setAllTeams([...allTeams, ...newTeams]);
-    setPage(nextPage);
-  };
 
   const changeSearch = (event: { target: { value: string } }) => {
     setQuery(event.target.value);
@@ -94,13 +84,6 @@ export default function Home({ initialTeams }: any) {
                 );
               })}
             </div>
-
-            <button
-              onClick={loadMore}
-              className="rounded-lg bg-gray-700 py-2 px-5 mt-5 text-gray-200 hover:bg-gray-600"
-            >
-              Load more
-            </button>
           </div>
           <Footer />
         </>
