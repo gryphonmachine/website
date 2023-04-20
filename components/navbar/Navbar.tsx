@@ -15,7 +15,7 @@ export const Navbar = (props: Props) => {
     { title: "Events", path: "/events" },
     { title: "Media", path: "/media" },
     { title: "Sponsors", path: "/sponsors" },
-    { title: "Contact Us" , path: "/contact"},
+    { title: "Contact Us", path: "/contact" },
   ];
 
   const router = useRouter();
@@ -40,20 +40,11 @@ export const Navbar = (props: Props) => {
               />
             </a>
           </Link>
-         
 
           {navbarItems.map(
             (item: { title: string; path: string }, key: number) => {
               const isActive = item.path === currentPath;
-
-              if (item.title === "Media") {
-                return (
-                  <>
-<div className="absolute top-full left-0 z-10 w-full bg-gray-800 py-2 rounded-b-lg group-hover:block hidden">
-                    aaa
-                  </div></>
-                )
-              }
+              
               return (
                 <Link href={item.path} legacyBehavior key={key}>
                   <a>
