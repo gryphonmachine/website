@@ -22,24 +22,26 @@ export default function TeamPage({ teamData, yearsParticipated }: any) {
 
   useEffect(() => {
     const getEventData = async () => {
-      const eventData =
-        await fetch(
-          `${API_URL}/api/events?name=${team}&year=${activeTab}`
-        ).then((res) => res.json())
+      const fetchEventData = await fetch(
+        `${API_URL}/api/events?name=${team}&year=${activeTab}`
+      ).then((res) => res.json());
 
-        eventData.map(async (event: any) => {
-            setMatchData(
-              await fetch(
-                `${API_URL}/api/eventMatches?team=${team}&year=${activeTab}&event=${event.event_code}`
-              ).then((res) => res.json())
-            );
-          });
-      
-        setEventData(eventData)
+      const eventMatchData: any = {}; // initialize an empty object to store match data for each event
+
+      for (const event of fetchEventData) {
+        const matchData = await fetch(
+          `${API_URL}/api/eventMatches?team=${team}&year=${activeTab}&event=${event.event_code}`
+        ).then((res) => res.json());
+        eventMatchData[event.event_code] = matchData; // store the match data for each event in the eventMatchData object
+      }
+      setMatchData(eventMatchData); // set the match data for all events
+      setEventData(fetchEventData);
     };
 
     getEventData();
   }, [team, activeTab]);
+
+  console.log(matchData)
 
   return (
     <>
@@ -104,12 +106,13 @@ export default function TeamPage({ teamData, yearsParticipated }: any) {
                 return (
                   <div
                     key={key}
-                    className="bg-gray-700 flex-wrap w-full rounded-lg px-8 py-5"
+                    className="bg-gray-700 flex-wrap md:w-full w-[250px] rounded-lg px-8 py-5"
                   >
                     <h1 className="font-black text-primary text-2xl" key={key}>
                       {event.name}
                     </h1>
-                    <EventData data={matchData} team={team} />
+                    <EventData data={matchData[event.event_code]} team={team} />{" "}
+                    {/* use the event code as the key to access the match data */}
                   </div>
                 );
               })}
