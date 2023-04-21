@@ -77,8 +77,8 @@ export default function Home({ initialTeams, initial }: any) {
                     <a>
                       <div className="px-5 py-10 bg-gray-800 border-2 border-gray-600 rounded-lg hover:bg-gray-700">
                         <h1 className="text-gray-200 font-black">
-                          {team.nickname.length > 19
-                            ? `${team.nickname.slice(0, 19)}...`
+                          {team.nickname.length > 17
+                            ? `${team.nickname.slice(0, 17)}...`
                             : team.nickname}
                         </h1>
                         <p className="text-gray-400 text-xs uppercase">
@@ -149,7 +149,7 @@ export const getServerSideProps: GetServerSideProps = async ({
   return {
     props: {
       initial: await baseFetch(
-        String(Math.floor(Math.random() * (19 - 0 + 1) + 0))
+        String(Math.floor(Math.random() * (18 - 0 + 1) + 0))
       ),
       initialTeams: [
         ...page0,
