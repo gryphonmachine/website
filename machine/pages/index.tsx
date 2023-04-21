@@ -1,4 +1,5 @@
 import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
 import { API_URL } from "@/lib/constants";
 import { GetServerSideProps } from "next";
 import Link from "next/link";
@@ -47,12 +48,7 @@ export default function Home({ initialTeams, initial }: any) {
       {isClient && (
         <>
           <div className="flex flex-col justify-center items-center">
-            <h1 className="text-center text-primary md:text-5xl text-3xl font-black mt-16 mb-2">
-              Machine: Scouting Simplified
-            </h1>
-            <p className="text-gray-400">
-              6070 presents Machine - I need to rewrite this.
-            </p>
+            <Header />
             <input
               type="text"
               placeholder="Search teams..."

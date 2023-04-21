@@ -9,6 +9,7 @@ import { useCallback, useEffect, useState } from "react";
 import { FaTwitch } from "react-icons/fa";
 import { convertDate } from "@/util/date";
 import { Header } from "@/components/Header";
+import Image from "next/image";
 
 export default function TeamPage({ teamData, yearsParticipated }: any) {
   const [activeTab, setActiveTab] = useState(2023);
@@ -50,9 +51,19 @@ export default function TeamPage({ teamData, yearsParticipated }: any) {
 
   return (
     <>
-    <Header />
+      <Header />
       <div className="flex flex-wrap items-center justify-center pl-8 pr-8 md:pl-0 md:pr-0">
         <div className="bg-gray-800 rounded-lg py-10 px-10 md:w-[900px] mt-16 relative">
+          <div className="md:flex">
+          <Image
+            className="rounded-lg mr-5 w-20 mb-5 md:mb-0"
+            alt={`${teamData.nickname} Logo`}
+            height="50"
+            width="50"
+            priority={true}
+            src={`https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${teamData.website}/&size=64`}
+          />
+          <div>
           <p className="text-gray-400 text-sm font-medium">
             {teamData.school_name}
           </p>
@@ -83,6 +94,9 @@ export default function TeamPage({ teamData, yearsParticipated }: any) {
               </span>
             </a>
           </p>
+          </div>
+          </div>
+
           <div className="bg-gray-700 border-2 border-gray-500 rounded-lg py-4 px-6 mt-5">
             <p className="text-gray-400 font-bold text-sm italic">
               {" "}
