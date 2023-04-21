@@ -1,8 +1,46 @@
+import { EventData } from "@/components/EventData";
 import { Footer } from "@/components/Footer";
+import { TabButton } from "@/components/TabButton";
 import { API_URL } from "@/lib/constants";
 import { GetServerSideProps } from "next";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
-export default function TeamPage({ teamData }: any) {
+export default function TeamPage({ teamData, yearsParticipated }: any) {
+  const [activeTab, setActiveTab] = useState(yearsParticipated[0]);
+  const [eventData, setEventData] = useState([]);
+  const [matchData, setMatchData] = useState<any>();
+  const year = yearsParticipated.map((year: any) => {
+    return year;
+  });
+  const router = useRouter();
+  const { team } = router.query;
+
+  const handleTabClick = (tabIndex: number) => {
+    setActiveTab(tabIndex);
+  };
+
+  useEffect(() => {
+    const getEventData = async () => {
+      const eventData =
+        await fetch(
+          `${API_URL}/api/events?name=${team}&year=${activeTab}`
+        ).then((res) => res.json())
+
+        eventData.map(async (event: any) => {
+            setMatchData(
+              await fetch(
+                `${API_URL}/api/eventMatches?team=${team}&year=${activeTab}&event=${event.event_code}`
+              ).then((res) => res.json())
+            );
+          });
+      
+        setEventData(eventData)
+    };
+
+    getEventData();
+  }, [team, activeTab]);
+
   return (
     <>
       <div className="flex flex-wrap items-center justify-center pl-8 pr-8 md:pl-0 md:pr-0">
@@ -27,7 +65,15 @@ export default function TeamPage({ teamData }: any) {
             <b>
               {teamData.city}, {teamData.state_prov}, {teamData.country}
             </b>{" "}
-            • Joined <span>{teamData.rookie_year}</span>
+            • Joined <span>{teamData.rookie_year}</span> •{" "}
+            <a
+              href={`https://frc-events.firstinspires.org/team/${teamData.team_number}`}
+              target="_blank"
+            >
+              <span className="text-white hover:text-primary">
+                FIRST Inspires
+              </span>
+            </a>
           </p>
           <div className="bg-gray-700 border-2 border-gray-500 rounded-lg py-4 px-6 mt-5">
             <p className="text-gray-400 font-bold text-sm italic">
@@ -37,7 +83,37 @@ export default function TeamPage({ teamData }: any) {
           </div>
         </div>
         <div className="bg-gray-800 rounded-lg py-10 px-10 w-[900px] mt-8">
-          What goes here?
+          <div className="flex gap-5 flex-wrap">
+            {yearsParticipated.map((year: any, key: any) => {
+              return (
+                <TabButton
+                  active={activeTab}
+                  key={key}
+                  tab={year}
+                  onClick={() => handleTabClick(year)}
+                >
+                  {year}
+                </TabButton>
+              );
+            })}
+          </div>
+
+          <div className="flex flex-col gap-5 mt-10">
+            {year.includes(activeTab) &&
+              eventData.map((event: any, key: number) => {
+                return (
+                  <div
+                    key={key}
+                    className="bg-gray-700 flex-wrap w-full rounded-lg px-8 py-5"
+                  >
+                    <h1 className="font-black text-primary text-2xl" key={key}>
+                      {event.name}
+                    </h1>
+                    <EventData data={matchData} team={team} />
+                  </div>
+                );
+              })}
+          </div>
         </div>
       </div>
 
@@ -52,10 +128,13 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const teamData = await fetch(`${API_URL}/api/team?name=${team}`).then((res) =>
     res.json()
   );
-
+  const yearsParticipated = await fetch(
+    `${API_URL}/api/yearsParticipated?name=${team}`
+  ).then((res) => res.json());
   return {
     props: {
       teamData,
+      yearsParticipated,
     },
   };
 };
