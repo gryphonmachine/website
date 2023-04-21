@@ -16,13 +16,7 @@ export default function Home({ initialTeams, initial }: any) {
 
     const filterTeams = () => {
       return initialTeams.filter((team: any) =>
-        (
-          team.team_number +
-          team.nickname +
-          team.city +
-          team.state_prov +
-          team.country
-        )
+        (team.team_number + team.nickname + team.city)
           .toLowerCase()
           .includes(query.toLowerCase())
       );

@@ -6,5 +6,5 @@ export default async function getTeams(
   res: NextApiResponse
 ) {
   const { page } = req.query;
-  return await fetchData(res, `/teams/${page}/simple`);
+  return await fetchData(res, `teams/${page}/simple`);
 }
