@@ -4,12 +4,14 @@ import { TabButton } from "@/components/TabButton";
 import { API_URL } from "@/lib/constants";
 import { GetServerSideProps } from "next";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import React from "react";
+import { useCallback, useEffect, useState } from "react";
 
 export default function TeamPage({ teamData, yearsParticipated }: any) {
   const [activeTab, setActiveTab] = useState(2023);
   const [eventData, setEventData] = useState([]);
   const [matchData, setMatchData] = useState<any>();
+  const [loading, setLoading] = useState(false);
   const year = yearsParticipated.map((year: any) => {
     return year;
   });
@@ -20,28 +22,28 @@ export default function TeamPage({ teamData, yearsParticipated }: any) {
     setActiveTab(tabIndex);
   };
 
-  useEffect(() => {
-    const getEventData = async () => {
-      const fetchEventData = await fetch(
-        `${API_URL}/api/events?name=${team}&year=${activeTab}`
+  const getEventData = useCallback(async () => {
+    setLoading(true);
+    const fetchEventData = await fetch(
+      `${API_URL}/api/events?name=${team}&year=${activeTab}`
+    ).then((res) => res.json());
+
+    const eventMatchData: any = {};
+
+    for (const event of fetchEventData) {
+      const matchData = await fetch(
+        `${API_URL}/api/eventMatches?team=${team}&year=${activeTab}&event=${event.event_code}`
       ).then((res) => res.json());
-
-      const eventMatchData: any = {}; // initialize an empty object to store match data for each event
-
-      for (const event of fetchEventData) {
-        const matchData = await fetch(
-          `${API_URL}/api/eventMatches?team=${team}&year=${activeTab}&event=${event.event_code}`
-        ).then((res) => res.json());
-        eventMatchData[event.event_code] = matchData; // store the match data for each event in the eventMatchData object
-      }
-      setMatchData(eventMatchData); // set the match data for all events
-      setEventData(fetchEventData);
-    };
-
-    getEventData();
+      eventMatchData[event.event_code] = matchData;
+    }
+    setMatchData(eventMatchData);
+    setEventData(fetchEventData);
+    setLoading(false);
   }, [team, activeTab]);
 
-  console.log(matchData)
+  useEffect(() => {
+    getEventData();
+  }, [getEventData]);
 
   return (
     <>
@@ -84,6 +86,7 @@ export default function TeamPage({ teamData, yearsParticipated }: any) {
             </p>
           </div>
         </div>
+
         <div className="bg-gray-800 rounded-lg py-10 px-10 w-[900px] mt-8">
           <div className="flex gap-5 flex-wrap">
             {yearsParticipated.map((year: any, key: any) => {
@@ -100,6 +103,8 @@ export default function TeamPage({ teamData, yearsParticipated }: any) {
             })}
           </div>
 
+          {loading && <p className="mt-5 font-bold">Loading events...</p>}
+
           <div className="flex flex-col gap-5 mt-10">
             {year.includes(activeTab) &&
               eventData.map((event: any, key: number) => {
@@ -112,7 +117,6 @@ export default function TeamPage({ teamData, yearsParticipated }: any) {
                       {event.name}
                     </h1>
                     <EventData data={matchData[event.event_code]} team={team} />{" "}
-                    {/* use the event code as the key to access the match data */}
                   </div>
                 );
               })}
