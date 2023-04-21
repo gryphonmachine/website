@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 export default function TeamPage({ teamData, yearsParticipated }: any) {
-  const [activeTab, setActiveTab] = useState(yearsParticipated[0]);
+  const [activeTab, setActiveTab] = useState(2023);
   const [eventData, setEventData] = useState([]);
   const [matchData, setMatchData] = useState<any>();
   const year = yearsParticipated.map((year: any) => {

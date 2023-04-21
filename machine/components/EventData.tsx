@@ -83,17 +83,50 @@ export const EventData = (props: any) => {
                   }
                 };
 
+                const didWeWin = () => {
+                  if (
+                    findAlliances().alliance.toLowerCase() ===
+                    match.winning_alliance
+                  ) {
+                    return true;
+                  } else {
+                    return false;
+                  }
+                };
+
                 return (
                   <tr
                     className="text-gray-300 bg-gray-700 border-2 border-gray-500 hover:bg-gray-600"
                     key={key}
                   >
-                    <th
-                      scope="row"
-                      className={`px-6 py-4 font-bold whitespace-nowrap`}
-                    >
-                      {search_array(newText, match.comp_level)}
-                    </th>
+                    {match.videos &&
+                    match.videos.length > 0 &&
+                    match.videos[0].key ? (
+                      <a
+                        href={`https://www.youtube.com/watch?v=${match.videos[0].key}`}
+                        target="_blank"
+                      >
+                        <th
+                          scope="row"
+                          className={`px-6 py-4 font-bold whitespace-nowrap ${
+                            didWeWin() ? "text-green-400" : "text-red-400"
+                          }`}
+                        >
+                          {search_array(newText, match.comp_level)}{" "}
+                          {match.match_number}
+                        </th>
+                      </a>
+                    ) : (
+                      <th
+                        scope="row"
+                        className={`px-6 py-4 font-bold whitespace-nowrap ${
+                          didWeWin() ? "text-green-400" : "text-red-400"
+                        }`}
+                      >
+                        {search_array(newText, match.comp_level)}{" "}
+                        {match.match_number}
+                      </th>
+                    )}
 
                     <td className="px-6 py-4">
                       <span className="text-gray-400">
@@ -110,12 +143,14 @@ export const EventData = (props: any) => {
                       </span>
                     </td>
                     <td className="px-6 py-4 font-semibold ">
-                      {match.score_breakdown &&
-                        match.score_breakdown.red.totalPoints}
+                      {match.score_breakdown
+                        ? match.score_breakdown.red.totalPoints
+                        : "?"}
                     </td>
                     <td className="px-6 py-4 font-semibold ">
-                      {match.score_breakdown &&
-                        match.score_breakdown.blue.totalPoints}
+                      {match.score_breakdown
+                        ? match.score_breakdown.blue.totalPoints
+                        : "?"}
                     </td>
                   </tr>
                 );
@@ -126,7 +161,7 @@ export const EventData = (props: any) => {
       )}
       {props.data.length === 0 && (
         <p className="text-gray-400 mt-5">
-          Looks like there&apos;s no data avliable for this event! 😔{" "}
+          Looks like there&apos;s no data available for this event! 😔{" "}
         </p>
       )}
     </>
