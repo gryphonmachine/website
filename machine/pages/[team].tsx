@@ -6,6 +6,7 @@ import { GetServerSideProps } from "next";
 import { useRouter } from "next/router";
 import React from "react";
 import { useCallback, useEffect, useState } from "react";
+import { FaTwitch } from "react-icons/fa";
 
 export default function TeamPage({ teamData, yearsParticipated }: any) {
   const [activeTab, setActiveTab] = useState(2023);
@@ -113,10 +114,54 @@ export default function TeamPage({ teamData, yearsParticipated }: any) {
                     key={key}
                     className="bg-gray-700 flex-wrap md:w-full w-[250px] rounded-lg px-8 py-5"
                   >
-                    <h1 className="font-black text-primary text-2xl" key={key}>
-                      {event.name}
-                    </h1>
-                    <EventData data={matchData[event.event_code]} team={team} />{" "}
+                    <div className="flex justify-between">
+                      <div>
+                        <a
+                          href={`https://frc-events.firstinspires.org/${activeTab}/${event.first_event_code}`}
+                          target="_blank"
+                        >
+                          <h1
+                            className="font-black text-primary text-2xl hover:text-white"
+                            key={key}
+                          >
+                            {event.name}
+                          </h1>
+                        </a>
+                        <a href={event.gmaps_url} target="_blank">
+                          <p className="text-gray-400 hover:text-white">
+                            {event.location_name} | {event.city},{" "}
+                            {event.country}
+                          </p>
+                        </a>
+                        <div className="md:hidden block mt-5">
+                          {event.webcasts.length > 0 && (
+                            <a
+                              href={`https://twitch.tv/${event.webcasts[0].channel}`}
+                              target="_blank"
+                            >
+                              <div className="flex bg-[#6441a5] text-white hover:bg-white hover:text-primary py-1 px-5 rounded-lg font-bold">
+                                <FaTwitch className="text-md mt-1 mr-2" />{" "}
+                                {event.webcasts[0].channel}
+                              </div>
+                            </a>
+                          )}
+                        </div>
+                      </div>
+                      <div className="md:block hidden">
+                        {event.webcasts.length > 0 && (
+                          <a
+                            href={`https://twitch.tv/${event.webcasts[0].channel}`}
+                            target="_blank"
+                          >
+                            <div className="flex bg-[#6441a5] text-white hover:bg-gray-600 hover:text-primary py-1 px-5 rounded-lg font-bold">
+                              <FaTwitch className="text-md mt-1 mr-2" />{" "}
+                              {event.webcasts[0].channel}
+                            </div>
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                    <EventData data={matchData[event.event_code]} team={team} />
                   </div>
                 );
               })}
