@@ -1,32 +1,86 @@
 import { useState, useEffect } from "react";
 
-interface TeamProps {
-  teamNumber: number;
-  station: string;
-  dq: boolean;
-}
+const newText = [
+  {
+    name: "f",
+    new: "Final",
+  },
+  {
+    name: "sf",
+    new: "Semi Final",
+  },
+  {
+    name: "qf",
+    new: "Quarter Final",
+  },
+  {
+    name: "qm",
+    new: "Qualification",
+  },
+];
+
+const EventList = (props: any) => {
+  return (
+    <tr className="text-gray-300 bg-gray-700 border-2 border-gray-500 hover:bg-gray-600">
+      {props.match.videos &&
+      props.match.videos.length > 0 &&
+      props.match.videos[0].key ? (
+        <a
+          href={`https://www.youtube.com/watch?v=${props.match.videos[0].key}`}
+          target="_blank"
+        >
+          <th
+            scope="row"
+            className={`px-6 py-4 font-bold whitespace-nowrap ${
+              props.didWeWin() ? "text-green-400" : "text-red-400"
+            }`}
+          >
+            {props.search_array(newText, props.match.comp_level)}{" "}
+            {props.match.match_number}
+          </th>
+        </a>
+      ) : (
+        <th
+          scope="row"
+          className={`px-6 py-4 font-bold whitespace-nowrap ${
+            props.didWeWin() ? "text-green-400" : "text-red-400"
+          }`}
+        >
+          {props.search_array(newText, props.match.comp_level)}{" "}
+          {props.match.match_number}
+        </th>
+      )}
+
+      <td className="px-6 py-4">
+        <span className="text-gray-400">
+          <span
+            className={`font-bold ${
+              props.findAlliances().alliance === "Red"
+                ? "text-red-400"
+                : "text-sky-400"
+            }`}
+          >
+            {props.findAlliances().alliance}
+          </span>{" "}
+          ({props.findAlliances().teams.join(", ")})
+        </span>
+      </td>
+      <td className="px-6 py-4 font-semibold ">
+        {props.match.score_breakdown
+          ? props.match.score_breakdown.red.totalPoints
+          : "?"}
+      </td>
+      <td className="px-6 py-4 font-semibold ">
+        {props.match.score_breakdown
+          ? props.match.score_breakdown.blue.totalPoints
+          : "?"}
+      </td>
+    </tr>
+  );
+};
 
 export const EventData = (props: any) => {
   const [isClient, setIsClient] = useState(false);
-
-  const newText = [
-    {
-      name: "f",
-      new: "Final",
-    },
-    {
-      name: "sf",
-      new: "Semi Final",
-    },
-    {
-      name: "qf",
-      new: "Quarter Final",
-    },
-    {
-      name: "qm",
-      new: "Qualification",
-    },
-  ];
 
   function search_array(array: any, valuetofind: any) {
     for (let i = 0; i < array.length; i++) {
@@ -39,6 +93,34 @@ export const EventData = (props: any) => {
   useEffect(() => {
     setIsClient(true);
   }, []);
+
+  const findAlliances = (match: any) => {
+    if (match.alliances.blue.team_keys.includes(`frc${props.team}`)) {
+      return {
+        teams: match.alliances.blue.team_keys.map((team: any) =>
+          team.substring(3)
+        ),
+        alliance: "Blue",
+      };
+    } else {
+      return {
+        teams: match.alliances.red.team_keys.map((team: any) =>
+          team.substring(3)
+        ),
+        alliance: "Red",
+      };
+    }
+  };
+
+  const didWeWin = (match: any) => {
+    if (
+      findAlliances(match).alliance.toLowerCase() === match.winning_alliance
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  };
 
   return (
     <>
@@ -62,99 +144,58 @@ export const EventData = (props: any) => {
               </tr>
             </thead>
             <tbody>
-              {props.data?.map((match: any, key: number) => {
-                const findAlliances = () => {
-                  if (
-                    match.alliances.blue.team_keys.includes(`frc${props.team}`)
-                  ) {
-                    return {
-                      teams: match.alliances.blue.team_keys.map((team: any) =>
-                        team.substring(3)
-                      ),
-                      alliance: "Blue",
-                    };
-                  } else {
-                    return {
-                      teams: match.alliances.red.team_keys.map((team: any) =>
-                        team.substring(3)
-                      ),
-                      alliance: "Red",
-                    };
-                  }
-                };
+              {props.data
+                ?.filter((match: any) => match.comp_level === "f")
+                .map((match: any, key: number) => {
+                  return (
+                    <EventList
+                      match={match}
+                      didWeWin={() => didWeWin(match)}
+                      findAlliances={() => findAlliances(match)}
+                      search_array={search_array}
+                      key={key}
+                    />
+                  );
+                })}
 
-                const didWeWin = () => {
-                  if (
-                    findAlliances().alliance.toLowerCase() ===
-                    match.winning_alliance
-                  ) {
-                    return true;
-                  } else {
-                    return false;
-                  }
-                };
+              {props.data
+                ?.filter(
+                  (match: any) =>
+                    match.comp_level === "sf" || match.comp_level === "qf"
+                )
+                .map((match: any, key: number) => {
+                  return (
+                    <EventList
+                      match={match}
+                      didWeWin={() => didWeWin(match)}
+                      findAlliances={() => findAlliances(match)}
+                      search_array={search_array}
+                      key={key}
+                    />
+                  );
+                })}
 
-                return (
-                  <tr
-                    className="text-gray-300 bg-gray-700 border-2 border-gray-500 hover:bg-gray-600"
-                    key={key}
-                  >
-                    {match.videos &&
-                    match.videos.length > 0 &&
-                    match.videos[0].key ? (
-                      <a
-                        href={`https://www.youtube.com/watch?v=${match.videos[0].key}`}
-                        target="_blank"
-                      >
-                        <th
-                          scope="row"
-                          className={`px-6 py-4 font-bold whitespace-nowrap ${
-                            didWeWin() ? "text-green-400" : "text-red-400"
-                          }`}
-                        >
-                          {search_array(newText, match.comp_level)}{" "}
-                          {match.match_number}
-                        </th>
-                      </a>
-                    ) : (
-                      <th
-                        scope="row"
-                        className={`px-6 py-4 font-bold whitespace-nowrap ${
-                          didWeWin() ? "text-green-400" : "text-red-400"
-                        }`}
-                      >
-                        {search_array(newText, match.comp_level)}{" "}
-                        {match.match_number}
-                      </th>
-                    )}
-
-                    <td className="px-6 py-4">
-                      <span className="text-gray-400">
-                        <span
-                          className={`font-bold ${
-                            findAlliances().alliance === "Red"
-                              ? "text-red-400"
-                              : "text-sky-400"
-                          }`}
-                        >
-                          {findAlliances().alliance}
-                        </span>{" "}
-                        ({findAlliances().teams.join(", ")})
-                      </span>
-                    </td>
-                    <td className="px-6 py-4 font-semibold ">
-                      {match.score_breakdown
-                        ? match.score_breakdown.red.totalPoints
-                        : "?"}
-                    </td>
-                    <td className="px-6 py-4 font-semibold ">
-                      {match.score_breakdown
-                        ? match.score_breakdown.blue.totalPoints
-                        : "?"}
-                    </td>
-                  </tr>
-                );
-              })}
+              {props.data
+                ?.filter(
+                  (match: any) =>
+                    match.comp_level === "sf" || match.comp_level === "qm"
+                )
+                .sort(
+                  (matchA: any, matchB: any) =>
+                    parseInt(matchB.match_number) -
+                    parseInt(matchA.match_number)
+                )
+                .map((match: any, key: number) => {
+                  return (
+                    <EventList
+                      match={match}
+                      didWeWin={() => didWeWin(match)}
+                      findAlliances={() => findAlliances(match)}
+                      search_array={search_array}
+                      key={key}
+                    />
+                  );
+                })}
             </tbody>
           </table>
         </div>
