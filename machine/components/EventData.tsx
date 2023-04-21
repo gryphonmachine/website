@@ -176,10 +176,7 @@ export const EventData = (props: any) => {
                 })}
 
               {props.data
-                ?.filter(
-                  (match: any) =>
-                    match.comp_level === "sf" || match.comp_level === "qm"
-                )
+                ?.filter((match: any) => match.comp_level === "qm")
                 .sort(
                   (matchA: any, matchB: any) =>
                     parseInt(matchB.match_number) -
