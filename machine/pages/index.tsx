@@ -75,7 +75,7 @@ export default function Home({ initialTeams, initial }: any) {
                 return (
                   <Link href={`/${team.team_number}`} legacyBehavior key={key}>
                     <a>
-                      <div className="px-5 py-10 bg-gray-800 border-2 border-gray-500 rounded-lg hover:bg-gray-600">
+                      <div className="px-5 py-10 bg-gray-800 border-2 border-gray-600 rounded-lg hover:bg-gray-700">
                         <h1 className="text-gray-200 font-black">
                           {team.nickname.length > 19
                             ? `${team.nickname.slice(0, 19)}...`
