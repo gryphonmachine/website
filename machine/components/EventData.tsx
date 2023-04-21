@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { convertTime } from "@/util/date";
 
 const newText = [
   {
@@ -29,14 +30,15 @@ const EventList = (props: any) => {
           href={`https://www.youtube.com/watch?v=${props.match.videos[0].key}`}
           target="_blank"
         >
-          <th
-            scope="row"
-            className={`px-6 py-4 font-bold whitespace-nowrap ${
-              props.didWeWin() ? "text-green-400" : "text-red-400"
-            }`}
-          >
-            {props.search_array(newText, props.match.comp_level)}{" "}
-            {props.match.match_number}
+          <th scope="row" className={`px-6 py-4 whitespace-nowrap`}>
+            <span
+              className={`font-bold ${
+                props.didWeWin() ? "text-green-400" : "text-red-400"
+              }`}
+            >
+              {props.search_array(newText, props.match.comp_level)}{" "}
+              {props.match.match_number}
+            </span>{" "}
           </th>
         </a>
       ) : (
@@ -62,18 +64,35 @@ const EventList = (props: any) => {
           >
             {props.findAlliances().alliance}
           </span>{" "}
-          ({props.findAlliances().teams.join(", ")})
         </span>
       </td>
-      <td className="px-6 py-4 font-semibold ">
-        {props.match.score_breakdown
-          ? props.match.score_breakdown.red.totalPoints
-          : "?"}
+      <td className="px-6 py-4">
+        <span className="font-bold">
+          {props.match.score_breakdown
+            ? props.match.score_breakdown.red.totalPoints
+            : "?"}{" "}
+        </span>
+        <span className="text-gray-400 font-regular">
+          (
+          {props.match.alliances.red.team_keys
+            .map((team: any) => team.substring(3))
+            .join(", ")}
+          )
+        </span>
       </td>
-      <td className="px-6 py-4 font-semibold ">
-        {props.match.score_breakdown
-          ? props.match.score_breakdown.blue.totalPoints
-          : "?"}
+      <td className="px-6 py-4">
+        <span className="font-bold">
+          {props.match.score_breakdown
+            ? props.match.score_breakdown.blue.totalPoints
+            : "?"}{" "}
+        </span>
+        <span className="text-gray-400 font-regular">
+          (
+          {props.match.alliances.blue.team_keys
+            .map((team: any) => team.substring(3))
+            .join(", ")}
+          )
+        </span>
       </td>
     </tr>
   );

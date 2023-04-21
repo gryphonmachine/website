@@ -25,3 +25,21 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Light */
+::-webkit-scrollbar-thumb {
+  background: #374151;
+}
+
+/* Dark */
+::-webkit-scrollbar-thumb:hover {
+  background: #1f2937;
+}

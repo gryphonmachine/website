@@ -7,6 +7,8 @@ import { useRouter } from "next/router";
 import React from "react";
 import { useCallback, useEffect, useState } from "react";
 import { FaTwitch } from "react-icons/fa";
+import { convertDate } from "@/util/date";
+import { Header } from "@/components/Header";
 
 export default function TeamPage({ teamData, yearsParticipated }: any) {
   const [activeTab, setActiveTab] = useState(2023);
@@ -48,8 +50,9 @@ export default function TeamPage({ teamData, yearsParticipated }: any) {
 
   return (
     <>
+    <Header />
       <div className="flex flex-wrap items-center justify-center pl-8 pr-8 md:pl-0 md:pr-0">
-        <div className="bg-gray-800 rounded-lg py-10 px-10 w-[900px] mt-32 relative">
+        <div className="bg-gray-800 rounded-lg py-10 px-10 md:w-[900px] mt-16 relative">
           <p className="text-gray-400 text-sm font-medium">
             {teamData.school_name}
           </p>
@@ -88,7 +91,7 @@ export default function TeamPage({ teamData, yearsParticipated }: any) {
           </div>
         </div>
 
-        <div className="bg-gray-800 rounded-lg py-10 px-10 w-[900px] mt-8">
+        <div className="bg-gray-800 rounded-lg py-10 px-10 md:w-[900px] mt-8">
           <div className="flex gap-5 flex-wrap">
             {yearsParticipated.map((year: any, key: any) => {
               return (
@@ -104,7 +107,7 @@ export default function TeamPage({ teamData, yearsParticipated }: any) {
             })}
           </div>
 
-          {loading && <p className="mt-5 font-bold">Loading events...</p>}
+          {loading && <p className="mt-5 text-gray-400">Loading events...</p>}
 
           <div className="flex flex-col gap-5 mt-10">
             {year.includes(activeTab) &&
@@ -112,7 +115,7 @@ export default function TeamPage({ teamData, yearsParticipated }: any) {
                 return (
                   <div
                     key={key}
-                    className="bg-gray-700 flex-wrap md:w-full w-[250px] rounded-lg px-8 py-5"
+                    className="bg-gray-700 flex-wrap md:w-full w-[270px] rounded-lg px-8 py-5"
                   >
                     <div className="flex justify-between">
                       <div>
@@ -129,10 +132,13 @@ export default function TeamPage({ teamData, yearsParticipated }: any) {
                         </a>
                         <a href={event.gmaps_url} target="_blank">
                           <p className="text-gray-400 hover:text-white">
-                            {event.location_name} | {event.city},{" "}
-                            {event.country}
+                            {event.location_name}, {event.city}, {event.country}{" "}
                           </p>
                         </a>
+                        <span className="text-md text-gray-400">
+                          {convertDate(event.start_date)} -{" "}
+                          {convertDate(event.end_date)}{" "}
+                        </span>
                         <div className="md:hidden block mt-5">
                           {event.webcasts.length > 0 && (
                             <a
