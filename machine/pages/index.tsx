@@ -122,6 +122,11 @@ export const getServerSideProps: GetServerSideProps = async ({
   res,
   query,
 }) => {
+  res.setHeader(
+    "Cache-Control",
+    "public, s-maxage=10, stale-while-revalidate=604800"
+  );
+
   const baseFetch = async (pageNum: string) =>
     await fetch(`${API_URL}/api/teams?page=${pageNum}`).then((res) =>
       res.json()
