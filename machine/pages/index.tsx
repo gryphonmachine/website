@@ -1,6 +1,7 @@
 import { Footer } from "@/components/Footer";
 import { API_URL } from "@/lib/constants";
 import { GetServerSideProps } from "next";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 
 export default function Home({ initialTeams, initial }: any) {
@@ -72,26 +73,24 @@ export default function Home({ initialTeams, initial }: any) {
             <div className="flex flex-col md:grid md:grid-cols-5 gap-5 mt-10 md:pr-32 md:pl-32 pr-8 pl-8">
               {allTeams.map((team: any, key: number) => {
                 return (
-                  <a
-                    key={key}
-                    href={`https://frc-events.firstinspires.org/team/${team.team_number}`}
-                    target="_blank"
-                  >
-                    <div className="px-5 py-10 bg-gray-700 border-2 border-gray-500 rounded-lg hover:bg-gray-600">
-                      <h1 className="text-gray-200 font-black">
-                        {team.nickname.length > 19
-                          ? `${team.nickname.slice(0, 19)}...`
-                          : team.nickname}
-                      </h1>
-                      <p className="text-gray-400 text-xs uppercase">
-                        {team.city ? team.city : "No location"}
-                      </p>
+                  <Link href={`/${team.team_number}`} legacyBehavior key={key}>
+                    <a>
+                      <div className="px-5 py-10 bg-gray-800 border-2 border-gray-500 rounded-lg hover:bg-gray-600">
+                        <h1 className="text-gray-200 font-black">
+                          {team.nickname.length > 19
+                            ? `${team.nickname.slice(0, 19)}...`
+                            : team.nickname}
+                        </h1>
+                        <p className="text-gray-400 text-xs uppercase">
+                          {team.city ? team.city : "No location"}
+                        </p>
 
-                      <p className="text-gray-400 font-bold text-lg">
-                        FRC {team.team_number}
-                      </p>
-                    </div>
-                  </a>
+                        <p className="text-gray-400 font-bold text-lg">
+                          FRC {team.team_number}
+                        </p>
+                      </div>
+                    </a>
+                  </Link>
                 );
               })}
             </div>
@@ -149,7 +148,9 @@ export const getServerSideProps: GetServerSideProps = async ({
 
   return {
     props: {
-      initial: page0,
+      initial: await baseFetch(
+        String(Math.floor(Math.random() * (19 - 0 + 1) + 0))
+      ),
       initialTeams: [
         ...page0,
         ...page1,
