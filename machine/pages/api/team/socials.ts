@@ -5,6 +5,6 @@ export default async function getTeams(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const { name } = req.query;
-  return await fetchData(res, `team/frc${name}/social_media`);
+  const { team } = req.query;
+  return await fetchData(res, `team/frc${team}/social_media`);
 }

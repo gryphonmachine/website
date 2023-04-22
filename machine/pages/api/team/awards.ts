@@ -5,6 +5,6 @@ export default async function getTeams(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const { name } = req.query;
-  return await fetchData(res, `team/frc${name}/years_participated`);
+  const { team } = req.query;
+  return await fetchData(res, `team/frc${team}/awards`);
 }

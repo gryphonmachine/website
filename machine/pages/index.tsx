@@ -33,7 +33,7 @@ export default function Home({ initialTeams, initial }: any) {
 
   const loadMore = async () => {
     const nextPage = page + 1;
-    const response = await fetch(`${API_URL}/api/teams?page=${nextPage}`);
+    const response = await fetch(`${API_URL}/api/team/teams?page=${nextPage}`);
     const newTeams = await response.json();
     setAllTeams([...allTeams, ...newTeams]);
     setPage(nextPage);
@@ -117,7 +117,7 @@ export const getServerSideProps: GetServerSideProps = async ({
   );
 
   const baseFetch = async (pageNum: string) =>
-    await fetch(`${API_URL}/api/teams?page=${pageNum}`).then((res) =>
+    await fetch(`${API_URL}/api/team/teams?page=${pageNum}`).then((res) =>
       res.json()
     );
 
