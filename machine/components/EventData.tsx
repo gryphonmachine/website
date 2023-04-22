@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { FaVideo } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa";
 import { ImCross } from "react-icons/im";
 
 const newText = [
@@ -30,10 +30,12 @@ const EventList = (props: any) => {
             href={`https://www.youtube.com/watch?v=${props.match.videos[0].key}`}
             target="_blank"
           >
-            <FaVideo className="text-lg" />
+            <FaYoutube className="text-3xl text-red-400 hover:text-white" />
           </a>
         ) : (
-          <p className="text-gray-400"><ImCross className="text-lg"/></p>
+          <p className="text-gray-400">
+            <ImCross className="text-lg" />
+          </p>
         )}
       </td>
 
@@ -149,6 +151,11 @@ export const EventData = (props: any) => {
     <>
       {isClient && (
         <div className="relative overflow-x-auto">
+          <div className="bg-gray-600 text-gray-400 mt-5 px-5 py-3 rounded-lg border-2 border-gray-500">
+            <span className="text-green-400">green = win</span> /{" "}
+            <span className="text-red-400">red = loss</span> /{" "}
+            <span className="text-gray-400">gray = unknown</span>
+          </div>
           <table className="w-full mt-5 text-sm text-left bg-gray-600 border-2 border-gray-500">
             <thead className="text-xs text-white uppercase">
               <tr>
