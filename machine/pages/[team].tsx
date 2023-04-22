@@ -387,6 +387,7 @@ export default function TeamPage({
                         <EventData
                           data={matchData[event.event_code]}
                           team={team}
+                          isTeam={true}
                         />
                       )}
                     </div>

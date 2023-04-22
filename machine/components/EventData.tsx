@@ -42,9 +42,9 @@ const EventList = (props: any) => {
       <th scope="row" className={`px-6 py-4 whitespace-nowrap`}>
         <span
           className={`font-bold ${
-            props.didWeWin() === "win" && "text-green-400"
-          } ${props.didWeWin() === "lose" && "text-red-400"} ${
-            props.didWeWin() === "unknown" && "text-gray-400"
+            props.didWeWin() === "win" && props.isTeam && "text-green-400"
+          } ${props.didWeWin() === "lose" && props.isTeam && "text-red-400"} ${
+            props.didWeWin() === "unknown" && props.isTeam && "text-gray-400"
           }`}
         >
           {props.search_array(newText, props.match.comp_level)}{" "}
@@ -52,19 +52,21 @@ const EventList = (props: any) => {
         </span>{" "}
       </th>
 
-      <td className="px-6 py-4">
-        <span className="text-gray-400">
-          <span
-            className={` ${
-              props.findAlliances().alliance === "Red"
-                ? "text-red-400"
-                : "text-sky-400"
-            }`}
-          >
-            {props.findAlliances().alliance}
-          </span>{" "}
-        </span>
-      </td>
+      {props.isTeam && (
+        <td className="px-6 py-4">
+          <span className="text-gray-400">
+            <span
+              className={` ${
+                props.findAlliances().alliance === "Red"
+                  ? "text-red-400"
+                  : "text-sky-400"
+              }`}
+            >
+              {props.findAlliances().alliance}
+            </span>{" "}
+          </span>
+        </td>
+      )}
       <td className="px-6 py-4">
         <span className="font-bold">
           {props.match.score_breakdown
@@ -151,11 +153,13 @@ export const EventData = (props: any) => {
     <>
       {isClient && (
         <div className="relative overflow-x-auto">
-          <div className="bg-gray-600 text-gray-400 mt-5 px-5 py-3 rounded-lg border-2 border-gray-500">
-            <span className="text-green-400">green = win</span> /{" "}
-            <span className="text-red-400">red = loss</span> /{" "}
-            <span className="text-gray-400">gray = unknown</span>
-          </div>
+          {props.isTeam && (
+            <div className="bg-gray-600 text-gray-400 mt-5 px-5 py-3 rounded-lg border-2 border-gray-500">
+              <span className="text-green-400">Win</span> /{" "}
+              <span className="text-red-400">Loss</span> /{" "}
+              <span className="text-gray-400">Unknown</span>
+            </div>
+          )}
           <table className="w-full mt-5 text-sm text-left bg-gray-600 border-2 border-gray-500">
             <thead className="text-xs text-white uppercase">
               <tr>
@@ -165,9 +169,11 @@ export const EventData = (props: any) => {
                 <th scope="col" className="px-6 py-3">
                   #
                 </th>
-                <th scope="col" className="px-6 py-3">
-                  Alliance
-                </th>
+                {props.isTeam && (
+                  <th scope="col" className="px-6 py-3">
+                    Alliance
+                  </th>
+                )}
                 <th scope="col" className="px-6 py-3 text-red-400">
                   Red Score
                 </th>
@@ -187,6 +193,7 @@ export const EventData = (props: any) => {
                       findAlliances={() => findAlliances(match)}
                       search_array={search_array}
                       key={key}
+                      isTeam={props.isTeam}
                     />
                   );
                 })}
@@ -204,6 +211,7 @@ export const EventData = (props: any) => {
                       findAlliances={() => findAlliances(match)}
                       search_array={search_array}
                       key={key}
+                      isTeam={props.isTeam}
                     />
                   );
                 })}
@@ -223,6 +231,7 @@ export const EventData = (props: any) => {
                       findAlliances={() => findAlliances(match)}
                       search_array={search_array}
                       key={key}
+                      isTeam={props.isTeam}
                     />
                   );
                 })}

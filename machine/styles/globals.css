@@ -26,6 +26,36 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+.fadeInDown {
+  animation: fadeInDown 1s forwards;
+}
+
+.fadeInDownAfter {
+  animation: fadeInDownAfter 1s forwards;
+}
+
+@keyframes fadeInDown {
+  0% {
+     opacity: 0;
+     transform: translateY(-20px);
+  }
+  100% {
+     opacity: 1;
+     transform: translateY(0);
+  }
+} 
+
+@keyframes fadeInDownAfter {
+  20% {
+     opacity: 0;
+     transform: translateY(-20px);
+  }
+  100% {
+     opacity: 1;
+     transform: translateY(0);
+  }
+} 
+
 ::-webkit-scrollbar {
   width: 8px;
 }

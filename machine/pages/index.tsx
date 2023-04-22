@@ -66,16 +66,14 @@ export default function Home({ initialTeams, initial }: any) {
               </div>
             )}
 
-            <div className="flex flex-col md:grid md:grid-cols-5 gap-5 mt-10 md:pr-32 md:pl-32 pr-8 pl-8">
+            <div className="flex flex-col md:grid md:grid-cols-6 gap-3 mt-10 md:pr-32 md:pl-32 pr-8 pl-8">
               {allTeams.map((team: any, key: number) => {
                 return (
                   <Link href={`/${team.team_number}`} legacyBehavior key={key}>
                     <a>
-                      <div className="px-5 py-10 bg-gray-800 border-2 border-gray-600 rounded-lg hover:bg-gray-700">
+                      <div className="px-5 py-10 bg-gray-700 border-2 border-gray-500 h-40 rounded-lg hover:bg-gray-600">
                         <h1 className="text-gray-200 font-black">
-                          {team.nickname.length > 15
-                            ? `${team.nickname.slice(0, 15)}...`
-                            : team.nickname}
+                          {team.nickname}
                         </h1>
                         <p className="text-gray-400 text-xs uppercase">
                           {team.city ? `${team.city}, ${team.country}` : "No location"}
