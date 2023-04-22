@@ -76,7 +76,6 @@ export default function TeamPage({
 
   return (
     <>
-      <Header />
       <div className="flex flex-wrap items-center justify-center pl-8 pr-8 md:pl-0 md:pr-0">
         <div className="bg-gray-800 rounded-lg py-10 px-10 md:w-[900px] mt-16 relative">
           <div className="md:flex">
@@ -245,7 +244,7 @@ export default function TeamPage({
             <div className="relative">
               <div
                 className={`bg-gray-700 w-[300px] text-white  ${
-                  isDropdownOpen ? "rounded-t-lg" : "rounded-lg"
+                  isDropdownOpen ? "rounded-t-lg border-2 border-b-gray-500 border-transparent" : "rounded-lg"
                 } px-5 py-2 flex items-center justify-between cursor-pointer`}
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               >
@@ -270,48 +269,65 @@ export default function TeamPage({
                 </svg>
               </div>
               <div
-                className={`grid grid-cols-3 gap-3 absolute right-0 left-0 bg-gray-700 text-white rounded-b-lg px-3 py-4 ${
+                className={`absolute right-0 left-0 bg-gray-700 text-white rounded-b-lg px-3 py-4 ${
                   isDropdownOpen ? "block" : "hidden"
                 } z-20`}
               >
-                {yearsParticipated.map((year: any, key: any) => (
-                  <div
-                    key={key}
-                    className=" cursor-pointer bg-gray-600 hover:bg-gray-500 hover:cursor-pointer py-1 px-3 rounded-lg border border-gray-500"
-                    onClick={() => {
-                      handleTabClick(Number(year));
-                      setIsDropdownOpen(false);
-                    }}
-                  >
-                    {year}
+                {yearsParticipated.length > 0 ? (
+                  <div className="grid grid-cols-3 gap-3">
+                    {yearsParticipated.map((year: any, key: any) => (
+                      <div
+                        key={key}
+                        className=" cursor-pointer bg-gray-600 hover:bg-gray-500 hover:cursor-pointer py-1 px-3 rounded-lg border border-gray-500"
+                        onClick={() => {
+                          handleTabClick(Number(year));
+                          setIsDropdownOpen(false);
+                        }}
+                      >
+                        {year}
+                      </div>
+                    ))}
                   </div>
-                ))}
+                ) : (
+                  <p className="px-2 text-gray-400">
+                    Looks like {teamData.team_number} hasn&apos;t competed, yet.
+                  </p>
+                )}
               </div>
             </div>
           </div>
 
-          <div className="flex flex-col md:grid md:grid-cols-3 gap-4 mt-5">
+          <div className="flex flex-col gap-4 mt-5">
             {activeTab === 1 &&
-              teamAwards
-                .sort(
-                  (teamAwardA: any, teamAwardB: any) =>
-                    parseInt(teamAwardB.year) - parseInt(teamAwardA.year)
-                )
-                .map((award: any, key: number) => {
-                  return (
-                    <a
-                      key={key}
-                      href={`https://frc-events.firstinspires.org/${
-                        award.year
-                      }/${award.event_key.slice(4)}`}
-                      target="_blank"
-                      className="bg-gray-700 rounded-lg px-5 py-5 hover:bg-gray-600 border border-gray-500"
-                    >
-                      <h1 className="font-bold">{award.name}</h1>
-                      <p className="text-gray-400">{award.year}</p>
-                    </a>
-                  );
-                })}
+              (teamAwards.length > 0 ? (
+                <div className="md:grid md:grid-cols-3 gap-4">
+                  {teamAwards
+                    .sort(
+                      (teamAwardA: any, teamAwardB: any) =>
+                        parseInt(teamAwardB.year) - parseInt(teamAwardA.year)
+                    )
+                    .map((award: any, key: number) => {
+                      return (
+                        <a
+                          key={key}
+                          href={`https://frc-events.firstinspires.org/${
+                            award.year
+                          }/${award.event_key.slice(4)}`}
+                          target="_blank"
+                          className="bg-gray-700 rounded-lg px-5 py-5 hover:bg-gray-600 border border-gray-500"
+                        >
+                          <h1 className="font-bold">{award.name}</h1>
+                          <p className="text-gray-400">{award.year}</p>
+                        </a>
+                      );
+                    })}
+                </div>
+              ) : (
+                <p className="text-gray-400">
+                  Looks like {teamData.team_number} hasn&apos;t received any
+                  awards yet.
+                </p>
+              ))}
           </div>
 
           {loading ? (
