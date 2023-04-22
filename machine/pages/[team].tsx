@@ -17,6 +17,7 @@ import {
 import { convertDate, isLive } from "@/util/date";
 import { Header } from "@/components/Header";
 import Image from "next/image";
+import Link from "next/link";
 
 const Social = (props: any) => {
   return (
@@ -326,17 +327,16 @@ export default function TeamPage({
                     >
                       <div className="flex justify-between">
                         <div>
-                          <a
-                            href={`https://frc-events.firstinspires.org/${activeTab}/${event.first_event_code}`}
-                            target="_blank"
-                          >
-                            <h1
-                              className="font-black text-primary text-2xl hover:text-white"
-                              key={key}
-                            >
-                              {event.name}
-                            </h1>
-                          </a>
+                          <Link href={`/events/${event.key}`} legacyBehavior>
+                            <a>
+                              <h1
+                                className="font-black text-primary text-2xl hover:text-white"
+                                key={key}
+                              >
+                                {event.name}
+                              </h1>
+                            </a>
+                          </Link>
                           <a href={event.gmaps_url} target="_blank">
                             <p className="text-gray-400 hover:text-white">
                               {event.location_name &&
