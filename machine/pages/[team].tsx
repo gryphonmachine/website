@@ -32,9 +32,7 @@ export default function TeamPage({
   yearsParticipated,
 }: any) {
   const [activeTab, setActiveTab] = useState(
-    yearsParticipated.includes(2023)
-      ? 2023
-      : yearsParticipated[yearsParticipated.length - 1]
+    yearsParticipated[yearsParticipated.length - 1]
   );
   const [eventData, setEventData] = useState([]);
   const [matchData, setMatchData] = useState<any>();
