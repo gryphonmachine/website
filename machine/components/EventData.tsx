@@ -216,11 +216,6 @@ export const EventData = (props: any) => {
           </table>
         </div>
       )}
-      {props.data.length === 0 && (
-        <p className="text-gray-400 mt-5">
-          Looks like there&apos;s no data available for this event! 😔{" "}
-        </p>
-      )}
     </>
   );
 };

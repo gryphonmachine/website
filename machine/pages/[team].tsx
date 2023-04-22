@@ -38,6 +38,7 @@ export default function TeamPage({
   const [matchData, setMatchData] = useState<any>();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const year = yearsParticipated.map((year: any) => {
     return year;
   });
@@ -131,7 +132,7 @@ export default function TeamPage({
             </div>
           </div>
 
-          <div className="flex mt-3">
+          <div className="flex flex-wrap gap-3 md:gap-5 mt-3">
             {teamSocials.map((social: any, key: number) => {
               return (
                 <div key={key} className="flex">
@@ -143,7 +144,7 @@ export default function TeamPage({
                       <Social
                         icon={FaFacebook}
                         name="Facebook"
-                        className="text-blue-500 mr-5"
+                        className="text-blue-500"
                       />
                     </a>
                   )}
@@ -156,7 +157,7 @@ export default function TeamPage({
                       <Social
                         icon={FaGithub}
                         name="GitHub"
-                        className="text-white mr-5"
+                        className="text-white"
                       />
                     </a>
                   )}
@@ -169,7 +170,7 @@ export default function TeamPage({
                       <Social
                         icon={FaInstagram}
                         name="Instagram"
-                        className="text-pink-400 mr-5"
+                        className="text-pink-400"
                       />
                     </a>
                   )}
@@ -182,7 +183,7 @@ export default function TeamPage({
                       <Social
                         icon={FaTwitter}
                         name="Twitter"
-                        className="text-sky-400 mr-5"
+                        className="text-sky-400"
                       />
                     </a>
                   )}
@@ -212,20 +213,51 @@ export default function TeamPage({
           </div>
         </div>
 
-        <div className="bg-gray-800 rounded-lg py-10 px-10 md:w-[900px] mt-8">
-          <div className="flex gap-5 flex-wrap">
-            {yearsParticipated.map((year: any, key: any) => {
-              return (
-                <TabButton
-                  active={activeTab}
-                  key={key}
-                  tab={year}
-                  onClick={() => handleTabClick(year)}
+        <div className="relative bg-gray-800 rounded-lg py-10 px-10 md:w-[900px] mt-8">
+          <div className="flex gap-4">
+            {/* tab buttons go here */}
+            <div className="relative">
+              <div
+                className={`bg-gray-700 w-[300px] border-2 border-gray-500 text-white ${
+                  isDropdownOpen ? "rounded-t-lg" : "rounded-lg"
+                } px-3 py-2 flex items-center justify-between cursor-pointer`}
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              >
+                <span>{activeTab}</span>
+                <svg
+                  className={`h-5 w-5 transform ${
+                    isDropdownOpen ? "-rotate-180" : ""
+                  }`}
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
                 >
-                  {year}
-                </TabButton>
-              );
-            })}
+                  <path
+                    fillRule="evenodd"
+                    d="M5.293 7.707a1 1 0 0 1 0-1.414l4-4a1 1 0 0 1 1.414 0l4 4a1 1 0 1 1-1.414 1.414L11 5.414V14a1 1 0 1 1-2 0V5.414L6.707 7.707a1 1 0 0 1-1.414 0z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div
+                className={`grid grid-cols-3 gap-3 absolute right-0 left-0 bg-gray-700 text-white rounded-b-lg border-2 border-t-transparent border-gray-500 px-3 py-4 ${
+                  isDropdownOpen ? "block" : "hidden"
+                } z-20`}
+              >
+                {yearsParticipated.map((year: any, key: any) => (
+                  <div
+                    key={key}
+                    className=" cursor-pointer bg-gray-600 hover:bg-gray-500 py-1 px-3 rounded-lg border border-gray-500"
+                    onClick={() => {
+                      handleTabClick(Number(year));
+                      setIsDropdownOpen(false);
+                    }}
+                  >
+                    {year}
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
 
           {loading && <p className="mt-5 text-gray-400">Loading events...</p>}
@@ -236,7 +268,7 @@ export default function TeamPage({
                 return (
                   <div
                     key={key}
-                    className="bg-gray-700 flex-wrap md:w-full w-[270px] rounded-lg px-8 py-5"
+                    className="bg-gray-700 flex-wrap md:w-full w-[300px] rounded-lg px-8 py-5"
                   >
                     <div className="flex justify-between">
                       <div>
@@ -259,7 +291,7 @@ export default function TeamPage({
                         </a>
                         <span className="text-md text-gray-400">
                           {convertDate(event.start_date)} -{" "}
-                          {convertDate(event.end_date)}{" "}
+                          {convertDate(event.end_date)}, {activeTab}
                         </span>
                         <div className="md:hidden block mt-5">
                           {event.webcasts.length > 0 && (
@@ -289,7 +321,17 @@ export default function TeamPage({
                         )}
                       </div>
                     </div>
-                    <EventData data={matchData[event.event_code]} team={team} />
+                    {matchData[event.event_code].length === 0 ? (
+                      <p className="text-red-400 mt-5 font-bold py-3 px-5 rounded-lg border-2 border-red-500">
+                        Looks like there&apos;s no data available for this
+                        event! 😔{" "}
+                      </p>
+                    ) : (
+                      <EventData
+                        data={matchData[event.event_code]}
+                        team={team}
+                      />
+                    )}
                   </div>
                 );
               })}
