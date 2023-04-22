@@ -85,7 +85,11 @@ export default function TeamPage({
                 height="50"
                 width="50"
                 priority={true}
-                src={`https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${teamData.website}/&size=64`}
+                src={`https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${
+                  teamData.website.startsWith("https")
+                    ? teamData.website
+                    : `https://${teamData.website.slice(7)}`
+                }/&size=64`}
                 onError={() => {
                   setError(true);
                 }}
@@ -294,31 +298,34 @@ export default function TeamPage({
                           {convertDate(event.end_date)}, {activeTab}
                         </span>
                         <div className="md:hidden block mt-5">
-                          {isLive(event.start_date, event.end_date) <= event.end_date && event.webcasts.length > 0 && (
+                          {isLive(event.start_date, event.end_date) <=
+                            event.end_date &&
+                            event.webcasts.length > 0 && (
+                              <a
+                                href={`https://twitch.tv/${event.webcasts[0].channel}`}
+                                target="_blank"
+                              >
+                                <div className="flex bg-[#6441a5] text-white hover:bg-white hover:text-primary py-1 px-5 rounded-lg font-bold">
+                                  <FaTwitch className="text-md mt-1 mr-2" />{" "}
+                                  {event.webcasts[0].channel}
+                                </div>
+                              </a>
+                            )}
+                        </div>
+                      </div>
+                      <div className="md:block hidden">
+                        {isLive(event.start_date, event.end_date) &&
+                          event.webcasts.length > 0 && (
                             <a
                               href={`https://twitch.tv/${event.webcasts[0].channel}`}
                               target="_blank"
                             >
-                              <div className="flex bg-[#6441a5] text-white hover:bg-white hover:text-primary py-1 px-5 rounded-lg font-bold">
+                              <div className="flex bg-[#6441a5] text-white hover:bg-gray-600 hover:text-primary py-1 px-5 rounded-lg font-bold">
                                 <FaTwitch className="text-md mt-1 mr-2" />{" "}
                                 {event.webcasts[0].channel}
                               </div>
                             </a>
                           )}
-                        </div>
-                      </div>
-                      <div className="md:block hidden">
-                        {isLive(event.start_date, event.end_date) && event.webcasts.length > 0 && (
-                          <a
-                            href={`https://twitch.tv/${event.webcasts[0].channel}`}
-                            target="_blank"
-                          >
-                            <div className="flex bg-[#6441a5] text-white hover:bg-gray-600 hover:text-primary py-1 px-5 rounded-lg font-bold">
-                              <FaTwitch className="text-md mt-1 mr-2" />{" "}
-                              {event.webcasts[0].channel}
-                            </div>
-                          </a>
-                        )}
                       </div>
                     </div>
                     {matchData[event.event_code].length === 0 ? (
