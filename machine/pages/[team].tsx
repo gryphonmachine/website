@@ -6,16 +6,36 @@ import { GetServerSideProps } from "next";
 import { useRouter } from "next/router";
 import React from "react";
 import { useCallback, useEffect, useState } from "react";
-import { FaTwitch } from "react-icons/fa";
+import {
+  FaFacebook,
+  FaGithub,
+  FaInstagram,
+  FaTwitch,
+  FaTwitter,
+  FaYoutube,
+} from "react-icons/fa";
 import { convertDate } from "@/util/date";
 import { Header } from "@/components/Header";
 import Image from "next/image";
 
-export default function TeamPage({ teamData, yearsParticipated }: any) {
+const Social = (props: any) => {
+  return (
+    <p className={`flex ${props.className} hover:text-primary`}>
+      <props.icon className="text-2xl mr-1" /> {props.name}
+    </p>
+  );
+};
+
+export default function TeamPage({
+  teamData,
+  teamSocials,
+  yearsParticipated,
+}: any) {
   const [activeTab, setActiveTab] = useState(2023);
   const [eventData, setEventData] = useState([]);
   const [matchData, setMatchData] = useState<any>();
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
   const year = yearsParticipated.map((year: any) => {
     return year;
   });
@@ -55,46 +75,131 @@ export default function TeamPage({ teamData, yearsParticipated }: any) {
       <div className="flex flex-wrap items-center justify-center pl-8 pr-8 md:pl-0 md:pr-0">
         <div className="bg-gray-800 rounded-lg py-10 px-10 md:w-[900px] mt-16 relative">
           <div className="md:flex">
-          <Image
-            className="rounded-lg mr-5 w-20 mb-5 md:mb-0"
-            alt={`${teamData.nickname} Logo`}
-            height="50"
-            width="50"
-            priority={true}
-            src={`https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${teamData.website}/&size=64`}
-          />
-          <div>
-          <p className="text-gray-400 text-sm font-medium">
-            {teamData.school_name}
-          </p>
-          <a
-            href={
-              teamData.website
-                ? teamData.website
-                : `https://frc-events.firstinspires.org/team/${teamData.team_number}`
-            }
-            target="_blank"
-          >
-            <h1 className="font-black text-4xl">
-              FRC {teamData.team_number}:{" "}
-              <span className="text-primary">{teamData.nickname}</span>
-            </h1>
-          </a>
-          <p className="text-gray-400">
-            <b>
-              {teamData.city}, {teamData.state_prov}, {teamData.country}
-            </b>{" "}
-            • Joined <span>{teamData.rookie_year}</span> •{" "}
-            <a
-              href={`https://frc-events.firstinspires.org/team/${teamData.team_number}`}
-              target="_blank"
-            >
-              <span className="text-white hover:text-primary">
-                FIRST Inspires
-              </span>
-            </a>
-          </p>
+            {!error && (
+              <Image
+                className="rounded-lg mr-5 w-20 mb-5 md:mb-0"
+                alt="a"
+                height="50"
+                width="50"
+                priority={true}
+                src={`https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${teamData.website}/&size=64`}
+                onError={() => {
+                  setError(true);
+                }}
+              />
+            )}
+            {error && (
+              <div className="flex items-center justify-center px-6 rounded-lg bg-gray-700 border-2 border-gray-500 mr-5">
+                <span className="text-gray-400 font-bold text-md text-center">
+                  FRC <br /> {teamData.team_number}{" "}
+                </span>
+              </div>
+            )}
+            <div>
+              <p className="text-gray-400 text-sm font-medium">
+                {teamData.school_name}
+              </p>
+              <a
+                href={
+                  teamData.website
+                    ? teamData.website
+                    : `https://frc-events.firstinspires.org/team/${teamData.team_number}`
+                }
+                target="_blank"
+              >
+                <h1 className="font-black text-4xl">
+                  FRC {teamData.team_number}:{" "}
+                  <span className="text-primary">{teamData.nickname}</span>
+                </h1>
+              </a>
+              <p className="text-gray-400">
+                <b>
+                  {teamData.city}, {teamData.state_prov}, {teamData.country}
+                </b>{" "}
+                • Joined <span>{teamData.rookie_year}</span> •{" "}
+                <a
+                  href={`https://frc-events.firstinspires.org/team/${teamData.team_number}`}
+                  target="_blank"
+                >
+                  <span className="text-white hover:text-primary">
+                    FIRST Inspires
+                  </span>
+                </a>
+              </p>
+            </div>
           </div>
+
+          <div className="flex mt-3">
+            {teamSocials.map((social: any, key: number) => {
+              return (
+                <div key={key} className="flex">
+                  {social.type === "facebook-profile" && (
+                    <a
+                      href={`https://facebook.com/${social.foreign_key}`}
+                      target="_blank"
+                    >
+                      <Social
+                        icon={FaFacebook}
+                        name="Facebook"
+                        className="text-blue-500 mr-5"
+                      />
+                    </a>
+                  )}
+
+                  {social.type === "github-profile" && (
+                    <a
+                      href={`https://github.com/${social.foreign_key}`}
+                      target="_blank"
+                    >
+                      <Social
+                        icon={FaGithub}
+                        name="GitHub"
+                        className="text-white mr-5"
+                      />
+                    </a>
+                  )}
+
+                  {social.type === "instagram-profile" && (
+                    <a
+                      href={`https://instagram.com/${social.foreign_key}`}
+                      target="_blank"
+                    >
+                      <Social
+                        icon={FaInstagram}
+                        name="Instagram"
+                        className="text-pink-400 mr-5"
+                      />
+                    </a>
+                  )}
+
+                  {social.type === "twitter-profile" && (
+                    <a
+                      href={`https://twitter.com/${social.foreign_key}`}
+                      target="_blank"
+                    >
+                      <Social
+                        icon={FaTwitter}
+                        name="Twitter"
+                        className="text-sky-400 mr-5"
+                      />
+                    </a>
+                  )}
+
+                  {social.type === "youtube-channel" && (
+                    <a
+                      href={`https://youtube.com/${social.foreign_key}`}
+                      target="_blank"
+                    >
+                      <Social
+                        icon={FaYoutube}
+                        name="Youtube"
+                        className="text-red-500"
+                      />
+                    </a>
+                  )}
+                </div>
+              );
+            })}
           </div>
 
           <div className="bg-gray-700 border-2 border-gray-500 rounded-lg py-4 px-6 mt-5">
@@ -200,12 +305,17 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const teamData = await fetch(`${API_URL}/api/team?name=${team}`).then((res) =>
     res.json()
   );
+  const teamSocials = await fetch(`${API_URL}/api/socials?name=${team}`).then(
+    (res) => res.json()
+  );
+
   const yearsParticipated = await fetch(
     `${API_URL}/api/yearsParticipated?name=${team}`
   ).then((res) => res.json());
   return {
     props: {
       teamData,
+      teamSocials,
       yearsParticipated,
     },
   };
