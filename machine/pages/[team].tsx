@@ -247,7 +247,7 @@ export default function TeamPage({
                 {yearsParticipated.map((year: any, key: any) => (
                   <div
                     key={key}
-                    className=" cursor-pointer bg-gray-600 hover:bg-gray-500 py-1 px-3 rounded-lg border border-gray-500"
+                    className=" cursor-pointer bg-gray-600 hover:bg-gray-500 hover:cursor-pointer py-1 px-3 rounded-lg border border-gray-500"
                     onClick={() => {
                       handleTabClick(Number(year));
                       setIsDropdownOpen(false);
