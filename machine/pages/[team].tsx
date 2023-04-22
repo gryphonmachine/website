@@ -31,6 +31,7 @@ export default function TeamPage({
   teamSocials,
   teamAwards,
   yearsParticipated,
+  teamDistrict,
 }: any) {
   const [activeTab, setActiveTab] = useState<any>(1);
   const [eventData, setEventData] = useState([]);
@@ -43,6 +44,7 @@ export default function TeamPage({
   });
   const router = useRouter();
   const { team } = router.query;
+  const currentDistrict = teamDistrict[teamDistrict.length - 1];
 
   const handleTabClick = (tabIndex: number) => {
     setActiveTab(tabIndex);
@@ -209,6 +211,20 @@ export default function TeamPage({
           </div>
 
           <div className="bg-gray-700 border-2 border-gray-500 rounded-lg py-4 px-6 mt-5">
+            {currentDistrict && (
+              <a
+                href={`https://frc-events.firstinspires.org/2023/district/${currentDistrict.abbreviation}`}
+                target="_blank"
+              >
+                <p className="text-white text-sm hover:text-primary">
+                  <span className="font-bold"> District: </span>
+                  {currentDistrict.display_name}{" "}
+                  <span className="text-gray-400">
+                    ({currentDistrict.abbreviation.toUpperCase()})
+                  </span>
+                </p>
+              </a>
+            )}
             <p className="text-gray-400 font-bold text-sm italic">
               {" "}
               {teamData.name}
@@ -403,11 +419,17 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const yearsParticipated = await fetch(
     `${API_URL}/api/team/years?team=${team}`
   ).then((res) => res.json());
+
+  const teamDistrict = await fetch(
+    `${API_URL}/api/team/districts?team=${team}`
+  ).then((res) => res.json());
+
   return {
     props: {
       teamData,
       teamSocials,
       teamAwards,
+      teamDistrict,
       yearsParticipated,
     },
   };
