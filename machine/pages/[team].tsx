@@ -227,14 +227,14 @@ export default function TeamPage({
             </TabButton>
             <div className="relative">
               <div
-                className={`bg-gray-700 w-[300px] border-2 border-gray-500 text-white ${
+                className={`bg-gray-700 w-[300px] text-white  ${
                   isDropdownOpen ? "rounded-t-lg" : "rounded-lg"
-                } px-3 py-2 flex items-center justify-between cursor-pointer`}
+                } px-5 py-2 flex items-center justify-between cursor-pointer`}
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               >
-                <span>
+                <span className="font-bold">
                   {String(activeTab).length >= 4
-                    ? activeTab
+                    ? `${activeTab} Season`
                     : "Select a Season"}
                 </span>
                 <svg
@@ -253,7 +253,7 @@ export default function TeamPage({
                 </svg>
               </div>
               <div
-                className={`grid grid-cols-3 gap-3 absolute right-0 left-0 bg-gray-700 text-white rounded-b-lg border-2 border-t-transparent border-gray-500 px-3 py-4 ${
+                className={`grid grid-cols-3 gap-3 absolute right-0 left-0 bg-gray-700 text-white rounded-b-lg px-3 py-4 ${
                   isDropdownOpen ? "block" : "hidden"
                 } z-20`}
               >

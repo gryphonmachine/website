@@ -32,7 +32,9 @@ const EventList = (props: any) => {
           <th scope="row" className={`px-6 py-4 whitespace-nowrap`}>
             <span
               className={`font-bold ${
-                props.didWeWin() ? "text-green-400" : "text-red-400"
+                props.didWeWin() === "win" && "text-green-400"
+              } ${props.didWeWin() === "lose" && "text-red-400"} ${
+                props.didWeWin() === "unknown" && "text-gray-400"
               }`}
             >
               {props.search_array(newText, props.match.comp_level)}{" "}
@@ -44,7 +46,9 @@ const EventList = (props: any) => {
         <th
           scope="row"
           className={`px-6 py-4 font-bold whitespace-nowrap ${
-            props.didWeWin() ? "text-green-400" : "text-red-400"
+            props.didWeWin() === "win" && "text-green-400"
+          } ${props.didWeWin() === "lose" && "text-red-400"} ${
+            props.didWeWin() === "unknown" && "text-gray-400"
           }`}
         >
           {props.search_array(newText, props.match.comp_level)}{" "}
@@ -73,9 +77,11 @@ const EventList = (props: any) => {
         </span>
         <span className="text-gray-400 font-regular">
           (
-          {props.match.alliances.red.team_keys
-            .map((team: any) => team.substring(3))
-            .join(", ")}
+          {props.match.alliances.red.team_keys.includes("frc0")
+            ? "TBD"
+            : props.match.alliances.red.team_keys
+                .map((team: any) => team.substring(3))
+                .join(", ")}
           )
         </span>
       </td>
@@ -87,9 +93,11 @@ const EventList = (props: any) => {
         </span>
         <span className="text-gray-400 font-regular">
           (
-          {props.match.alliances.blue.team_keys
-            .map((team: any) => team.substring(3))
-            .join(", ")}
+          {props.match.alliances.blue.team_keys.includes("frc0")
+            ? "TBD"
+            : props.match.alliances.blue.team_keys
+                .map((team: any) => team.substring(3))
+                .join(", ")}
           )
         </span>
       </td>
@@ -132,11 +140,14 @@ export const EventData = (props: any) => {
 
   const didWeWin = (match: any) => {
     if (
+      match.score_breakdown &&
       findAlliances(match).alliance.toLowerCase() === match.winning_alliance
     ) {
-      return true;
+      return "win";
+    } else if (!match.score_breakdown) {
+      return "unknown";
     } else {
-      return false;
+      return "lose";
     }
   };
 
