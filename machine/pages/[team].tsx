@@ -14,7 +14,7 @@ import {
   FaTwitter,
   FaYoutube,
 } from "react-icons/fa";
-import { convertDate } from "@/util/date";
+import { convertDate, isLive } from "@/util/date";
 import { Header } from "@/components/Header";
 import Image from "next/image";
 
@@ -294,7 +294,7 @@ export default function TeamPage({
                           {convertDate(event.end_date)}, {activeTab}
                         </span>
                         <div className="md:hidden block mt-5">
-                          {event.webcasts.length > 0 && (
+                          {isLive(event.start_date, event.end_date) <= event.end_date && event.webcasts.length > 0 && (
                             <a
                               href={`https://twitch.tv/${event.webcasts[0].channel}`}
                               target="_blank"
@@ -308,7 +308,7 @@ export default function TeamPage({
                         </div>
                       </div>
                       <div className="md:block hidden">
-                        {event.webcasts.length > 0 && (
+                        {isLive(event.start_date, event.end_date) && event.webcasts.length > 0 && (
                           <a
                             href={`https://twitch.tv/${event.webcasts[0].channel}`}
                             target="_blank"

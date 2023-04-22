@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { convertTime } from "@/util/date";
 
 const newText = [
   {

@@ -1,5 +1,13 @@
+const getDayOrdinal = (day: number) => {
+  const suffixes = ["th", "st", "nd", "rd"];
+  const v = day % 100;
+  return day + (suffixes[(v - 20) % 10] || suffixes[v] || suffixes[0]);
+};
+
 export const convertDate = (dateParam: string) => {
   const date = new Date(dateParam);
+  const month = date.getUTCMonth();
+  const day = date.getUTCDate();
 
   const months = [
     "January",
@@ -15,16 +23,7 @@ export const convertDate = (dateParam: string) => {
     "November",
     "December",
   ];
-
-  const monthName = months[date.getMonth()];
-
-  const day = date.getDate();
-
-  function getDayOrdinal(day: number) {
-    const suffixes = ["th", "st", "nd", "rd"];
-    const v = day % 100;
-    return day + (suffixes[(v - 20) % 10] || suffixes[v] || suffixes[0]);
-  }
+  const monthName = months[month];
 
   const dayOrdinal = getDayOrdinal(day);
 
@@ -32,11 +31,15 @@ export const convertDate = (dateParam: string) => {
   return output;
 };
 
-export const convertTime = (epochTime: number) => {
-  const dateObj = new Date(epochTime * 1000);
-  const timeString = dateObj.toLocaleTimeString([], {
-    hour: "numeric",
-    minute: "numeric",
-  });
-  return timeString;
+export const isLive = (start: string, end: string) => {
+  const today = new Date();
+  const newToday = today.toISOString().split("T")[0];
+
+  today.setHours(0, 0, 0, 0);
+
+  if (newToday >= start && newToday <= end) {
+    return true;
+  } else {
+    return false;
+  }
 };
