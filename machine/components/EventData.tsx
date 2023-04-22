@@ -30,7 +30,7 @@ const EventList = (props: any) => {
             href={`https://www.youtube.com/watch?v=${props.match.videos[0].key}`}
             target="_blank"
           >
-            <FaYoutube className="text-3xl text-red-400 hover:text-white" />
+            <FaYoutube className="text-2xl text-red-400 hover:text-white" />
           </a>
         ) : (
           <p className="text-gray-400">
