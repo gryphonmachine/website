@@ -31,7 +31,11 @@ export default function TeamPage({
   teamSocials,
   yearsParticipated,
 }: any) {
-  const [activeTab, setActiveTab] = useState(2023);
+  const [activeTab, setActiveTab] = useState(
+    yearsParticipated.includes(2023)
+      ? 2023
+      : yearsParticipated[yearsParticipated.length - 1]
+  );
   const [eventData, setEventData] = useState([]);
   const [matchData, setMatchData] = useState<any>();
   const [loading, setLoading] = useState(false);
@@ -251,7 +255,8 @@ export default function TeamPage({
                         </a>
                         <a href={event.gmaps_url} target="_blank">
                           <p className="text-gray-400 hover:text-white">
-                            {event.location_name}, {event.city}, {event.country}{" "}
+                            {event.location_name &&
+                              `${event.location_name}, ${event.city}, ${event.country}`}
                           </p>
                         </a>
                         <span className="text-md text-gray-400">

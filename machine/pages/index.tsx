@@ -73,12 +73,12 @@ export default function Home({ initialTeams, initial }: any) {
                     <a>
                       <div className="px-5 py-10 bg-gray-800 border-2 border-gray-600 rounded-lg hover:bg-gray-700">
                         <h1 className="text-gray-200 font-black">
-                          {team.nickname.length > 17
-                            ? `${team.nickname.slice(0, 17)}...`
+                          {team.nickname.length > 15
+                            ? `${team.nickname.slice(0, 15)}...`
                             : team.nickname}
                         </h1>
                         <p className="text-gray-400 text-xs uppercase">
-                          {team.city ? team.city : "No location"}
+                          {team.city ? `${team.city}, ${team.country}` : "No location"}
                         </p>
 
                         <p className="text-gray-400 font-bold text-lg">
