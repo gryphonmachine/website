@@ -13,6 +13,8 @@ export default function Event({
   eventInfo,
   eventTeams,
   eventAlliances,
+  eventRankings,
+  eventAwards,
 }: any) {
   const router = useRouter();
   const { team } = router.query;
@@ -138,25 +140,43 @@ export default function Event({
               tab={1}
               onClick={() => handleTabClick(1)}
             >
-              Teams ({eventTeams.length})
+              Results
             </TabButton>
             <TabButton
               active={activeTab}
               tab={2}
               onClick={() => handleTabClick(2)}
             >
-              Results
+              Rankings
+            </TabButton>
+            <TabButton
+              active={activeTab}
+              tab={3}
+              onClick={() => handleTabClick(3)}
+            >
+              Awards
+            </TabButton>
+            <TabButton
+              active={activeTab}
+              tab={4}
+              onClick={() => handleTabClick(4)}
+            >
+              Teams ({eventTeams.length})
             </TabButton>
           </div>
 
-          {activeTab === 1 && (
+          {activeTab === 4 && (
             <div className="flex flex-col md:grid grid-cols-3 gap-5 mt-5">
               {eventTeams.map((team: any, key: number) => {
                 return (
                   <Link key={key} href={`/${team.team_number}`} legacyBehavior>
                     <a>
                       <div className="bg-gray-700 border-2 border-gray-500 hover:bg-gray-600 rounded-lg py-3 px-5">
-                        <h1 className="font-black text-xl">{team.nickname.length > 17 ? `${team.nickname.slice(0, 17)}...` : team.nickname}</h1>
+                        <h1 className="font-black text-xl">
+                          {team.nickname.length > 17
+                            ? `${team.nickname.slice(0, 17)}...`
+                            : team.nickname}
+                        </h1>
                         <p className="text-gray-400">{team.team_number}</p>
                       </div>
                     </a>
@@ -166,7 +186,7 @@ export default function Event({
             </div>
           )}
 
-          {activeTab === 2 &&
+          {activeTab === 1 &&
             (matches.length > 0 ? (
               <EventData
                 data={matches}
@@ -204,12 +224,22 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     `${API_URL}/api/events/alliances?event=${event}`
   ).then((res) => res.json());
 
+  const eventRankings = await fetch(
+    `${API_URL}/api/events/rankings?event=${event}`
+  ).then((res) => res.json());
+
+  const eventAwards = await fetch(
+    `${API_URL}/api/events/awards?event=${event}`
+  ).then((res) => res.json());
+
   return {
     props: {
       matches,
       eventInfo,
       eventTeams,
       eventAlliances,
+      eventRankings,
+      eventAwards,
     },
   };
 };

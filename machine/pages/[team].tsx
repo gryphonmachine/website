@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import React from "react";
 import { useCallback, useEffect, useState } from "react";
 import {
+  FaAward,
   FaFacebook,
   FaGithub,
   FaInstagram,
@@ -18,6 +19,7 @@ import { convertDate, isLive } from "@/util/date";
 import { Header } from "@/components/Header";
 import Image from "next/image";
 import Link from "next/link";
+import { findTeam } from "@/util/team";
 
 const Social = (props: any) => {
   return (
@@ -74,6 +76,14 @@ export default function TeamPage({
     getEventData();
   }, [getEventData]);
 
+  const sortedEventData = eventData.sort((a: any, b: any) => {
+    const aTimestamp = new Date(a.start_date).getTime();
+    const bTimestamp = new Date(b.start_date).getTime();
+    return bTimestamp - aTimestamp;
+  });
+
+  const isHOF = findTeam(String(teamData.team_number));
+
   return (
     <>
       <div className="flex flex-wrap items-center justify-center pl-8 pr-8 md:pl-0 md:pr-0">
@@ -105,7 +115,7 @@ export default function TeamPage({
             )}
             <div>
               <p className="text-gray-400 text-sm font-medium">
-                {teamData.school_name}
+                {teamData.school_name}{" "}
               </p>
               <a
                 href={
@@ -211,20 +221,38 @@ export default function TeamPage({
           </div>
 
           <div className="bg-gray-700 border-2 border-gray-500 rounded-lg py-4 px-6 mt-5">
-            {currentDistrict && (
-              <a
-                href={`https://frc-events.firstinspires.org/2023/district/${currentDistrict.abbreviation}`}
-                target="_blank"
-              >
-                <p className="text-white text-sm hover:text-primary">
-                  <span className="font-bold"> District: </span>
-                  {currentDistrict.display_name}{" "}
-                  <span className="text-gray-400">
-                    ({currentDistrict.abbreviation.toUpperCase()})
+            {isHOF && (
+              <Link href="/fame" legacyBehavior>
+                <a>
+                  <span className="text-[#ecc729] hover:text-white inline-block">
+                    {" "}
+                    <span className="flex mb-3 font-black">
+                      <FaAward className="text-2xl mr-1" />{" "}
+                      <span>Hall of Fame ({isHOF.year})</span>
+                    </span>
                   </span>
-                </p>
-              </a>
+                </a>
+              </Link>
             )}
+
+            <p className="text-white text-sm">
+              <span className="font-bold"> District: </span>
+              {currentDistrict && (
+                <a
+                  href={`https://frc-events.firstinspires.org/2023/district/${currentDistrict.abbreviation}`}
+                  target="_blank"
+                  className="hover:text-primary"
+                >
+                  {currentDistrict.display_name}{" "}
+                </a>
+              )}
+              <span className="text-gray-400">
+                {currentDistrict
+                  ? `(${currentDistrict.abbreviation.toUpperCase()}) `
+                  : "N/A"}
+              </span>
+            </p>
+
             <p className="text-gray-400 font-bold text-sm italic">
               {" "}
               {teamData.name}
@@ -244,7 +272,9 @@ export default function TeamPage({
             <div className="relative">
               <div
                 className={`bg-gray-700 w-[300px] text-white  ${
-                  isDropdownOpen ? "rounded-t-lg border-2 border-b-gray-500 border-transparent" : "rounded-lg"
+                  isDropdownOpen
+                    ? "rounded-t-lg border-2 border-b-gray-500 border-transparent"
+                    : "rounded-lg"
                 } px-5 py-2 flex items-center justify-between cursor-pointer`}
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               >
@@ -314,7 +344,7 @@ export default function TeamPage({
                             award.year
                           }/${award.event_key.slice(4)}`}
                           target="_blank"
-                          className="bg-gray-700 rounded-lg px-5 py-5 hover:bg-gray-600 border border-gray-500"
+                          className="bg-gray-700 rounded-lg px-5 py-5 hover:bg-gray-600 border-2 border-gray-500"
                         >
                           <h1 className="font-bold">{award.name}</h1>
                           <p className="text-gray-400">{award.year}</p>
@@ -335,7 +365,7 @@ export default function TeamPage({
           ) : (
             <div className="flex flex-col gap-5">
               {year.includes(activeTab) &&
-                eventData.map((event: any, key: number) => {
+                sortedEventData.map((event: any, key: number) => {
                   return (
                     <div
                       key={key}
@@ -394,6 +424,7 @@ export default function TeamPage({
                             )}
                         </div>
                       </div>
+
                       {matchData[event.event_code].length === 0 ? (
                         <p className="text-red-400 mt-5 font-bold py-3 px-5 rounded-lg border-2 border-red-500">
                           Looks like there&apos;s no data available for this
