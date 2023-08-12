@@ -1,96 +1,126 @@
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
+import { useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 
-const Sponsors = () => {
-  return (
-    <div className="flex flex-col items-center justify-center">
-      <p className="uppercase text-gray-400 mb-[-5px]">$2500+</p>
-      <h1 className="text-[#B9F2FF] text-4xl font-black mb-5">
-        💎 Diamond Sponsors
-      </h1>
+interface Sponsor {
+  name: string;
+  logo: string;
+  link: string;
+  width: number;
+  height: number;
+}
 
-      <div className="flex md:flex-row flex-col mb-10 gap-10 items-center justify-center">
-        <a href="https://glenforest.peelschools.org/" target="_blank">
-          <Image
-            src="/sponsors/glenforest.png"
-            alt="Glenforest Logo"
-            height="100"
-            width="150"
-            priority={true}
-          />
-        </a>
-        <a href="https://www.peelschools.org/" target="_blank">
-          <Image
-            src="/sponsors/pdsb.png"
-            alt="Peel District School Board Logo"
-            height="400"
-            width="400"
-            priority={true}
-          />
-        </a>
-      </div>
+interface SponsorTier {
+  tier: string;
+  colour: string;
+  amount: string;
+  sponsors: Sponsor[];
+}
 
-      <p className="uppercase text-gray-400 mb-[-5px]">$1000-$2500</p>
-      <h1 className="text-[#FFD700] text-4xl font-black mb-5">
-        🌟 Gold Sponsors
-      </h1>
+const sponsorData = [
+  {
+    tier: "Diamond",
+    colour: "text-[#B9F2FF]",
+    amount: "$2500+",
+    sponsors: [
+      {
+        name: "Glenforest",
+        logo: "/sponsors/glenforest.png",
+        link: "https://glenforest.peelschools.org/",
+        width: 150,
+        height: 100,
+      },
+      {
+        name: "Peel District School Board",
+        logo: "/sponsors/pdsb.png",
+        link: "https://www.peelschools.org/",
+        width: 400,
+        height: 400,
+      },
+    ],
+  },
+  {
+    tier: "Gold",
+    colour: "text-[#FFD700]",
+    amount: "$1000-$2500",
+    sponsors: [
+      {
+        name: "Quality Inn",
+        logo: "/sponsors/quality-inn.png",
+        link: "https://www.choicehotels.com/en-ca/quality-inn",
+        width: 350,
+        height: 300,
+      },
+      {
+        name: "Bempro",
+        logo: "/sponsors/bempro.png",
+        link: "https://www.bempro.com/",
+        width: 400,
+        height: 400,
+      },
+      {
+        name: "Nye Manufacturing",
+        logo: "/sponsors/nye.png",
+        link: "https://www.bempro.com/",
+        width: 175,
+        height: 175,
+      },
+    ],
+  },
+  {
+    tier: "Bronze",
+    colour: "text-[#CD7F32]",
+    amount: "Up to $1000",
+    sponsors: [
+      {
+        name: "Gap Wireless",
+        logo: "/sponsors/gap-wireless.png",
+        link: "https://gapwireless.com/",
+        width: 300,
+        height: 300,
+      },
+      {
+        name: "Zafin",
+        logo: "/sponsors/zafin.png",
+        link: "https://zafin.com/",
+        width: 300,
+        height: 300,
+      },
+    ],
+  },
+];
 
-      <div className="flex md:flex-row flex-col mb-10 gap-10 items-center justify-center">
+const SponsorTier = ({ tier, colour, amount, sponsors }: SponsorTier) => (
+  <div className="flex flex-col items-center justify-center">
+    <p className="uppercase text-gray-400 mb-[-5px]">{amount}</p>
+    <h1 className={`${colour} text-4xl font-black mb-5`}>
+      {tier} Sponsors
+    </h1>
+
+    <div className="flex md:flex-row flex-col mb-10 gap-10 items-center justify-center">
+      {sponsors.map((sponsor, index) => (
         <a
-          href="https://www.choicehotels.com/en-ca/quality-inn"
+          key={index}
+          href={sponsor.link}
           target="_blank"
+          rel="noopener noreferrer"
         >
           <Image
-            src="/sponsors/quality-inn.png"
-            alt="Quality Inn Logo"
-            height="300"
-            width="350"
+            src={sponsor.logo}
+            alt={`${sponsor.name} Logo`}
+            height={sponsor.height}
+            width={sponsor.width}
             priority={true}
           />
         </a>
-        <a href="https://www.bempro.com/" target="_blank">
-          <Image
-            src="/sponsors/bempro.png"
-            alt="Bempro Logo"
-            height="400"
-            width="400"
-            priority={true}
-          />
-        </a>
-      </div>
-
-      <p className="uppercase text-gray-400 mb-[-5px]">Up to $1000</p>
-      <h1 className="text-[#CD7F32] text-4xl font-black mb-5">
-        🥉 Bronze Sponsors
-      </h1>
-
-      <div className="flex md:flex-row flex-col mb-10 gap-10 items-center justify-center">
-        <a href="https://gapwireless.com/" target="_blank">
-          <Image
-            src="/sponsors/gap-wireless.png"
-            alt="Gap Wireless Logo"
-            height="300"
-            width="300"
-            priority={true}
-          />
-        </a>
-        <a href="https://zafin.com/" target="_blank">
-          <Image
-            src="/sponsors/zafin.png"
-            alt="Zafin Logo"
-            height="300"
-            width="300"
-            priority={true}
-          />
-        </a>
-      </div>
+      ))}
     </div>
-  );
-};
-export default function SponsorsPage() {
+  </div>
+);
+
+const SponsorsPage = () => {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
@@ -126,10 +156,15 @@ export default function SponsorsPage() {
             }
           />
 
-          <Sponsors />
+          {sponsorData.map((tier, index) => (
+            <SponsorTier key={index} {...tier} />
+          ))}
+
           <Footer />
         </>
       )}
     </>
   );
-}
+};
+
+export default SponsorsPage;
