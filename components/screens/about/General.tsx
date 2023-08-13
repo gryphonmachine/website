@@ -18,7 +18,7 @@ export const AboutCard = (props: Props) => {
         </h1>
       </div>
       <Image
-        className="backgroundImage opacity-50 group-hover:opacity-60 absolute inset-0 w-full h-full object-cover"
+        className="backgroundImage opacity-40 group-hover:opacity-50 absolute inset-0 w-full h-full object-cover transition-all duration-300"
         src={props.bg}
         alt="Background Image"
         priority={true}
