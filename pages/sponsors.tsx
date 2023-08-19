@@ -88,6 +88,20 @@ const sponsorData = [
         width: 300,
         height: 300,
       },
+      {
+        name: "Koojo Custom Power Coating",
+        logo: "/sponsors/koojo.png",
+        link: "https://www.facebook.com/p/Koojo-CustomPowderCoating-100054628891519/",
+        width: 200,
+        height: 200,
+      },
+      {
+        name: "Agile Manufacturing",
+        logo: "/sponsors/agile.png",
+        link: "https://agile-manufacturing.com/",
+        width: 400,
+        height: 400,
+      },
     ],
   },
 ];
@@ -95,9 +109,7 @@ const sponsorData = [
 const SponsorTier = ({ tier, colour, amount, sponsors }: SponsorTier) => (
   <div className="flex flex-col items-center justify-center">
     <p className="uppercase text-gray-400 mb-[-5px]">{amount}</p>
-    <h1 className={`${colour} text-4xl font-black mb-5`}>
-      {tier} Sponsors
-    </h1>
+    <h1 className={`${colour} text-4xl font-black mb-5`}>{tier} Sponsors</h1>
 
     <div className="flex md:flex-row flex-col mb-10 gap-10 items-center justify-center">
       {sponsors.map((sponsor, index) => (
