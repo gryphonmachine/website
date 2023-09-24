@@ -64,7 +64,7 @@ export const RobotsScreen2023 = () => {
       <Title>Robot(s) Breakdown</Title>
       <div className="flex md:flex-row flex-col mb-5 bg-[#191919] rounded-lg p-10 border-2 border-[#2A2A2A]">
         <Image
-          src="/icbm.png"
+          src="/icbm.webp"
           className="md:mb-0 mb-10"
           alt="2023 ICBM Bot"
           width="350"
