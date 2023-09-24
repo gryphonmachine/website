@@ -13,7 +13,7 @@ export const TabButton = (props: Props) => {
       onClick={props.onClick}
       className={`px-5 py-2 rounded-lg font-semibold transition-all duration-300 ${
         props.active === props.tab
-          ? "bg-gray-700 text-white"
+          ? "bg-[#191919] text-white"
           : "text-gray-400 bg-[#191919] dark:hover:border-gray-600 border-2 border-[#2A2A2A] hover:text-white"
       }`}
     >

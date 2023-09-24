@@ -15,27 +15,27 @@ const Details = (props: Props) => {
   return (
     <>
       <div className="flex">
-        <h1 className="text-gray-300 bg-gray-600 hover:bg-gray-500 hover:cursor-default w-[85px] py-1 px-4 rounded-lg text-center font-black text-sm mr-3">
+      <h1 className="px-5 font-semibold transition-all duration-300 text-gray-400 bg-[#191919] dark:hover:border-gray-600 border-2 border-[#2A2A2A] hover:text-white md:w-[85px] w-[110px] py-1 px-4 rounded-lg text-center font-black text-sm mr-3">
           Name
         </h1>
         <span className="text-gray-300 font-medium">{props.name}</span>
       </div>
       <div className="flex">
         <h1
-          className={`bg-gray-600 text-gray-300 hover:bg-gray-500 hover:cursor-default w-[85px] py-1 px-4 rounded-lg text-center font-black text-sm mr-3`}
+          className={`px-5 font-semibold transition-all duration-300 text-gray-400 bg-[#191919] dark:hover:border-gray-600 border-2 border-[#2A2A2A] hover:text-white md:w-[85px] w-[110px] py-1 px-4 rounded-lg text-center font-black text-sm mr-3`}
         >
           Status
         </h1>
         <span className={`text-gray-300 font-medium`}>{props.status}</span>
       </div>
       <div className="flex">
-        <h1 className="bg-gray-600 text-gray-300 hover:bg-gray-500 hover:cursor-default w-[85px] py-1 px-4 rounded-lg text-center font-black text-sm mr-3">
+      <h1 className="flex justify-center px-5 font-semibold transition-all duration-300 text-gray-400 bg-[#191919] dark:hover:border-gray-600 border-2 border-[#2A2A2A] hover:text-white md:w-[85px] w-[110px] py-1 px-4 rounded-lg text-center font-black text-sm mr-3">
           Weight
         </h1>
         <span className="text-gray-300 font-medium">{props.weight} lbs</span>
       </div>
       <div className="flex">
-        <h1 className="flex justify-center text-gray-300 items-center bg-gray-600 hover:bg-gray-500 hover:cursor-default md:w-[85px] w-[110px] py-1 px-4 rounded-lg text-center font-black text-sm mr-3">
+        <h1 className="px-5 font-semibold transition-all duration-300 text-gray-400 bg-[#191919] dark:hover:border-gray-600 border-2 border-[#2A2A2A] hover:text-white md:w-[85px] w-[110px] py-1 px-4 rounded-lg text-center font-black text-sm mr-3">
           Size
         </h1>
         <span className="text-gray-300 font-medium">
@@ -62,7 +62,7 @@ export const RobotsScreen2023 = () => {
   return (
     <>
       <Title>Robot(s) Breakdown</Title>
-      <div className="flex md:flex-row flex-col mb-5 bg-gray-700 border-2 border-gray-500 rounded-lg p-10">
+      <div className="flex md:flex-row flex-col mb-5 bg-[#2A2A2A] rounded-lg p-10">
         <Image
           src="/icbm.png"
           className="md:mb-0 mb-10"
@@ -87,7 +87,7 @@ export const RobotsScreen2023 = () => {
           />
         </div>
       </div>
-      <div className="flex md:flex-row flex-col bg-gray-700 border-2 border-gray-500 rounded-lg p-10">
+      <div className="flex md:flex-row flex-col bg-[#2A2A2A] rounded-lg p-10">
         <Image
           src="/mini-me.png"
           className="md:mb-0 mb-10 md:mr-[125px]"
