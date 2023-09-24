@@ -1,4 +1,4 @@
-import { Mentors, Team } from "@/lib/lists/Team";
+import { Mentors, Team2023, Team2024 } from "@/lib/lists/Team";
 import { Title } from "../../Title";
 import Image from "next/image";
 
@@ -86,15 +86,16 @@ export const CaptainsScreen = () => {
         </Title>
 
         <div className="flex flex-col md:grid md:grid-cols-3 gap-5">
-          <Placeholder />
-          <Placeholder />
-          <Placeholder />
-          <Placeholder />
-          <Placeholder />
-          <Placeholder />
-          <Placeholder />
-          <Placeholder />
-          <Placeholder />
+          {Team2024.map((member: TeamMember, key: number) => {
+            return (
+              <Captain
+                key={key}
+                name={member.name}
+                role={member.role}
+                img={member.img}
+              />
+            );
+          })}
         </div>
       </div>
       <div className="border-2 border-gray-600 rounded-lg px-10 py-8">
@@ -104,7 +105,7 @@ export const CaptainsScreen = () => {
         </Title>
 
         <div className="flex flex-col md:grid md:grid-cols-3 gap-5">
-          {Team.map((member: TeamMember, key: number) => {
+          {Team2023.map((member: TeamMember, key: number) => {
             return (
               <Captain
                 key={key}

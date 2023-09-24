@@ -20,7 +20,65 @@ export const Mentors = [
     role: "BEMPRO"
   }
 ]
-export const Team = [
+export const Team2024 = [
+  {
+    name: "Utkarsh Dubey",
+    img: "/people/utkarsh.png",
+    role: "Head",
+  },
+  {
+    name: "Armaan Khosla",
+    img: "/people/armaan.png",
+    role: "Head",
+  },
+  {
+    name: "Bereket Semagn",
+    img: "/6070-logo.png",
+    role: "Programming",
+  },
+  {
+    name: "Aakanksh Panda",
+    img: "/6070-logo.png",
+    role: "Design",
+  },
+  {
+    name: "Sajenie Sivakaran",
+    img: "/6070-logo.png",
+    role: "Build",
+  },
+  {
+    name: "Emerik Cheng",
+    img: "/6070-logo.png",
+    role: "Electrical",
+  },
+  {
+    name: "Valentina Gheorghe",
+    img: "/6070-logo.png",
+    role: "Outreach",
+  },
+  {
+    name: "Lan Le",
+    img: "/6070-logo.png",
+    role: "Logistics",
+  },
+  {
+    name: "Ben Zhou",
+    img: "/6070-logo.png",
+    role: "Finance",
+  },
+  {
+    name: "Advay Chandorkar",
+    img: "/6070-logo.png",
+    role: "Media",
+  },
+  {
+    name: "Amy Sun",
+    img: "/people/amy.png",
+    role: "Media",
+  },
+];
+
+export const Team2023 = [
   {
     name: "Muhammad Awan",
     img: "/people/muhammed.png",
@@ -75,5 +133,5 @@ export const Team = [
     name: "Amy Sun",
     img: "/people/amy.png",
     role: "Media",
-  },
-];
+  },];
+
