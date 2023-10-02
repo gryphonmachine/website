@@ -1,7 +1,12 @@
 export const Events = [
   {
+    title: "DixieBloor's Newcomer Event",
+    subtitle: "August 2023",
+    img: "/events/newcomers.png",
+  },
+  {
     title: "The 6070 Showcase",
-    subtitle: "February 2022",
+    subtitle: "February 2023",
     img: "/events/IMG_6087.JPG",
   },
   {

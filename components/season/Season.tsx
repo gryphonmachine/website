@@ -15,7 +15,7 @@ export const Season = (props: Props) => {
   return (
     <div className="flex items-center justify-center p-5">
       <div
-        className={`${props.className} bg-[#232936] rounded-lg md:w-[800px] px-10 py-10`}
+        className={`${props.className} bg-[#191919] rounded-lg md:w-[800px] px-10 py-10`}
       >
         <div>
           <h1 className="md:text-3xl text-3xl font-bold text-left mb-4">

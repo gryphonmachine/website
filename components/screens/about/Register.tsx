@@ -10,7 +10,7 @@ interface SubteamProps {
 
 const Subteam = (props: SubteamProps) => {
   return (
-    <div className="bg-gray-700 border-2 border-gray-500 py-5 px-5 rounded-lg hover:bg-gray-600 hover:cursor-default">
+    <div className="bg-[#191919] border-2 border-[#2A2A2A] py-5 px-5 rounded-lg hover:border-gray-600 hover:cursor-default">
       <h1 className="font-bold text-md text-white">{props.title}</h1>
       <p className="text-gray-400 text-sm">{props.subtitle}</p>
       {props.subteams && <p className="text-[11px] mt-3 text-gray-400"><span className="uppercase font-bold">Subteams:</span> {props.subteams}</p>}
@@ -121,16 +121,6 @@ export const RegisterScreen = () => {
         <div>
           <h2 className="font-bold text-gray-300 text-lg mb-3">Registration</h2>
           <p className="text-left text-gray-400">
-            Want to apply for Captain?{" "}
-            <b
-              className="cursor-not-allowed text-primary"
-              onMouseEnter={() => handleHover(1)}
-              onMouseLeave={() => handleHover(2)}
-            >
-              {" "}
-              {hoverText ? hoverText : "Apply here"}
-            </b>
-            <br />
             Want to apply for General Member?{" "}
             <b
               className="cursor-not-allowed text-primary"
