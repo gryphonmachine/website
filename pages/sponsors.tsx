@@ -61,6 +61,13 @@ const sponsorData = [
         height: 400,
       },
       {
+        name: "RBC",
+        logo: "/sponsors/rbc.png",
+        link: "https://www.rbcroyalbank.com",
+        width: 100,
+        height: 100,
+      },
+      {
         name: "Nye Manufacturing",
         logo: "/sponsors/nye.png",
         link: "https://nyemanufacturing.com",
