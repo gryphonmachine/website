@@ -26,9 +26,6 @@ const getDaysInMonth = (date: Date): Date[] => {
 };
 
 const CalendarPage = () => {
-  const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-  const currentDate = new Date();
-
   const [currentMonth, setCurrentMonth] = useState<Date>(new Date());
   const [maxDate, setMaxDate] = useState<Date>(() => {
     const latestDate = Math.max(
@@ -131,10 +128,12 @@ const CalendarPage = () => {
             >
               <span
                 className={clsx("text-gray-400", {
-                  "bg-[#045cd2] text-white rounded-full py-1 px-3": isSameDay(
-                    day,
-                    currentDate
-                  ),
+                  "bg-[#045cd2] text-white rounded-full py-1 px-3":
+                    new Date(
+                      new Date().getFullYear(),
+                      new Date().getMonth(),
+                      day.getDate()
+                    ).toDateString() === new Date().toDateString(),
                 })}
               >
                 {day.getDate()}
