@@ -13,6 +13,7 @@ export const Navbar = (props: Props) => {
     { title: "Builds", path: "/builds" },
     { title: "Awards", path: "/awards" },
     { title: "Events", path: "/events" },
+    { title: "Schedule", path: "/schedule" },
     { title: "Media", path: "/media" },
     { title: "Sponsors", path: "/sponsors" },
     { title: "Contact Us", path: "/contact" },

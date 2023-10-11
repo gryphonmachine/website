@@ -12,9 +12,9 @@ import {
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import Head from "next/head";
-import { calendarDates } from "@/lib/lists/CalendarDates";
+import { scheduleDates } from "@/lib/lists/ScheduleDates";
 
-export interface CalendarEvent {
+export interface ScheduleEvent {
   date: string;
   event: string;
 }
@@ -25,18 +25,18 @@ const getDaysInMonth = (date: Date): Date[] => {
   return eachDayOfInterval({ start: firstDay, end: lastDay });
 };
 
-const CalendarPage = () => {
+const SchedulePage = () => {
   const [currentMonth, setCurrentMonth] = useState<Date>(new Date());
   const [maxDate, setMaxDate] = useState<Date>(() => {
     const latestDate = Math.max(
-      ...calendarDates.map((event) => parseISO(event.date).getTime())
+      ...scheduleDates.map((event) => parseISO(event.date).getTime())
     );
     return new Date(latestDate);
   });
 
   const [minDate, setMinDate] = useState<Date>(() => {
     const earliestDate = Math.min(
-      ...calendarDates.map((event) => parseISO(event.date).getTime())
+      ...scheduleDates.map((event) => parseISO(event.date).getTime())
     );
     return new Date(earliestDate);
   });
@@ -49,7 +49,7 @@ const CalendarPage = () => {
 
   const isPreviousMonthDisabled =
     currentMonth <= minDate ||
-    !calendarDates.some((event) => {
+    !scheduleDates.some((event) => {
       const prevMonth = addMonths(currentMonth, -1);
       const prevMonthFirstDay = startOfMonth(prevMonth);
       const prevMonthLastDay = endOfMonth(prevMonth);
@@ -62,7 +62,7 @@ const CalendarPage = () => {
 
   const isNextMonthDisabled =
     currentMonth >= maxDate ||
-    !calendarDates.some((event) => {
+    !scheduleDates.some((event) => {
       const nextMonth = addMonths(currentMonth, 1);
       const nextMonthFirstDay = startOfMonth(nextMonth);
       const nextMonthLastDay = endOfMonth(nextMonth);
@@ -88,11 +88,11 @@ const CalendarPage = () => {
   return (
     <>
       <Head>
-        <title>Calendar [6070: Gryphon Machine]</title>
+        <title>Schedule [6070: Gryphon Machine]</title>
       </Head>
 
       <Header
-        title="Calendar"
+        title="Schedule"
         subtitle="📅 View our upcoming and previous events for 6070"
       />
 
@@ -138,7 +138,7 @@ const CalendarPage = () => {
               >
                 {day.getDate()}
               </span>
-              {calendarDates
+              {scheduleDates
                 .filter((event) => isSameDay(parseISO(event.date), day))
                 .map((event, idx) => (
                   <span key={idx} className="text-white text-sm mt-2">
@@ -155,4 +155,4 @@ const CalendarPage = () => {
   );
 };
 
-export default CalendarPage;
+export default SchedulePage;
