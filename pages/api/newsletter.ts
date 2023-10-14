@@ -2,6 +2,14 @@ import { NextApiRequest, NextApiResponse } from "next";
 import axios from "axios";
 import { prisma } from "@/lib/prisma";
 
+export const config = {
+  api: {
+    bodyParser: {
+      sizeLimit: '20mb',
+    },
+  },
+};
+
 export default async function newsletter(
   req: NextApiRequest,
   res: NextApiResponse
