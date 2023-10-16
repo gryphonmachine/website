@@ -1,6 +1,8 @@
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Navbar } from "@/components/navbar/Navbar";
+import { PlateEditor } from "@/components/plate/PlateEditor";
+import { PlateRead } from "@/components/plate/PlateRead";
 import { prisma } from "@/lib/prisma";
 import { Post } from "@prisma/client";
 import axios from "axios";
@@ -72,10 +74,12 @@ export default function Newsletter({ posts }: { posts: Post[] }) {
                 className="rounded-lg bg-gray-700/50 border border-gray-700 px-4 py-2 outline-none"
                 onChange={(e) => setTitle(e.target.value)}
               />
-              <textarea
-                placeholder="Content"
-                className="rounded-lg bg-gray-700/50 border border-gray-700 px-4 py-2 outline-none"
-                onChange={(e) => setContent(e.target.value)}
+              <PlateEditor
+                editableProps={{
+                  className:
+                    "rounded-lg bg-gray-700/50 border border-gray-700 px-4 py-2 outline-none",
+                }}
+                onChange={(v) => setContent(JSON.stringify(v))}
               />
               <button
                 onClick={submit}
@@ -94,7 +98,8 @@ export default function Newsletter({ posts }: { posts: Post[] }) {
               className="w-full rounded-lg bg-gray-700/50 border border-gray-700 p-8"
             >
               <h1 className="font-bold text-2xl mb-3">{post.title}</h1>
-              <p className="text-gray-400">{post.content}</p>
+
+              <PlateRead rawText={post.content} />
             </div>
           ))}
         </div>
