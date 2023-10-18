@@ -21,6 +21,21 @@ interface SponsorTier {
 
 const sponsorData = [
   {
+    tier: "Title",
+    colour: "text-[#E5E4E2]",
+    amount: "$5000+",
+    sponsors: [
+      {
+        name: "Erin Mills Mazda",
+        logo: "/sponsors/mazda.png",
+        link: "https://erinmillsmazda.ca",
+        width: 250,
+        height: 100,
+      }
+    ]
+  },
+  {
+
     tier: "Diamond",
     colour: "text-[#B9F2FF]",
     amount: "$2500+",
