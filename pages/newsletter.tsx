@@ -11,7 +11,9 @@ import { GetServerSideProps } from "next";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
-export default function Newsletter({ posts }: { posts: Post[] }) {
+export default function Newsletter({ posts, sizeInMegabytes }: { posts: Post[], sizeInMegabytes: number }) {
+  console.log(sizeInMegabytes);
+  
   const [enteringPassword, setEnteringPassword] = useState(false);
   const [correctPassword, setCorrectPassword] = useState(false);
   const [title, setTitle] = useState("");
@@ -116,5 +118,10 @@ export const getServerSideProps: GetServerSideProps = async () => {
     next: { revalidate: 60 },
   }).then((res) => res.json());
 
-  return { props: { posts } };
+  const postsJson = JSON.stringify(posts);
+  const sizeInBytes = Buffer.byteLength(postsJson, 'utf-8');
+  const sizeInKilobytes = sizeInBytes / 1024;
+  const sizeInMegabytes = sizeInKilobytes / 1024;
+
+  return { props: { posts, size: sizeInMegabytes } };
 };
