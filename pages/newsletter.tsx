@@ -112,9 +112,9 @@ export default function Newsletter({ posts }: { posts: Post[] }) {
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const posts = await fetch(`${API_URL}/api/newsletter`, { next: { revalidate: 60 } }).then((res) =>
-    res.json()
-  );
+  const posts = await fetch(`${API_URL}/api/newsletter`, {
+    next: { revalidate: 60 },
+  }).then((res) => res.json());
 
   return { props: { posts } };
 };

@@ -3,7 +3,9 @@ import { prisma } from "@/lib/prisma";
 
 export const config = {
   api: {
-    responseLimit: false,
+    bodyParser: {
+      sizeLimit: "4mb",
+    }
   },
 };
 
@@ -34,7 +36,7 @@ export default async function newsletter(
     }
   } else if (req.method === "GET") {
     const posts = await prisma.post.findMany();
-    
+
     return res.status(200).send(JSON.parse(JSON.stringify(posts.reverse())));
   } else {
     res.status(405).json({ error: "Method not allowed" });
