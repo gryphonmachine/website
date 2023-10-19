@@ -3,6 +3,7 @@ import { Header } from "@/components/Header";
 import { Navbar } from "@/components/navbar/Navbar";
 import { PlateEditor } from "@/components/plate/PlateEditor";
 import { PlateRead } from "@/components/plate/PlateRead";
+import { API_URL } from "@/lib/constants";
 import { prisma } from "@/lib/prisma";
 import { Post } from "@prisma/client";
 import axios from "axios";
@@ -111,6 +112,9 @@ export default function Newsletter({ posts }: { posts: Post[] }) {
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const posts = await prisma.post.findMany();
-  return { props: { posts: JSON.parse(JSON.stringify(posts.reverse())) } };
+  const posts = await fetch(`${API_URL}/api/newsletter`, { next: { revalidate: 60 } }).then((res) =>
+    res.json()
+  );
+
+  return { props: { posts } };
 };

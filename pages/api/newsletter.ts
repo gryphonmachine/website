@@ -24,7 +24,7 @@ export default async function newsletter(
             content: body.content,
           },
         });
-      } catch(e) {
+      } catch (e) {
         return res.status(500).json(e);
       }
 
@@ -32,6 +32,10 @@ export default async function newsletter(
     } else {
       res.status(401).json({ error: "Unauthorized" });
     }
+  } else if (req.method === "GET") {
+    const posts = await prisma.post.findMany();
+    
+    return res.status(200).send(JSON.parse(JSON.stringify(posts.reverse())));
   } else {
     res.status(405).json({ error: "Method not allowed" });
   }
