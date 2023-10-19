@@ -37,6 +37,11 @@ export const Team2024 = [
     role: "Programming",
   },
   {
+    name: "Kissan Manimaran",
+    img: "/6070-logo.png",
+    role: "Programming",
+  },
+  {
     name: "Aakanksh Panda",
     img: "/6070-logo.png",
     role: "Design",
@@ -75,11 +80,6 @@ export const Team2024 = [
     name: "Amy Sun",
     img: "/people/amy.png",
     role: "Media",
-  },
-  {
-    name: "Kissan Manimaran",
-    img: "/6070-logo.png",
-    role: "Programming",
   },
 ];
 
