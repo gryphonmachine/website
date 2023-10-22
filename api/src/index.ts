@@ -1,9 +1,7 @@
-import fastify, { FastifyReply } from "fastify";
+import fastify from "fastify";
 import cors from "@fastify/cors";
-import autoLoad from "@fastify/autoload";
 import "dotenv/config";
 
-import { join } from "path";
 import { HOST, PORT, CLIENT_URL, API_VERSION } from "./lib/constants";
 import { Logger } from "./lib/logger";
 import { middleware } from "./modules/middleware";
