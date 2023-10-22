@@ -16,12 +16,7 @@ const server = fastify({
 // Middleware
 void server.register(cors, {
   credentials: true,
-  origin: [
-    "https://www.snapsaver.me",
-    "https://snapsaver.vercel.app",
-    "https://staging.snapsaver.me",
-    CLIENT_URL,
-  ],
+  origin: ["https://www.frc6070.ca", CLIENT_URL],
   methods: ["GET", "PUT", "POST", "PATCH", "DELETE"],
 });
 
