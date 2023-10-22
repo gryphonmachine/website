@@ -5,16 +5,26 @@ import { PlateRead } from "@/components/plate/PlateRead";
 import { API_URL } from "@/lib/constants";
 import { NewsletterPost } from "@/types/post";
 import axios from "axios";
-import { GetServerSideProps } from "next";
+import { LucideLoader2 } from "lucide-react";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-export default function Newsletter({ posts }: { posts: NewsletterPost[] }) {
+export default function Newsletter() {
+  const [posts, setPosts] = useState<NewsletterPost[]>([]);
   const [enteringPassword, setEnteringPassword] = useState(false);
   const [correctPassword, setCorrectPassword] = useState(false);
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const router = useRouter();
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const posts = await axios.get(`${API_URL}/v1/newsletter`);
+      setPosts(posts.data.data);
+    };
+
+    fetchPosts();
+  });
 
   const submit = async () => {
     setCorrectPassword(false);
@@ -91,16 +101,22 @@ export default function Newsletter({ posts }: { posts: NewsletterPost[] }) {
         </div>
 
         <div className="flex flex-col gap-6 justify-center items-center">
-          {posts.map((post) => (
-            <div
-              key={post.id}
-              className="w-full rounded-lg bg-gray-700/50 border border-gray-700 p-8"
-            >
-              <h1 className="font-bold text-2xl mb-3">{post.title}</h1>
+          {posts.length > 0 ? (
+            posts.map((post) => (
+              <div
+                key={post.id}
+                className="w-full rounded-lg bg-gray-700/50 border border-gray-700 p-8"
+              >
+                <h1 className="font-bold text-2xl mb-3">{post.title}</h1>
 
-              <PlateRead rawText={post.content} />
-            </div>
-          ))}
+                <PlateRead rawText={post.content} />
+              </div>
+            ))
+          ) : (
+            <p className="flex">
+              <LucideLoader2 className="animate-spin mr-2" /> Loading...
+            </p>
+          )}
         </div>
       </div>
 
@@ -108,13 +124,3 @@ export default function Newsletter({ posts }: { posts: NewsletterPost[] }) {
     </>
   );
 }
-
-export const getServerSideProps: GetServerSideProps = async () => {
-  const posts = await axios.get(`${API_URL}/v1/newsletter`);
-
-  return {
-    props: {
-      posts: posts.data.data,
-    },
-  };
-};
