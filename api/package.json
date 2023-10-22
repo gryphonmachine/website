@@ -3,7 +3,7 @@
   "scripts": {
     "dev": "ts-node-dev --poll --exit-child --transpile-only ./src/index.ts",
     "build": "prisma migrate deploy && tsc",
-    "start": "node dist/server.js",
+    "start": "node dist/index.js",
     "prisma:ready": "prisma format && prisma generate && prisma db push",
     "prisma:push": "prisma db push",
     "prisma:generate": "prisma generate",
