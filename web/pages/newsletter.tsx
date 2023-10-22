@@ -1,19 +1,15 @@
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import { Navbar } from "@/components/navbar/Navbar";
 import { PlateEditor } from "@/components/plate/PlateEditor";
 import { PlateRead } from "@/components/plate/PlateRead";
 import { API_URL } from "@/lib/constants";
-import { prisma } from "@/lib/prisma";
-import { Post } from "@prisma/client";
+import { NewsletterPost } from "@/types/post";
 import axios from "axios";
 import { GetServerSideProps } from "next";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
-export default function Newsletter({ posts, sizeInMegabytes }: { posts: Post[], sizeInMegabytes: number }) {
-  console.log(sizeInMegabytes);
-  
+export default function Newsletter({ posts }: { posts: NewsletterPost[] }) {
   const [enteringPassword, setEnteringPassword] = useState(false);
   const [correctPassword, setCorrectPassword] = useState(false);
   const [title, setTitle] = useState("");
@@ -24,7 +20,7 @@ export default function Newsletter({ posts, sizeInMegabytes }: { posts: Post[], 
     setCorrectPassword(false);
     setEnteringPassword(false);
 
-    const result = await axios.post(
+    await axios.post(
       "/api/newsletter",
       {
         title,
@@ -114,14 +110,9 @@ export default function Newsletter({ posts, sizeInMegabytes }: { posts: Post[], 
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const posts = await fetch(`${API_URL}/api/newsletter`, {
-    next: { revalidate: 60 },
-  }).then((res) => res.json());
+  const posts = await fetch(`${API_URL}/v1/newsletter`).then((res) =>
+    res.json()
+  );
 
-  const postsJson = JSON.stringify(posts);
-  const sizeInBytes = Buffer.byteLength(postsJson, 'utf-8');
-  const sizeInKilobytes = sizeInBytes / 1024;
-  const sizeInMegabytes = sizeInKilobytes / 1024;
-
-  return { props: { posts, size: sizeInMegabytes } };
+  return { props: { posts: posts.data } };
 };
