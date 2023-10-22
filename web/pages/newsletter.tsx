@@ -21,7 +21,7 @@ export default function Newsletter({ posts }: { posts: NewsletterPost[] }) {
     setEnteringPassword(false);
 
     await axios.post(
-      "/api/newsletter",
+      `${API_URL}/v1/newsletter`,
       {
         title,
         content,
@@ -110,9 +110,11 @@ export default function Newsletter({ posts }: { posts: NewsletterPost[] }) {
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const posts = await fetch(`${API_URL}/v1/newsletter`).then((res) =>
-    res.json()
-  );
+  const posts = await axios.get(`${API_URL}/v1/newsletter`);
 
-  return { props: { posts: posts.data } };
+  return {
+    props: {
+      posts: posts.data.data,
+    },
+  };
 };
