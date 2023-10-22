@@ -23,7 +23,7 @@ server.register(middleware);
 // Routes
 server.register(newsletterRoutes, { prefix: `/${API_VERSION}/newsletter` });
 
-server.get("/", async (req, res) => {
+server.get("/", async (_req, res) => {
   res.status(200).send("hi from 6070 :)");
 });
 
