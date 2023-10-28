@@ -7,7 +7,7 @@ import { VideoEmbed } from "@/components/VideoEmbed";
 import Head from "next/head";
 import { Media } from "@/lib/lists/Media";
 import { GetServerSideProps } from "next";
-import { API_URL } from "@/lib/constants";
+import { API_URL, FRONTEND_API_URL } from "@/lib/constants";
 import { ReactNode } from "react";
 
 interface Props {
@@ -131,13 +131,8 @@ export default function MediaPage({ videos }: Props) {
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
-  res.setHeader(
-    "Cache-Control",
-    "public, s-maxage=10, stale-while-revalidate=59"
-  );
-
-  const videos = await fetch(`${API_URL}/api/videos`).then((res) => res.json());
+export const getServerSideProps: GetServerSideProps = async () => {
+  const videos = await fetch(`${FRONTEND_API_URL}/api/videos`).then((res) => res.json());
 
   return { props: { videos } };
 };
