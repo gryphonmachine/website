@@ -77,8 +77,8 @@ export const Team2024 = [
     role: "Media",
   },
   {
-    name: "Amy Sun",
-    img: "/people/amy.png",
+    name: "Karen Le",
+    img: "/6070-logo.png",
     role: "Media",
   },
 ];
