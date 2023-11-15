@@ -48,6 +48,20 @@ const sponsorData = [
         height: 100,
       },
       {
+        name: "Genius Tools",
+        logo: "/sponsors/genius-tools.png",
+        link: "https://www.geniustools.net/",
+        width: 150,
+        height: 100,
+      },
+      {
+        name: "Princess Auto",
+        logo: "/sponsors/princess-auto.png",
+        link: "https://www.princessauto.com/",
+        width: 150,
+        height: 100,
+      },
+      {
         name: "Peel District School Board",
         logo: "/sponsors/pdsb.png",
         link: "https://www.peelschools.org",
