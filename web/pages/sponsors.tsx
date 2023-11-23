@@ -79,8 +79,8 @@ const sponsorData = [
         name: "Gene Haas Foundation",
         logo: "/sponsors/gene-haas.webp",
         link: "https://ghaasfoundation.org/content/ghf/en/home.html",
-        width: 350,
-        height: 300,
+        width: 175,
+        height: 175,
       },
       {
         name: "Bempro",
