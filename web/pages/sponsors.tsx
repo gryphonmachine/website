@@ -54,13 +54,6 @@ const sponsorData = [
         width: 250,
         height: 250,
       },
-      {
-        name: "Peel District School Board",
-        logo: "/sponsors/pdsb.png",
-        link: "https://www.peelschools.org",
-        width: 400,
-        height: 400,
-      },
     ],
   },
   {
