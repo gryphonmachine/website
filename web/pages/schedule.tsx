@@ -19,6 +19,7 @@ import { scheduleDates } from "@/lib/lists/ScheduleDates";
 export interface ScheduleEvent {
   date: string;
   event: string;
+  event_type: string;
 }
 
 const getDaysInMonth = (date: Date): Date[] => {
@@ -51,6 +52,7 @@ const SchedulePage = () => {
   const allDays = [...daysOfPreviousMonth, ...days];
 
   useEffect(() => {
+    // Additional logic can be added here if needed
   }, [currentMonth]);
 
   const isPreviousMonthDisabled =
@@ -129,7 +131,7 @@ const SchedulePage = () => {
           </button>
         </div>
   
-          <div className="border-2 border-gray-600 rounded-lg md:w-[939px] px-5 py-4 grid grid-cols-7 text-center gap-2">
+        <div className="border-2 border-gray-600 rounded-lg md:w-[939px] px-5 py-4 grid grid-cols-7 text-center gap-2">
           {daysOfWeek.map((dayOfWeek, idx) => (
             <div key={idx} className="text-gray-400">
               {dayOfWeek}
@@ -138,26 +140,29 @@ const SchedulePage = () => {
                 .map((day, idx) => (
                   <div
                     key={idx}
-                    className="flex flex-col items-center justify-center h-24 bg-[#191919] border border-[#2A2A2A] rounded my-2 "
+                    className={clsx("flex flex-col items-center justify-center h-24 bg-[#191919] border border-[#2A2A2A] rounded my-2 relative", {
+                      "bg-[#045cd2]": isSameDay(day, new Date()),
+                    })}
                   >
-                    <span
-                      className={clsx("text-gray-400", {
-                        "bg-[#045cd2] text-white rounded-full py-1 px-3":
-                          new Date(
-                            new Date().getFullYear(),
-                            new Date().getMonth(),
-                            day.getDate()
-                          ).toDateString() === new Date().toDateString(),
-                      })}
-                    >
+                    <span className={clsx("text-gray-400", {
+                      "text-white bg-[#045cd2] text-white rounded-full py-1 px-3": isSameDay(day, new Date()),
+                    })}>
                       {day.getDate()}
-                    </span>
+                    </span> 
                     {scheduleDates
                       .filter((event) => isSameDay(parseISO(event.date), day))
                       .map((event, idx) => (
                         <span key={idx} className="text-white text-[12px] mt-2">
                           {event.event}
                         </span>
+                      ))}
+                    {scheduleDates
+                      .filter((event) => isSameDay(parseISO(event.date), day) && event.event_type === "Competition") 
+                      .map((event, idx) => (
+                        <span
+                          key={idx}
+                          className="bg-[#d20404] w-4 h-4 rounded-full absolute -top-1.5 -right-1.5" 
+                        ></span>
                       ))}
                   </div>
                 ))}
