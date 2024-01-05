@@ -8,6 +8,8 @@ import {
   endOfMonth,
   addMonths,
   eachDayOfInterval,
+  startOfWeek,
+  subDays,
 } from "date-fns";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
@@ -31,20 +33,24 @@ const SchedulePage = () => {
     const latestDate = Math.max(
       ...scheduleDates.map((event) => parseISO(event.date).getTime())
     );
+
     return new Date(latestDate);
   });
 
-  const [minDate, setMinDate] = useState<Date>(() => {
-    const earliestDate = Math.min(
-      ...scheduleDates.map((event) => parseISO(event.date).getTime())
-    );
-    return new Date(earliestDate);
+  const minDate = new Date();
+
+  const startOfWeekDate = startOfWeek(startOfMonth(currentMonth));
+
+  const daysOfPreviousMonth = eachDayOfInterval({
+    start: startOfWeekDate,
+    end: subDays(startOfMonth(currentMonth), 1),
   });
 
-  const [days, setDays] = useState<Date[]>(getDaysInMonth(currentMonth));
+  const days = getDaysInMonth(currentMonth);
+
+  const allDays = [...daysOfPreviousMonth, ...days];
 
   useEffect(() => {
-    setDays(getDaysInMonth(currentMonth));
   }, [currentMonth]);
 
   const isPreviousMonthDisabled =
@@ -85,17 +91,20 @@ const SchedulePage = () => {
     setCurrentMonth(newMonth);
   };
 
+  const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  const firstDayOfWeek = startOfWeek(currentMonth);
+
   return (
     <>
       <Head>
         <title>Schedule [6070: Gryphon Machine]</title>
       </Head>
-
+  
       <Header
         title="Schedule"
         subtitle="📅 View our upcoming and previous events for 6070"
       />
-
+  
       <div className="flex flex-col items-center">
         <div className="flex justify-between md:w-[939px] mb-4 text-2xl">
           <button
@@ -119,37 +128,44 @@ const SchedulePage = () => {
             Next Month <FaArrowRight className="ml-2" />
           </button>
         </div>
-
-        <div className="border-2 border-gray-600 rounded-lg md:w-[939px] px-5 py-4 grid grid-cols-7 text-center gap-2">
-          {days.map((day, idx) => (
-            <div
-              key={idx}
-              className="flex flex-col items-center justify-center h-24 bg-[#191919] border border-[#2A2A2A] rounded"
-            >
-              <span
-                className={clsx("text-gray-400", {
-                  "bg-[#045cd2] text-white rounded-full py-1 px-3":
-                    new Date(
-                      new Date().getFullYear(),
-                      new Date().getMonth(),
-                      day.getDate()
-                    ).toDateString() === new Date().toDateString(),
-                })}
-              >
-                {day.getDate()}
-              </span>
-              {scheduleDates
-                .filter((event) => isSameDay(parseISO(event.date), day))
-                .map((event, idx) => (
-                  <span key={idx} className="text-white text-sm mt-2">
-                    {event.event}
-                  </span>
+  
+          <div className="border-2 border-gray-600 rounded-lg md:w-[939px] px-5 py-4 grid grid-cols-7 text-center gap-2">
+          {daysOfWeek.map((dayOfWeek, idx) => (
+            <div key={idx} className="text-gray-400">
+              {dayOfWeek}
+              {allDays
+                .filter(day => day.getDay() === (idx + 7) % 7) 
+                .map((day, idx) => (
+                  <div
+                    key={idx}
+                    className="flex flex-col items-center justify-center h-24 bg-[#191919] border border-[#2A2A2A] rounded my-2 "
+                  >
+                    <span
+                      className={clsx("text-gray-400", {
+                        "bg-[#045cd2] text-white rounded-full py-1 px-3":
+                          new Date(
+                            new Date().getFullYear(),
+                            new Date().getMonth(),
+                            day.getDate()
+                          ).toDateString() === new Date().toDateString(),
+                      })}
+                    >
+                      {day.getDate()}
+                    </span>
+                    {scheduleDates
+                      .filter((event) => isSameDay(parseISO(event.date), day))
+                      .map((event, idx) => (
+                        <span key={idx} className="text-white text-[12px] mt-2">
+                          {event.event}
+                        </span>
+                      ))}
+                  </div>
                 ))}
             </div>
           ))}
         </div>
       </div>
-
+  
       <Footer />
     </>
   );
