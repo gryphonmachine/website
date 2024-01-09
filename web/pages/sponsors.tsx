@@ -190,7 +190,7 @@ const SponsorsPage = () => {
                 to sponsor us? Check out our{" "}
                 <a
                   onClick={() =>
-                    window.open("/6070_SponsorshipPackage-2023.pdf")
+                    window.open("/6070_SponsorshipPackage-2024.pdf")
                   }
                   download
                   className="text-primary text-white hover:text-primary font-bold cursor-pointer"
