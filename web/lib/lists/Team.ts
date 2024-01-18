@@ -32,7 +32,7 @@ export const Team2024 = [
     role: "Head",
   },
   {
-    name: "Bereket Semagn",
+    name: "Kevin Xia",
     img: "/6070-logo.png",
     role: "Programming",
   },
@@ -62,7 +62,7 @@ export const Team2024 = [
     role: "Outreach",
   },
   {
-    name: "Lan Le",
+    name: "Tyrus Ha",
     img: "/6070-logo.png",
     role: "Logistics",
   },
@@ -72,7 +72,7 @@ export const Team2024 = [
     role: "Finance",
   },
   {
-    name: "Advay Chandorkar",
+    name: "Tae Eun Ha",
     img: "/6070-logo.png",
     role: "Media",
   },
@@ -80,6 +80,11 @@ export const Team2024 = [
     name: "Karen Le",
     img: "/6070-logo.png",
     role: "Media",
+  },
+    {
+    name: "Advay Chandorkar",
+    img: "/6070-logo.png",
+    role: "Website Manager",
   },
 ];
 
