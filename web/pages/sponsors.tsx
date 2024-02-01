@@ -62,13 +62,6 @@ const sponsorData = [
     amount: "$1000-$2500",
     sponsors: [
       {
-        name: "Quality Inn",
-        logo: "/sponsors/quality-inn.png",
-        link: "https://www.choicehotels.com/en-ca/quality-inn",
-        width: 350,
-        height: 300,
-      },
-      {
         name: "Gene Haas Foundation",
         logo: "/sponsors/gene-haas.webp",
         link: "https://ghaasfoundation.org/content/ghf/en/home.html",
@@ -103,13 +96,6 @@ const sponsorData = [
     colour: "text-[#CD7F32]",
     amount: "Up to $1000",
     sponsors: [
-      {
-        name: "Gap Wireless",
-        logo: "/sponsors/gap-wireless.png",
-        link: "https://gapwireless.com",
-        width: 250,
-        height: 250,
-      },
       {
         name: "Princess Auto",
         logo: "/sponsors/princess-auto.png",
