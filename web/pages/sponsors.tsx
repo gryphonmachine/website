@@ -34,6 +34,7 @@ const sponsorData = [
       }
     ]
   },
+
   {
 
     tier: "Diamond",
@@ -69,6 +70,13 @@ const sponsorData = [
         height: 175,
       },
       {
+        name: "JBM Precision Machining",
+        logo: "/sponsors/gm.png",
+        link: "https://jbmprecision.com/",
+        width: 165,
+        height: 135,
+      },
+      {
         name: "Bempro",
         logo: "/sponsors/bempro.png",
         link: "https://www.bempro.com",
@@ -81,6 +89,13 @@ const sponsorData = [
         link: "https://www.rbcroyalbank.com",
         width: 100,
         height: 100,
+      },
+      {
+        name: "GM Canada",
+        logo: "/sponsors/jbm.png",
+        link: "https://jbmprecision.com/",
+        width: 175,
+        height: 175,
       },
       {
         name: "Nye Manufacturing",
