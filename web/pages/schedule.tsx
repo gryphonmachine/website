@@ -152,7 +152,7 @@ const SchedulePage = () => {
                     {scheduleDates
                       .filter((event) => isSameDay(parseISO(event.date), day))
                       .map((event, idx) => (
-                        <span key={idx} className="text-white text-[12px] mt-2">
+                        <span key={idx} className="text-white mt-2 sm:text-[12px] text-[5.5px]">
                           {event.event}
                         </span>
                       ))}
