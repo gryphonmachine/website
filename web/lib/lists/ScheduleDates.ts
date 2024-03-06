@@ -99,14 +99,14 @@ export const scheduleDates: ScheduleEvent[] = [
   { date: "2024-03-18", event: "Upgrade Packages", event_type: "Meeting"},
   { date: "2024-03-19", event: "Upgrade Packages", event_type: "Meeting"},
   { date: "2024-03-20", event: "Upgrade Packages", event_type: "Meeting"},
-  { date: "2024-03-21", event: "Upgrade Packages", event_type: "Meeting"},
-  { date: "2024-03-22", event: "Upgrade Packages", event_type: "Meeting"},
 
   
+  { date: "2024-03-21", event: "Waterloo District Competition", event_type: "Competition"},
+  { date: "2024-03-22", event: "Waterloo District Competition", event_type: "Competition"},
   { date: "2024-03-23", event: "Waterloo District Competition", event_type: "Competition"},
-  { date: "2024-03-24", event: "Waterloo District Competition", event_type: "Competition"},
-  { date: "2024-03-25", event: "Waterloo District Competition", event_type: "Competition"},
 
+  { date: "2024-03-24", event: "Upgrade Packages", event_type: "Meeting"},
+  { date: "2024-03-25", event: "Upgrade Packages", event_type: "Meeting"},
   { date: "2024-03-26", event: "Upgrade Packages", event_type: "Meeting"},
   { date: "2024-03-27", event: "Upgrade Packages", event_type: "Meeting"},
   { date: "2024-03-28", event: "Upgrade Packages", event_type: "Meeting"},
