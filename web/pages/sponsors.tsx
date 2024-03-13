@@ -85,10 +85,10 @@ const sponsorData = [
       },
       {
         name: "RBC",
-        logo: "/sponsors/rbc.png",
-        link: "https://www.rbcroyalbank.com",
-        width: 100,
-        height: 100,
+        logo: "/sponsors/rbc.webp",
+        link: "https://www.rbcgam.com/en/ca/",
+        width: 120,
+        height: 120,
       },
       {
         name: "GM Canada",
