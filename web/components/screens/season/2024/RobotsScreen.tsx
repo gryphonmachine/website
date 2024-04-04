@@ -66,7 +66,7 @@ export const RobotsScreen2024 = () => {
         <Image
           src="/sam.jpg"
           className="md:mb-0 mb-10"
-          alt="2024 SAM"
+          alt="2024 SAM Bluey"
           width="350"
           height="300"
           priority={true}
