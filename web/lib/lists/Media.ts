@@ -1,5 +1,11 @@
 export const Media = [
   {
+    img: "/media/DSC_0702.jpg",
+    url: " https://photos.app.goo.gl/hHRvxpkruwd38kVP8",
+    title: "University of Waterloo Event 2024",
+    subtitle: "FIRST Crecendo - 2024",
+  },
+  {
     img: "/media/IMG_8382.CR2.jpg",
     url: " https://photos.app.goo.gl/9ntGaAc7CD7Ax1FM6",
     title: "Windsor Essex Great Lakes Event",

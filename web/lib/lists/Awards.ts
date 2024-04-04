@@ -1,5 +1,11 @@
 export const Awards = [
   {
+    img: "/awards/IMG_1862.jpg",
+    title: "University of Waterloo Event 2024",
+    year: "2024",
+    subtitle: "Team Sustainability Award sponsored by Dow",
+  },
+  {
     img: "/awards/EJD-KYgWoAEORDV.jpg",
     title: "McMaster University District Event",
     year: "2019",

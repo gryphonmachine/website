@@ -18,6 +18,15 @@ export default function BuildsPage() {
       />
 
       <div className="flex flex-col space-y-7 items-center justify-center pr-10 pl-10">
+      <Link href="/season/2024" legacyBehavior>
+          <a>
+            <SeasonCard
+              title="Crescendo presented by Haas"
+              subtitle="2024"
+              bg="/season/6070-crescendo.jpg"
+            />
+          </a>
+        </Link>
         <Link href="/season/2023" legacyBehavior>
           <a>
             <SeasonCard
