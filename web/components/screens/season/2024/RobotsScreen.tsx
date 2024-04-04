@@ -73,7 +73,7 @@ export const RobotsScreen2024 = () => {
         />
         <div className="flex-col space-y-4">
           <Details
-            name="SAM"
+            name="SAM Bluey"
             status="Active"
             weight="114"
             width="28"
