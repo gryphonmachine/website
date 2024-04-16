@@ -1,5 +1,11 @@
 export const Media = [
   {
+    img: "/media/IMG_3145.jpg",
+    url: "https://photos.app.goo.gl/XqkNHuDz5QD4EF7Y9",
+    title: "Durham College Event 2024",
+    subtitle: "FIRST Crecendo - 2024",
+  },
+  {
     img: "/media/DSC_0702.jpg",
     url: " https://photos.app.goo.gl/hHRvxpkruwd38kVP8",
     title: "University of Waterloo Event 2024",

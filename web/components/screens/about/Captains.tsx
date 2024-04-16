@@ -53,10 +53,10 @@ export const CaptainsScreen = () => {
       <div className="border-2 border-gray-600 rounded-lg px-10 py-8 justify-center items-center flex">
         <Image
           className="rounded-lg"
-          src="/team-pics/IMG_3793.jpg"
-          height="850"
-          width="850"
-          alt="Windsor Team Photo"
+          src="/team-pics/team2024.JPG"
+          height="975"
+          width="975"
+          alt="2024 Team Photo"
           priority={true}
         />
       </div>

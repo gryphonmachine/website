@@ -33,57 +33,57 @@ export const Team2024 = [
   },
   {
     name: "Kevin Xia",
-    img: "/6070-logo.png",
+    img: "/people/current/kevin.png",
     role: "Programming",
   },
   {
     name: "Kissan Manimaran",
-    img: "/6070-logo.png",
+    img: "/people/current/kissan.png",
     role: "Programming",
   },
   {
     name: "Aakanksh Panda",
-    img: "/6070-logo.png",
+    img: "/people/current/panda.png",
     role: "Design",
   },
   {
     name: "Sajenie Sivakaran",
-    img: "/6070-logo.png",
+    img: "/people/current/sajenie.png",
     role: "Build",
   },
   {
     name: "Emerik Cheng",
-    img: "/6070-logo.png",
+    img: "/people/current/emerik.png",
     role: "Electrical",
   },
   {
     name: "Valentina Gheorghe",
-    img: "/6070-logo.png",
+    img: "/people/current/val.png",
     role: "Outreach",
   },
   {
     name: "Tyrus Ha",
-    img: "/6070-logo.png",
+    img: "/people/current/tyrus.png",
     role: "Logistics",
   },
   {
     name: "Ben Zhou",
-    img: "/6070-logo.png",
+    img: "/people/current/ben.png",
     role: "Finance",
   },
   {
     name: "Tae Eun Ha",
-    img: "/6070-logo.png",
+    img: "/people/current/tae.png",
     role: "Media",
   },
   {
     name: "Karen Le",
-    img: "/6070-logo.png",
+    img: "/people/current/karen.png",
     role: "Media",
   },
     {
     name: "Advay Chandorkar",
-    img: "/6070-logo.png",
+    img: "/people/current/advay.png",
     role: "Website Manager",
   },
 ];
