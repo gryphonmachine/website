@@ -34,13 +34,19 @@ const sponsorData = [
       }
     ]
   },
-
   {
 
     tier: "Diamond",
     colour: "text-[#B9F2FF]",
     amount: "$2500+",
     sponsors: [
+      {
+        name: "RBC",
+        logo: "/sponsors/rbc.webp",
+        link: "https://www.rbcgam.com/en/ca/",
+        width: 120,
+        height: 120,
+      },
       {
         name: "Glenforest",
         logo: "/sponsors/glenforest.png",
@@ -84,13 +90,6 @@ const sponsorData = [
         height: 400,
       },
       {
-        name: "RBC",
-        logo: "/sponsors/rbc.webp",
-        link: "https://www.rbcgam.com/en/ca/",
-        width: 120,
-        height: 120,
-      },
-      {
         name: "GM Canada",
         logo: "/sponsors/jbm.png",
         link: "https://jbmprecision.com/",
@@ -98,11 +97,11 @@ const sponsorData = [
         height: 175,
       },
       {
-        name: "Nye Manufacturing",
-        logo: "/sponsors/nye.png",
-        link: "https://nyemanufacturing.com",
-        width: 175,
-        height: 175,
+        name: "Zafin",
+        logo: "/sponsors/zafin.png",
+        link: "https://zafin.com",
+        width: 225,
+        height: 225,
       },
     ],
   },
@@ -117,13 +116,6 @@ const sponsorData = [
         link: "https://www.princessauto.com/",
         width: 200,
         height: 200,
-      },
-      {
-        name: "Zafin",
-        logo: "/sponsors/zafin.png",
-        link: "https://zafin.com",
-        width: 225,
-        height: 225,
       },
       {
         name: "Koojo Custom Power Coating",
