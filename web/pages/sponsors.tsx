@@ -54,13 +54,6 @@ const sponsorData = [
         width: 150,
         height: 100,
       },
-      {
-        name: "Genius Tools",
-        logo: "/sponsors/genius-tools.png",
-        link: "https://www.geniustools.net/",
-        width: 320,
-        height: 320,
-      },
     ],
   },
   {
@@ -69,32 +62,11 @@ const sponsorData = [
     amount: "$1000-$2500",
     sponsors: [
       {
-        name: "Gene Haas Foundation",
-        logo: "/sponsors/gene-haas.webp",
-        link: "https://ghaasfoundation.org/content/ghf/en/home.html",
-        width: 175,
-        height: 175,
-      },
-      {
-        name: "JBM Precision Machining",
-        logo: "/sponsors/gm.png",
-        link: "https://jbmprecision.com/",
-        width: 165,
-        height: 135,
-      },
-      {
         name: "Bempro",
         logo: "/sponsors/bempro.png",
         link: "https://www.bempro.com",
         width: 400,
         height: 400,
-      },
-      {
-        name: "GM Canada",
-        logo: "/sponsors/jbm.png",
-        link: "https://jbmprecision.com/",
-        width: 175,
-        height: 175,
       },
       {
         name: "Zafin",
